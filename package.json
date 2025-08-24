@@ -1,0 +1,16 @@
+{
+  "name": "blazorserverfirstproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx @tailwindcss/cli -c ./tailwind.config.js -i ./Themes/Theme.css -o ./wwwroot/css/theme.css --watch",
+    "build": "npx @tailwindcss/cli -c ./tailwind.config.js -i ./Themes/Theme.css -o ./wwwroot/css/theme.min.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^4.1.11"
+  }
+}
