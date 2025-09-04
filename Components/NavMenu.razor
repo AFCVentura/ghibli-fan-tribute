@@ -1,0 +1,100 @@
+﻿<div class="text-ghibli-white text- bg-ghibli-sky p-2 md:flex md:items-center md:justify-between">
+    <!-- wrapper principal -->
+    <div class="flex w-full items-start justify-between">
+        <div class="flex flex-col items-center md:flex-row md:gap-7">
+            <!-- logo -->
+            <div class="w-full md:w-fit">
+                <NavLink href="/">
+                    <img src="favicon.svg"
+                         class="w- h-14 w-14 rounded-full p-1 transition-colors duration-300 hover:bg-ghibli-black/10 active:bg-ghibli-black/20" />
+                </NavLink>
+            </div>
+       
+            <!-- links: ao lado da logo em md, abaixo em telas pequenas -->
+            <ul class="@($"{(_menuVisible ? "opacity-100 max-h-screen" : "opacity-0 max-h-0")} transition-all duration-500 md:opacity-100 md:max-h-96 flex-col font-ghibli-lemon-milk text-navbar flex md:flex-row gap-5")">
+                
+                <DropdownMenu 
+                    CssButton="hover:text-ghibli-black transition-colors duration-300"
+                              CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky/90 p-0 gap-1 w-full text-ghibli-sky text-navbar-dropdown max-h-0 overflow-hidden opacity-0 scale-95"
+                    CssItemsOnClick="max-h-screen opacity-100 scale-100"
+                    DefaultOrdering>
+                    <ButtonContent>
+                        Studio Ghibli
+                    </ButtonContent>
+                    <ChildContent>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/ghibli">Ghibli's History</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/ghibli/notable-figures">Notable Figures</NavLink>
+                    </ChildContent>
+                </DropdownMenu>
+                <DropdownMenu 
+                    CssButton="hover:text-ghibli-black transition-colors duration-300"
+                    CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky/90 p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
+                    CssItemsOnClick="max-h-screen opacity-100 scale-100"
+                    DefaultOrdering>
+                    <ButtonContent>
+                        Films
+                    </ButtonContent>
+                    <ChildContent>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/films">Filmography</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/characters">Characters</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/others">Others</NavLink>
+                    </ChildContent>
+                </DropdownMenu>
+                <DropdownMenu 
+                    CssButton="hover:text-ghibli-black transition-colors duration-300"
+                    CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky/90 p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
+                    CssItemsOnClick="max-h-screen opacity-100 scale-100"
+                    DefaultOrdering>
+                    <ButtonContent>
+                        About me
+                    </ButtonContent>
+                    <ChildContent>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me">Who Am I</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me/resume">My Resume</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me/portfolio">My Portfolio</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me/techstack">Tech Stack</NavLink>
+                    </ChildContent>
+                </DropdownMenu>
+                <NavLink class="transition-colors duration-300 hover:text-ghibli-black" href="/contact">Contact</NavLink>
+            </ul>
+
+        </div>
+
+        <!-- botões: só na direita -->
+        <div class="items-center">
+            <div class="ml-auto flex h-14 gap-4 p-1">
+                <button class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black">
+                    <!-- dark/light -->
+                    <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+                        <path d="M12 2a10 10 0 0 0 0 20" fill="currentColor" />
+                    </svg>
+                </button>
+                <button class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black">
+                    <!-- mundo -->
+                    <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+                        <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                              stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                </button>
+                <button type="button" @onclick="ToggleMenu" class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black md:hidden">
+                    <!-- menu sanduiche -->
+                    <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool _menuVisible = false;
+
+    private void ToggleMenu()
+    {
+        _menuVisible = !_menuVisible;
+    }
+}

@@ -2,10 +2,13 @@
 
 <PageTitle>Home</PageTitle>
 
-<div class="flex"> 
-    <button class="rounded bg-blue-500 py-2 font-bold text-white underline decoration-black hover:bg-blue-700">
-        Clique aqui
-    </button>
-</div>
-
-Welcome to your new app.
+<DropdownMenu CssButton="px-3 py-2 font-bold bg-teal-500 rounded-xl" CssItemsContainer="top-12 right-0 flex min-w-max flex-col bg-teal-200 px-2 py-1 animate-pulse">
+    <ButtonContent>
+        Teste
+    </ButtonContent>
+    <ChildContent>
+        <a class="px-2 py-1 hover:bg-neutral-300" href="#">Item 99</a>
+        <a class="px-2 py-1 hover:bg-neutral-300" href="#">Item 2</a>
+        <a class="px-2 py-1 hover:bg-neutral-300" href="#">Item 3</a>
+    </ChildContent>
+</DropdownMenu>

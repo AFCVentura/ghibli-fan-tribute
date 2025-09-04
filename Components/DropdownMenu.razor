@@ -1,0 +1,54 @@
+﻿<div class="group relative inline-block"
+     @onfocusout="() => alreadyClicked = false">
+    <button type="button" class="@CssButton cursor-pointer"
+        @onclick="@ToggleMenu">
+        @if (ButtonContent is null)
+        {
+            <text>...</text>
+        }
+        else
+        {
+            @ButtonContent
+        }
+    </button>
+
+    <div class="@CssItemsContainer @(DefaultOrdering ? "left-0 top-10 flex min-w-max flex-col" : "") invisible @(AbsolutePositioning ? "absolute" : "") @(isVisible ? " group-focus-within:visible group-active:visible" : "") @(isVisible && alreadyClicked ? CssItemsOnClick : "") transition-all duration-500">
+        @if (ChildContent is not null)
+        {
+            @ChildContent
+        }
+    </div>
+</div>
+
+
+
+@code
+{
+    private bool isVisible;
+    private bool alreadyClicked;
+
+    [Parameter] public RenderFragment? ButtonContent { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public string CssButton { get; set; } = "rounded-md border border-neutral-600 px-1";
+    [Parameter] public string CssItemsContainer { get; set; } = "rounded-md border border-neutral-500 bg-neutral-100 px-2 py-1";
+    [Parameter] public string CssItemsOnClick { get; set; } = "";
+    [Parameter] public bool DefaultOrdering { get; set; } = false;
+    [Parameter] public bool AbsolutePositioning { get; set; } = false;
+
+
+    private void ToggleMenu()
+    {
+        if (alreadyClicked)
+        {
+            isVisible = false;
+            alreadyClicked = false;
+        }
+        else
+        {
+
+            isVisible = true;
+            alreadyClicked = true;
+        }
+    }
+}
+
