@@ -1,0 +1,67 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+
+<section class="text-ghibli-black flex min-h-dvh flex-col justify-between dark:text-ghibli-white">
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <div>
+        <div class="">
+            <div class="flex items-center justify-center pb-5">
+                <h2 class="font-ghibli-lemon-milk w-fit text-center text-2xl md:text-4xl">@L["AboutSectionTitle"]</h2>
+            </div>
+            <div class="font-ghibli-lemon-milk flex items-center justify-center gap-10 px-3 pb-14 text-ghibli-grey">
+                <button class="@((activeSection == "project") ? "underline decoration-2" : "") w-[30%] cursor-pointer text-center text-xl md:text-2xl lg:mx-10 lg:w-[20%]" @onclick="@(() => ShowSection("project"))">@L["AboutSectionProjectTitle"]</button>
+                <button class="@((activeSection == "me") ? "underline decoration-2" : "") w-[30%] cursor-pointer text-center text-xl md:text-2xl lg:mx-10 lg:w-[20%]" @onclick="@(() => ShowSection("me"))">@L["AboutSectionMeTitle"]</button>
+            </div>
+            <div class="font-montserrat text-ghibli-black text-md flex items-center justify-center px-10 pb-14 text-justify md:px-30 lg:px-60 lg:text-xl xl:px-100 dark:text-ghibli-white">
+                @if (activeSection == "project")
+                {
+                    <p>
+                        @L["AboutSectionProjectText"]
+                    </p>
+                }
+                else if (activeSection == "me")
+                {
+                    <p>
+                        @L["AboutSectionMeText"]
+                    </p>
+                }
+                else
+                {
+                    <p class="text-gray-500 italic">@L["AboutSectionGenericText"]</p>
+                }
+            </div>
+            <div class="flex flex-wrap items-center justify-center px-10">
+                @if (activeSection == "project")
+                {
+                    <NavLink class="font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:active:bg-ghibli-black dark:hover:bg-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-black">@L["AboutSectionProjectButton"]</NavLink>
+                }
+                else if (activeSection == "me")
+                {
+                    <NavLink class="font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:active:bg-ghibli-black dark:hover:bg-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-black">@L["AboutSectionMeButton"]</NavLink>
+                }
+                else
+                {
+
+                }
+            </div>
+        </div>
+    </div>
+    <div class="border-ghibli-black flex items-end justify-center py-14 dark:border-ghibli-white">
+        <div class="border-ghibli-black w-[60vw] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+</section>
+
+@code {
+    private string? activeSection = "project";
+
+    private void ShowSection(string section)
+    {
+        // alterna a seção
+        if (activeSection != section)
+            activeSection = section;
+    }
+}

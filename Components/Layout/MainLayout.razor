@@ -1,16 +1,33 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorServerFirstProject.Services
+@inherits LayoutComponentBase
+@inject ThemeService Theme
+<!-- As linhas acima fazem, respectivamente
+1. Importar o namespace do service.
+2. Indicar que este componente herda de LayoutComponentBase, que é a base para layouts em Blazor, não voga pro modo dark, já estava aqui.
+3. Injetar uma instância do serviço ThemeService, permitindo que o layout usa funcionalidades desse service, incluindo a de iniciar o tema. 
+-->
 
+<!-- Aqui é o código do Layout, não voga pro modo dark -->
 <div class="page">
     <div class="">
         <NavMenu />
     </div>
 
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
+    <main class="bg-ghibli-white min-h-screen dark:bg-ghibli-black">
+        @Body
     </main>
 </div>
+ 
 
 @code {
+    // Esse método é chamado após o componente ser renderizado.
+    // O firstRender indica se é a primeira vez que o componente está sendo renderizado.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Se for a primeira vez, inicializa o tema.
+        if (firstRender)
+        {
+            await Theme.InitAsync();
+        }
+    }
 }

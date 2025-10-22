@@ -12,7 +12,7 @@
         }
     </button>
 
-    <div class="@CssItemsContainer @(DefaultOrdering ? "left-0 top-10 flex min-w-max flex-col" : "") invisible @(AbsolutePositioning ? "absolute" : "") @(isVisible ? " group-focus-within:visible group-active:visible" : "") @(isVisible && alreadyClicked ? CssItemsOnClick : "") transition-all duration-500">
+    <div class="@CssItemsContainer @(DefaultOrdering ? (AlignRight ? "right-0 top-10 min-w-max flex flex-col" : "left-0 top-10 min-w-max flex flex-col") : "") invisible @(AbsolutePositioning ? "absolute" : "") @(isVisible ? " group-focus-within:visible group-active:visible" : "") @(isVisible && alreadyClicked ? CssItemsOnClick : "") transition-all duration-500">
         @if (ChildContent is not null)
         {
             @ChildContent
@@ -34,6 +34,7 @@
     [Parameter] public string CssItemsOnClick { get; set; } = "";
     [Parameter] public bool DefaultOrdering { get; set; } = false;
     [Parameter] public bool AbsolutePositioning { get; set; } = false;
+    [Parameter] public bool AlignRight { get; set; } = false;
 
 
     private void ToggleMenu()

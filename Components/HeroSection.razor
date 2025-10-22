@@ -1,0 +1,23 @@
+﻿@using Microsoft.Extensions.Localization
+@using BlazorServerFirstProject.Components.SVGs
+@inject IStringLocalizer<SharedResources> L
+
+<section class="flex flex-col min-h-[calc(100dvh-72px)] w-full items-center justify-center bg-cover bg-local dark:bg-[top_10%_right_36%] bg-center dark:md:bg-center bg-no-repeat bg-[url('/images/hero-section-light.jpg')] dark:bg-[url('/images/hero-section-dark.jpg')] gap-[3rem] select-none">
+    <div class="flex flex-col gap-4">
+        <h3 class="font-ghibli-lemon-milk text-ghibli-black text-center text-xl md:text-3xl dark:text-ghibli-white">
+            @L["HeroFanTribute"]
+        </h3>
+        <GhibliLogo CssClass="text-ghibli-black h-24 w-auto md:h-32 lg:h-48 xl:h-64 dark:text-ghibli-white"></GhibliLogo>
+
+        <h3 class="font-ghibli-lemon-milk text-ghibli-black text-center text-xl md:text-3xl dark:text-ghibli-white">
+            @L["HeroMadeBy"]
+        </h3>
+    </div>
+    <div class="">
+        <button type="button" class="font-ghibli-lemon-milk bg-ghibli-white text-ghibli-black me-2 mb-2 cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-black hover:text-ghibli-white active:bg-ghibli-black active:text-ghibli-white md:text-xl dark:text-ghibli-white dark:bg-ghibli-black dark:active:bg-ghibli-white dark:hover:bg-ghibli-white dark:hover:text-ghibli-black dark:active:text-ghibli-black">@L["HeroButton"]</button>
+    </div>
+</section>
+
+@code {
+
+}

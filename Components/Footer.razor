@@ -1,0 +1,60 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+@using BlazorServerFirstProject.Components.SVGs
+
+<footer class="font-ghibli-lemon-milk text-ghibli-white flex flex-col bg-ghibli-sky dark:text-ghibli-black">
+    <div class="border-ghibli-white flex flex-wrap border-b-3 md:relative dark:border-ghibli-black">
+        <div class="flex w-full items-center justify-center py-3 md:pointer-events-none md:absolute md:z-10">
+            <img src="favicon.svg" class="h-30" />
+        </div>
+        <div class="flex w-full p-3">
+            <div class="flex w-[50%] flex-col items-start">
+                <NavLink href="/ghibli" class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
+                    @L["NavGhibliHistory"]
+                </NavLink>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/ghibli/notable-figures">@L["NavGhibliFigures"]</NavLink>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/films">@L["NavFilmsFilmography"]</NavLink>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/characters">@L["NavFilmsCharacters"]</NavLink>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/others">@L["NavFilmsOthers"]</NavLink>
+            </div>
+            <div class="flex w-[50%] flex-col items-end text-end">
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/me">@L["NavAboutmeWhoAmI"]</NavLink>
+                <a class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="@L["ResumePath"]" target="_blank" rel="noopener noreferrer" >@L["NavAboutmeMyResume"]</a>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="https://afcventura.github.io/ventura-dev" target="_blank" rel="noopener noreferrer">@L["NavAboutmeMyPortfolio"]</NavLink>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/me/techstack">@L["NavAboutmeTechStack"]</NavLink>
+                <NavLink class="w-fit transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" href="/contact">@L["NavContact"]</NavLink>
+            </div>
+        </div>
+    </div>
+    <div class="flex-row-reverse p-3 lg:flex">
+        <div class="flex w-full items-center justify-center gap-4 py-6 lg:w-[30%] lg:justify-end lg:p-0">
+            <a rel="noopener noreferrer" href="https://www.linkedin.com/in/jo%C3%A3o-vitor-ventura-b2777626a/" target="_blank"><LinkedinIcon CssClass="text-ghibli-white h-12 w-12 transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" /> </a>
+            <a rel="noopener noreferrer" href="https://afcventura.github.io/ventura-dev/" target="_blank"><WebsiteIcon CssClass="text-ghibli-white h-12 w-12 transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" /></a>
+            <a rel="noopener noreferrer" href="https://github.com/AFCVentura" target="_blank"><GitHubIcon CssClass="text-ghibli-white h-12 w-12 transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" /></a>
+            <a href="mailto:ventura.py3@gmail.com"><EmailIcon CssClass="text-ghibli-white h-12 w-12 transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white" /></a>
+        </div>
+        <div class="flex flex-col gap-4 lg:w-[70%] lg:flex-row-reverse lg:flex-wrap lg:justify-between lg:text-justify">
+            <h4 class="text-xs">
+                @L["FooterDisclaimerPart1"] <a target="_blank" href="https://afcventura.github.io/ventura-dev/" rel="noopener noreferrer" class="text-ghibli-white inline cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">@L["FooterDisclaimerPart2"]</a>@L["FooterDisclaimerPart3"]<a target="_blank" href="https://ghibliapi.vercel.app/" rel="noopener noreferrer" class="text-ghibli-white inline cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">@L["FooterDisclaimerPart4"]</a>@L["FooterDisclaimerPart5"]
+            </h4>
+            <p class="text-xs">
+                <NavLink class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
+                    @L["FooterCopyrightButton"]
+                </NavLink>
+                / 
+                <NavLink class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
+                    @L["FooterPrivacyPolicyButton"]
+                </NavLink> 
+                / 
+                <NavLink class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
+                    @L["FooterCookiesButton"]
+                </NavLink>
+            </p>
+            <h5 class="text-xs"> @L["FooterCopyrightText"]</h5>
+        </div>
+    </div>
+</footer>
+
+@code {
+
+}

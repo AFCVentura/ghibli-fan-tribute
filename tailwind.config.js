@@ -1,4 +1,5 @@
 ﻿module.exports = {
+    darkMode: "class",
     content: [
         "./Pages/**/*.{html,js,razor,cshtml}",
         "./Components/**/*.{html,js,razor,cshtml}",

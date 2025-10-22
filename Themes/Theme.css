@@ -1,10 +1,44 @@
 ﻿@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@font-face {
+    font-family: 'Lemon Milk'; 
+    src: url('/fonts/LEMONMILK-Regular.otf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lemon Milk Light';
+    src: url('/fonts/LEMONMILK-Light.otf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat'; 
+    src: url('/fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
 
 @theme {
     --color-ghibli-sky: #109CEB;
+    --color-ghibli-sky-hover: #0F80C0;
     --color-ghibli-white: #FFFDF7;
     --color-ghibli-black: #191919;
+    --color-ghibli-grey: #616161;
+    --color-metacritic-green: #00CE7A;
+    --color-metacritic-green-dark: #009156;
+    --color-metacritic-yellow: #FFBD3F;
+    --color-metacritic-red: #FF6874;
+    --color-imdb-star: #F5C518;
+    --color-imdb-star-dark: #B59111;
     --font-ghibli-lemon-milk: 'Lemon Milk', sans-serif;
-    --text-navbar: 1.375rem;
-    --text-navbar-dropdown: 1.125rem;
+    --font-ghibli-lemon-milk-light: 'Lemon Milk Light', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --text-navbar: 1.125rem;
+    --text-navbar-dropdown: 1rem;
 }
+

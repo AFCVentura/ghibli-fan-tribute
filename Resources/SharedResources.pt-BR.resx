@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NavGhibli" xml:space="preserve">
+    <value>Studio Ghibli</value>
+  </data>
+  <data name="NavGhibliFigures" xml:space="preserve">
+    <value>Figuras Notáveis</value>
+  </data>
+  <data name="NavGhibliHistory" xml:space="preserve">
+    <value>História do Ghibli</value>
+  </data>
+  <data name="NavFilms" xml:space="preserve">
+    <value>Filmes</value>
+    <comment>Link "Films"</comment>
+  </data>
+  <data name="NavFilmsFilmography" xml:space="preserve">
+    <value>Filmografia</value>
+    <comment>Sublink "Filmography"</comment>
+  </data>
+  <data name="NavFilmsCharacters" xml:space="preserve">
+    <value>Personagens</value>
+    <comment>Sublink "Characters"</comment>
+  </data>
+  <data name="NavFilmsOthers" xml:space="preserve">
+    <value>Outros</value>
+    <comment>Sublink "Others"</comment>
+  </data>
+  <data name="NavAboutme" xml:space="preserve">
+    <value>Sobre Mim</value>
+    <comment>Link "About Me"</comment>
+  </data>
+  <data name="NavAboutmeWhoAmI" xml:space="preserve">
+    <value>Quem Sou Eu</value>
+    <comment>Sublink "Who Am I"</comment>
+  </data>
+  <data name="NavAboutmeMyResume" xml:space="preserve">
+    <value>Meu Currículo</value>
+    <comment>Sublink "My Resume"</comment>
+  </data>
+  <data name="NavAboutmeMyPortfolio" xml:space="preserve">
+    <value>Meu Portifólio</value>
+    <comment>Sublink "My Portfolio"</comment>
+  </data>
+  <data name="NavAboutmeTechStack" xml:space="preserve">
+    <value>Stack Tecnológico</value>
+    <comment>Sublink "Tech Stack"</comment>
+  </data>
+  <data name="NavContact" xml:space="preserve">
+    <value>Contato</value>
+    <comment>Link "Contact"</comment>
+  </data>
+  <data name="NavThemeLight" xml:space="preserve">
+    <value>Claro</value>
+    <comment>Button "Light"</comment>
+  </data>
+  <data name="NavThemeDark" xml:space="preserve">
+    <value>Escuro</value>
+    <comment>Button "Dark"</comment>
+  </data>
+  <data name="NavThemeSystem" xml:space="preserve">
+    <value>Sistema</value>
+    <comment>Button "System"</comment>
+  </data>
+  <data name="HeroFanTribute" xml:space="preserve">
+    <value>Uma Homenagem de Fã para o</value>
+  </data>
+  <data name="HeroMadeBy" xml:space="preserve">
+    <value>Feita por Ventura</value>
+  </data>
+  <data name="HeroButton" xml:space="preserve">
+    <value>Saiba Mais Sobre o Ghibli</value>
+  </data>
+  <data name="QuotePhrase" xml:space="preserve">
+    <value>"Gostaria de fazer um filme para dizer às crianças: 'é bom estar vivo'."</value>
+  </data>
+  <data name="QuoteAuthor" xml:space="preserve">
+    <value>Hayao Miyazaki</value>
+  </data>
+  <data name="AboutGhibliPreviewText" xml:space="preserve">
+    <value>O Studio Ghibli é um renomado estúdio japonês de animação, conhecido por seus filmes poéticos, visualmente marcantes e emocionalmente profundos. Fundado em 1985 pelos mestres da animação Hayao Miyazaki e Isao Takahata, com produção de Toshio Suzuki e apoio financeiro de Yasuyoshi Tokuma, o estúdio rapidamente se tornou uma referência mundial em animação autoral.
+Suas obras mesclam temas humanos, natureza, fantasia e crítica social, ressoando com gerações ao redor do mundo.</value>
+  </data>
+  <data name="AboutGhibliPreviewTitle" xml:space="preserve">
+    <value>Sobre o Estúdio Ghibli</value>
+  </data>
+  <data name="AboutGhibliPreviewButton" xml:space="preserve">
+    <value>História Completa e Diretores</value>
+  </data>
+  <data name="HayaoMiyazaki" xml:space="preserve">
+    <value>Hayao Miyazaki</value>
+  </data>
+  <data name="IsaoTakahata" xml:space="preserve">
+    <value>Isao Takahata</value>
+  </data>
+  <data name="ToshioSuzuki" xml:space="preserve">
+    <value>Toshio Suzuki</value>
+  </data>
+  <data name="YasuyoshiTokuma" xml:space="preserve">
+    <value>Yasuyoshi Tokuma</value>
+  </data>
+  <data name="SpiritedAwayTitle" xml:space="preserve">
+    <value>A Viagem de Chihiro</value>
+  </data>
+  <data name="TheBoyAndTheHeronTitle" xml:space="preserve">
+    <value>O Menino e a Garça</value>
+  </data>
+  <data name="MyNeighborTotoroTitle" xml:space="preserve">
+    <value>Meu Vizinho Totoro</value>
+  </data>
+  <data name="GraveOfTheFirefliesTitle" xml:space="preserve">
+    <value>O Túmulo dos Vagalumes</value>
+  </data>
+  <data name="PrincessMononokeTitle" xml:space="preserve">
+    <value>Princesa Mononoke</value>
+  </data>
+  <data name="SpiritedAwayPreviewDescription" xml:space="preserve">
+    <value>Uma jovem entra em um mundo mágico governado por deuses, bruxas e espíritos, e precisa salvar seus pais nesta obra-prima vencedora do Oscar.</value>
+  </data>
+  <data name="TheBoyAndTheHeronPreviewDescription" xml:space="preserve">
+    <value>Um garoto em luto pela mãe descobre um mundo oculto guiado por uma misteriosa garça, no conto de perda e maravilha vencedor do Oscar de Hayao Miyazaki.</value>
+  </data>
+  <data name="GraveOfTheFirefliesPreviewDescription" xml:space="preserve">
+    <value>Dois irmãos lutam para sobreviver em meio ao Japão devastado pela guerra, nesta obra-prima comovente e aclamada pela crítica.</value>
+  </data>
+  <data name="PrincessMononokePreviewDescription" xml:space="preserve">
+    <value>Um guerreiro amaldiçoado por um espírito mortal é levado a uma intensa batalha entre humanos e os deuses da floresta nesta épica produção premiada.</value>
+  </data>
+  <data name="MyNeighborTotoroPreviewDescription" xml:space="preserve">
+    <value>Duas irmãs se mudam para o campo e encontram gentis espíritos da floresta, neste adorado e encantador clássico do Studio Ghibli.</value>
+  </data>
+  <data name="AwardsSectionButton" xml:space="preserve">
+    <value>Explore Todos os Filmes</value>
+  </data>
+  <data name="AwardsSectionTitle" xml:space="preserve">
+    <value>Trabalhos Premiados</value>
+  </data>
+  <data name="AboutSectionTitle" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="AboutSectionProjectTitle" xml:space="preserve">
+    <value>Sobre o Projeto</value>
+  </data>
+  <data name="AboutSectionMeTitle" xml:space="preserve">
+    <value>Sobre Mim</value>
+  </data>
+  <data name="AboutSectionMeText" xml:space="preserve">
+    <value>Desenvolvedor .NET com foco em ASP.NET Core, Blazor e arquiteturas limpas, apaixonado por transformar ideias em experiências digitais sólidas e bem estruturadas. Tenho experiência em projetos profissionais, acadêmicos e pessoais que envolvem desde o back-end até o front-end, com ênfase em boas práticas, organização e usabilidade. Busco constantemente expandir meus conhecimentos, explorando tecnologias como .NET MAUI, React, Azure e integração com bancos de dados como SQL Server e MySQL. Além do lado técnico, valorizo o design intuitivo, a clareza na comunicação e a entrega de soluções que unem performance e estética.</value>
+  </data>
+  <data name="AboutSectionProjectText" xml:space="preserve">
+    <value>Projeto de front-end desenvolvido com Blazor Server, criado com o objetivo de aprimorar habilidades práticas e compor o portfólio profissional. A aplicação foi construída para explorar princípios de design de interface e experiência do usuário (UI/UX), aplicando boas práticas de estrutura, componentização e responsividade. Inspirado no universo dos filmes do Studio Ghibli, o projeto busca transmitir a atmosfera poética e visual marcante do estúdio através de uma interface limpa, fluida e acessível, combinando estética minimalista e aconchego.
+</value>
+  </data>
+  <data name="AboutSectionProjectButton" xml:space="preserve">
+    <value>Ver Stack Tecnológica Completa do Projeto</value>
+  </data>
+  <data name="AboutSectionMeButton" xml:space="preserve">
+    <value>Ver Mais Sobre Mim</value>
+  </data>
+  <data name="AboutSectionGenericText" xml:space="preserve">
+    <value>Selecione uma opção acima.</value>
+  </data>
+  <data name="FooterDisclaimerPart1" xml:space="preserve">
+    <value>Este site foi desenvolvido por </value>
+  </data>
+  <data name="FooterDisclaimerPart2" xml:space="preserve">
+    <value>João Vitor Ventura</value>
+  </data>
+  <data name="FooterDisclaimerPart3" xml:space="preserve">
+    <value> para propósitos educacionais. Ele usa dados da </value>
+  </data>
+  <data name="FooterDisclaimerPart4" xml:space="preserve">
+    <value>API do Studio Ghibli</value>
+  </data>
+  <data name="FooterDisclaimerPart5" xml:space="preserve">
+    <value>, que não é afiliada ao Studio Ghibli. Nem esse site nem a API reivindicam quaisquer direitos à propriedade intelectual do Studio Ghibli.</value>
+  </data>
+  <data name="FooterCopyrightText" xml:space="preserve">
+    <value>© 2025 João Vitor Ventura.</value>
+  </data>
+  <data name="FooterCopyrightButton" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="FooterPrivacyPolicyButton" xml:space="preserve">
+    <value>Política de Privacidade</value>
+  </data>
+  <data name="FooterCookiesButton" xml:space="preserve">
+    <value>Cookies</value>
+  </data>
+  <data name="ResumePath" xml:space="preserve">
+    <value>files/JoaoVitorVenturaResumePortugues.pdf</value>
+  </data>
+</root>

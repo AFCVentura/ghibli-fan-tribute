@@ -1,0 +1,60 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+
+<section class="text-ghibli-black min-h-dvh">
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <div class="grid grid-rows-[auto_1fr] gap-14">
+        <div class="row-start-1 flex items-center justify-center">
+            <div class="flex h-full w-[60vw] items-center justify-center text-center lg:w-[30vw]">
+                <p class="font-ghibli-lemon-milk text-ghibli-black text-2xl md:text-4xl dark:text-ghibli-white">@L["AboutGhibliPreviewTitle"]</p>
+            </div>
+        </div>
+        <div class="row-start-2 grid grid-rows-[1fr_3fr] gap-14 px-10 md:grid-cols-2 md:grid-rows-1 lg:px-30">
+            <div class="flex flex-col items-center justify-start gap-16 md:justify-center">
+                <p class="font-montserrat text-ghibli-black text-md text-justify lg:text-xl dark:text-ghibli-white">
+                    @L["AboutGhibliPreviewText"]
+                </p>
+                <button type="button" class="font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:active:bg-ghibli-black dark:hover:bg-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-black">@L["AboutGhibliPreviewButton"]</button>
+            </div>
+            <div class="row-start-1 flex items-center justify-center select-none md:col-start-2">
+                <div class="font-ghibli-lemon-milk grid h-fit w-full grid-cols-4 gap-1 md:h-full md:w-1/2 md:grid-cols-[1fr_1fr] md:grid-rows-[1fr_1fr] md:gap-2">
+                    <div class="group relative col-start-1 md:col-start-1 md:row-start-1">
+                        <img src="images/hayao_miyazaki.jpeg" class="h-full w-full object-cover dark:brightness-90" draggable="false" />
+                        <div class="text-ghibli-white absolute inset-0 flex items-center justify-center bg-black/50 text-center opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
+                            @L["HayaoMiyazaki"]
+                        </div>
+                    </div>
+                    <div class="group relative col-start-2 md:col-start-2 md:row-start-1">
+                        <img src="images/isao_takahata.jpg" class="h-full w-full object-cover dark:brightness-90" draggable="false" />
+                        <div class="text-ghibli-white absolute inset-0 flex items-center justify-center bg-black/50 text-center opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
+                            @L["IsaoTakahata"]
+                        </div>
+                    </div>
+                    <div class="group relative col-start-3 md:col-start-1 md:row-start-2">
+                        <img src="images/toshio_suzuki.jpg" class="h-full w-full object-cover dark:brightness-90" draggable="false" />
+                        <div class="text-ghibli-white absolute inset-0 flex items-center justify-center bg-black/50 text-center opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
+                            @L["ToshioSuzuki"]
+                        </div>
+                    </div>
+                    <div class="group relative col-start-4 md:col-start-2 md:row-start-2">
+                        <img src="images/yasuyoshi_tokuma.webp" class="h-full w-full object-cover dark:brightness-90" draggable="false" />
+                        <div class="text-ghibli-white absolute inset-0 flex items-center justify-center bg-black/50 text-center opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100">
+                            @L["YasuyoshiTokuma"]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-ghibli-black flex items-end justify-center border-b-[3px] py-14 dark:border-ghibli-white">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+</section>
+
+@code {
+
+}

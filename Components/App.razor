@@ -13,7 +13,23 @@
 </head>
 
 <body>
+    <!-- LOADING (aparece enquanto o Blazor inicia) -->
+    <div id="blazor-loading" class="bg-ghibli-white flex h-screen items-center justify-center dark:bg-ghibli-black">
+        <div class="text-center">
+            <img src="favicon.svg" class="mx-auto w-28 animate-bounce" alt="logo" />
+            <p class="mt-4 text-lg font-medium">Abrindo o mundo de Ghibli…</p>
+        </div>
+    </div>
+
+    <!-- O teu Router / Routes -->
     <Routes @rendermode="new InteractiveServerRenderMode()" />
+
+    <!-- RECONNECT MODAL -->
+    <div id="components-reconnect-modal"
+         class="fixed inset-0 z-[9999] flex hidden items-center justify-center text-center text-black dark:text-white">
+    </div>
+
+   
     <script src="_framework/blazor.web.js"></script>
 
 

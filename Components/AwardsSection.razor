@@ -1,0 +1,217 @@
+﻿@using BlazorServerFirstProject.Constants
+@using BlazorServerFirstProject.Services
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+@using Microsoft.AspNetCore.Components
+
+<section class="text-ghibli-black min-h-dvh dark:text-ghibli-white">
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <div class="grid w-dvw grid-rows-[auto_1fr_auto]">
+        <div class="w-dvw pb-14">
+            <p class="font-ghibli-lemon-milk text-center text-2xl md:text-4xl">@L["AwardsSectionTitle"]</p>
+        </div>
+        <div class="flex w-dvw items-center justify-center">
+            <div class="relative h-full w-full max-w-[calc(100%)] px-14 sm:max-w-[calc(75%)] md:max-w-[calc(60%)] lg:max-w-[calc(80%)] xl:max-w-[calc(50%)]">
+                <!-- Conteúdo -->
+                <div class="flex h-full max-h-[95dvh] w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl shadow-lg lg:flex-row lg:gap-0">
+                    <!-- Poster -->
+                    <img src="@Items[CurrentIndex].ImageUrl"
+                         alt="Poster"
+                         class="h-full object-cover lg:w-1/2 dark:brightness-90" draggable="false" />
+
+                    <!-- Descrição -->
+                    <div class="flex flex-col items-center justify-between px-3 text-left lg:h-full lg:w-1/2 lg:p-6">
+                        <h2 class="font-ghibli-lemon-milk w-full text-2xl">
+                            @Items[CurrentIndex].Title
+                        </h2>
+                        <p class="font-montserrat text-md lg:text-lg">
+                            @Items[CurrentIndex].Description
+                        </p>
+                        <div class="w-full">
+                            <div class="flex w-full items-center justify-start gap-4">
+                                <div class="flex h-14 w-14 items-center justify-center sm:h-18 sm:w-18">  
+                                    <div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg bg-metacritic-green text-center text-2xl font-bold sm:h-14 sm:w-14 sm:text-3xl dark:bg-metacritic-green-dark">
+                                        @Items[CurrentIndex].Metacritic.ToString()
+                                    </div>
+                                </div>
+                                <p class="font-ghibli-lemon-milk text-xl sm:text-2xl">METACRITIC</p>
+                            </div>
+                            <div class="flex w-full items-center justify-start gap-4">
+                                <!-- Estrela com nota -->
+                                <div class="relative flex h-14 w-14 items-center justify-center sm:h-18 sm:w-18">
+                                    <svg class="absolute inset-0 h-full w-full text-imdb-star dark:text-imdb-star-dark" fill="currentColor" width="256px" height="256px" viewBox="0 0 24.00 24.00" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <g id="SVGRepo_iconCarrier"> <path d="M16.926 20.2a1 1 0 0 1-.466-.115l-4.471-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.98L3.3 10.521a1 1 0 0 1 .555-1.706l5-.727 2.237-4.531A1 1 0 0 1 11.989 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .555 1.706l-3.618 3.527.854 4.98a1 1 0 0 1-.99 1.172z" /> </g>
+                                    </svg>
+                                    <span class="relative z-10 text-2xl font-bold sm:text-3xl">
+                                        @Items[CurrentIndex].Score.ToString("0.0")
+                                    </span>
+                                </div>
+                                <p class="font-ghibli-lemon-milk text-xl sm:text-2xl">IMDB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Botão Esquerda -->
+                <button @onclick="Prev"
+                        class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white hover:bg-black/70">
+                    &#10094;
+                </button>
+
+                <!-- Botão Direita -->
+                <button @onclick="Next"
+                        class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-black/40 p-3 text-white hover:bg-black/70">
+                    &#10095;
+                </button>
+
+                <!-- Paginação -->
+                <div class="mt-4 flex justify-center space-x-2">
+                    @for (int i = 0; i < Items.Count; i++)
+                    {
+                        var index = i; <!-- cópia local obrigatória -->
+
+                        <button @onclick="() => GoTo(index)"
+                                class="@GetButtonClass(index)">
+                        </button>
+                    }
+                </div>
+            </div>
+
+        </div>
+        <div class="flex items-center justify-center pt-14">
+            <button type="button" class="font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:active:bg-ghibli-black dark:hover:bg-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-black">@L["AwardsSectionButton"]</button>
+        </div>
+    </div>
+    <div class="border-ghibli-black flex items-end justify-center border-b-[3px] py-14 dark:border-ghibli-white">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+</section>
+
+
+@code {
+    private int CurrentIndex = 0;
+
+    private ImdbApiService _imdbService = new ImdbApiService();
+    private RateLimiter _rateLimiter = new RateLimiter()
+    ;
+    private List<CarouselItem> Items;
+    private List<string> CarouselMovieIds = new()
+        {
+        GhibliMovies.SpiritedAway,
+        GhibliMovies.TheBoyAndTheHeron,
+        GhibliMovies.GraveOfTheFireflies,
+        GhibliMovies.PrincessMononoke,
+        GhibliMovies.MyNeighborTotoro
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Items = new()
+        {
+            new CarouselItem {
+            Title = L["SpiritedAwayTitle"],
+            Description = L["SpiritedAwayPreviewDescription"],
+            ImageUrl = "images/spirited_away.jpg",
+            },
+            new CarouselItem {
+            Title = L["TheBoyAndTheHeronTitle"],
+            Description = L["TheBoyAndTheHeronPreviewDescription"],
+            ImageUrl = "images/the_boy_and_the_heron.jpg"
+            },
+            new CarouselItem {
+            Title = L["GraveOfTheFirefliesTitle"],
+            Description = L["GraveOfTheFirefliesPreviewDescription"],
+            ImageUrl = "images/grave_of_the_fireflies.jpg"
+            },
+            new CarouselItem {
+            Title = L["PrincessMononokeTitle"],
+            Description = L["PrincessMononokePreviewDescription"],
+            ImageUrl = "images/princess_mononoke.webp"
+            },
+            new CarouselItem {
+            Title = L["MyNeighborTotoroTitle"],
+            Description = L["MyNeighborTotoroPreviewDescription"],
+            ImageUrl = "images/my_neighbor_totoro.jpg"
+            },
+        };
+        
+        for (int i = 0; i < CarouselMovieIds.Count; i++)
+        {
+            Items[i].Score = await _rateLimiter.ExecuteAsync(() => GetMovieScoreAsync(CarouselMovieIds[i]));
+            Items[i].Metacritic = await _rateLimiter.ExecuteAsync(() => GetMovieMetacriticAsync(CarouselMovieIds[i]));
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task<double> GetMovieScoreAsync(string imdbId)
+    {
+        var score = await _imdbService.GetMovieRatingAsync(imdbId);
+        return score;
+    }
+
+    private async Task<int> GetMovieMetacriticAsync(string imdbId)
+    {
+        var metacritic = await _imdbService.GetMovieMetacriticAsync(imdbId);
+        return metacritic;
+    }
+    private bool _isNavigating = false;
+
+    private async Task Next()
+    {
+        if (_isNavigating) return; // ignora clique duplo
+        _isNavigating = true;
+
+        CurrentIndex = (CurrentIndex + 1) % Items.Count;
+
+        await Task.Delay(100); // atraso de 100ms (ajusta como quiser)
+        _isNavigating = false;
+    }
+
+    private async Task Prev()
+    {
+        if (_isNavigating) return;
+        _isNavigating = true;
+
+        CurrentIndex = (CurrentIndex - 1 + Items.Count) % Items.Count;
+
+
+        await Task.Delay(100);
+        _isNavigating = false;
+    }
+
+    private void GoTo(int index)
+    {
+        if (index < 0 || index >= Items.Count)
+            return;
+
+        CurrentIndex = index;
+    }
+
+    // Buttons below carousel
+    private string GetButtonClass(int i) =>
+        "h-3 w-3 rounded-full transition-all " +
+        (i == CurrentIndex
+            ? "bg-ghibli-black dark:bg-gray-500 scale-125"
+            : "bg-gray-400 dark:bg-ghibli-white hover:bg-gray-500 dark:hover:bg-ghibli-white/70");
+
+
+    public class CarouselItem
+    {
+        public string Title { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string ImageUrl { get; set; } = "";
+        public double Score { get; set; }
+        public int Metacritic { get; set; }
+    }
+}

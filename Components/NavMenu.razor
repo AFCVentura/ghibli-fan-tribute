@@ -1,4 +1,10 @@
-﻿<div class="text-ghibli-white text- bg-ghibli-sky p-2 md:flex md:items-center md:justify-between">
+﻿@using BlazorServerFirstProject.Services
+@using Microsoft.Extensions.Localization
+@inject ThemeService Theme
+@inject CultureService Culture
+@inject IStringLocalizer<SharedResources> L
+
+<nav class="text-ghibli-white bg-ghibli-sky p-2 md:flex md:items-center md:justify-between dark:text-ghibli-black">
     <!-- wrapper principal -->
     <div class="flex w-full items-start justify-between">
         <div class="flex flex-col items-center md:flex-row md:gap-7">
@@ -11,51 +17,49 @@
             </div>
        
             <!-- links: ao lado da logo em md, abaixo em telas pequenas -->
-            <ul class="@($"{(_menuVisible ? "opacity-100 max-h-screen" : "opacity-0 max-h-0")} transition-all duration-500 md:opacity-100 md:max-h-96 flex-col font-ghibli-lemon-milk text-navbar flex md:flex-row gap-5")">
+            <ul class="@($"{(_menuVisible ? "opacity-100 max-h-screen overflow-visible" : "opacity-0 max-h-0 overflow-hidden md:overflow-visible")} transition-all duration-500 md:opacity-100 md:max-h-96 flex-col font-ghibli-lemon-milk text-navbar flex md:flex-row gap-5")">
                 
                 <DropdownMenu 
-                    CssButton="hover:text-ghibli-black transition-colors duration-300"
-                              CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky/90 p-0 gap-1 w-full text-ghibli-sky text-navbar-dropdown max-h-0 overflow-hidden opacity-0 scale-95"
+                    CssButton="hover:text-ghibli-black transition-colors duration-300 dark:hover:text-ghibli-white"
+                              CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
                     CssItemsOnClick="max-h-screen opacity-100 scale-100"
                     DefaultOrdering>
                     <ButtonContent>
-                        Studio Ghibli
+                        @L["NavGhibli"]
                     </ButtonContent>
                     <ChildContent>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/ghibli">Ghibli's History</NavLink>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/ghibli/notable-figures">Notable Figures</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/ghibli">@L["NavGhibliHistory"]</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/ghibli/notable-figures">@L["NavGhibliFigures"]</NavLink>
                     </ChildContent>
                 </DropdownMenu>
-                <DropdownMenu 
-                    CssButton="hover:text-ghibli-black transition-colors duration-300"
-                    CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky/90 p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
+                <DropdownMenu CssButton="hover:text-ghibli-black transition-colors duration-300 dark:hover:text-ghibli-white"
+                    CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
                     CssItemsOnClick="max-h-screen opacity-100 scale-100"
                     DefaultOrdering>
                     <ButtonContent>
-                        Films
+                        @L["NavFilms"]
                     </ButtonContent>
                     <ChildContent>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/films">Filmography</NavLink>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/characters">Characters</NavLink>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/others">Others</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/films">@L["NavFilmsFilmography"]</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/characters">@L["NavFilmsCharacters"]</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/others">@L["NavFilmsOthers"]</NavLink>
                     </ChildContent>
                 </DropdownMenu>
-                <DropdownMenu 
-                    CssButton="hover:text-ghibli-black transition-colors duration-300"
-                    CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky/90 p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
+                <DropdownMenu CssButton="hover:text-ghibli-black transition-colors duration-300 dark:hover:text-ghibli-white"
+                    CssItemsContainer="md:absolute md:mt-5 md:bg-ghibli-sky p-0 gap-1 w-full text-navbar-dropdown max-h-0 scale-95 opacity-0"
                     CssItemsOnClick="max-h-screen opacity-100 scale-100"
                     DefaultOrdering>
                     <ButtonContent>
-                        About me
+                        @L["NavAboutme"]
                     </ButtonContent>
                     <ChildContent>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me">Who Am I</NavLink>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me/resume">My Resume</NavLink>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me/portfolio">My Portfolio</NavLink>
-                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky md:px-2 md:py-1" href="/me/techstack">Tech Stack</NavLink>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/me">@L["NavAboutmeWhoAmI"]</NavLink>
+                        <a class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="@L["ResumePath"]" target="_blank" rel="noopener noreferrer">@L["NavAboutmeMyResume"]</a>
+                        <a class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="https://afcventura.github.io/ventura-dev" target="_blank" rel="noopener noreferrer">@L["NavAboutmeMyPortfolio"]</a>
+                        <NavLink class="w-full px-4 py-0 transition-colors duration-300 hover:text-ghibli-black hover:bg-ghibli-sky-hover md:px-2 md:py-1 dark:hover:text-ghibli-white" href="/me/techstack">@L["NavAboutmeTechStack"]</NavLink>
                     </ChildContent>
                 </DropdownMenu>
-                <NavLink class="transition-colors duration-300 hover:text-ghibli-black" href="/contact">Contact</NavLink>
+                <NavLink class="transition-colors duration-300 hover:text-ghibli-black dark:hover:text-ghibli-white" href="/contact">@L["NavContact"]</NavLink>
             </ul>
 
         </div>
@@ -63,22 +67,49 @@
         <!-- botões: só na direita -->
         <div class="items-center">
             <div class="ml-auto flex h-14 gap-4 p-1">
-                <button class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black">
-                    <!-- dark/light -->
-                    <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
-                        <path d="M12 2a10 10 0 0 0 0 20" fill="currentColor" />
-                    </svg>
-                </button>
-                <button class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black">
-                    <!-- mundo -->
-                    <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
-                        <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
-                              stroke="currentColor" stroke-width="2" fill="none" />
-                    </svg>
-                </button>
-                <button type="button" @onclick="ToggleMenu" class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black md:hidden">
+
+                <div class="font-ghibli-lemon-milk flex flex-col justify-center">
+                    <DropdownMenu CssButton="hover:text-ghibli-black dark:hover:text-ghibli-white transition-colors duration-300 h-full"
+                                  CssItemsContainer="@($"{(_menuVisible ? "bg-ghibli-white text-ghibli-sky dark:bg-ghibli-black" : "bg-ghibli-sky dark:text-ghibli-black text-ghibli-white")} absolute mt-5 p-0 gap-1 w-full text-navbar-dropdown max-h-screen opacity-0 scale-95 max-h-0")"
+                                  CssItemsOnClick="opacity-100 scale-100 max-h-screen"
+                                  DefaultOrdering
+                                  AlignRight>
+                        <ButtonContent>
+                            <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+                                <path d="M12 2a10 10 0 0 0 0 20" fill="currentColor" />
+                            </svg>
+                        </ButtonContent>
+                        <ChildContent>
+                            <button @onclick="@(() => ChangeTheme("light"))" class="@($"{(_menuVisible ? "hover:bg-ghibli-sky" : "hover:bg-ghibli-sky-hover")} dark:hover:text-ghibli-white w-full px-2 py-1 text-start transition-colors duration-300 hover:text-ghibli-black")">@L["NavThemeLight"]</button>
+                            <button @onclick="@(() => ChangeTheme("dark"))" class="@($"{(_menuVisible ? "hover:bg-ghibli-sky" : "hover:bg-ghibli-sky-hover")} dark:hover:text-ghibli-white w-full px-2 py-1 text-start transition-colors duration-300 hover:text-ghibli-black")">@L["NavThemeDark"]</button>
+                            <button @onclick="@(() => ChangeTheme("system"))" class="@($"{(_menuVisible ? "hover:bg-ghibli-sky" : "hover:bg-ghibli-sky-hover")} dark:hover:text-ghibli-white w-full px-2 py-1 text-start transition-colors duration-300 hover:text-ghibli-black")">@L["NavThemeSystem"]</button>
+                        </ChildContent>
+                    </DropdownMenu>
+                </div>
+                <div class="font-ghibli-lemon-milk flex flex-col justify-center">
+
+                <DropdownMenu
+                    AlignRight
+                    DefaultOrdering
+                    CssButton="hover:text-ghibli-black dark:hover:text-ghibli-white transition-colors duration-300 h-full"
+                              CssItemsContainer="@($"{(_menuVisible ? "bg-ghibli-white text-ghibli-sky dark:bg-ghibli-black" : "bg-ghibli-sky dark:text-ghibli-black text-ghibli-white")} absolute mt-5 p-0 gap-1 w-full text-navbar-dropdown max-h-screen opacity-0 scale-95 max-h-0")"
+                              CssItemsOnClick="opacity-100 scale-100 max-h-screen">
+                    <ButtonContent>
+                        <!-- mundo -->
+                        <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+                            <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+                                  stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </ButtonContent>
+                    <ChildContent>
+                            <button @onclick="@(() => ChangeLanguage("en-US"))" class="@($"{(_menuVisible ? "hover:bg-ghibli-sky" : "hover:bg-ghibli-sky-hover")} dark:hover:text-ghibli-white w-full px-2 py-1 text-start transition-colors duration-300 hover:text-ghibli-black")">English</button>
+                            <button @onclick="@(() => ChangeLanguage("pt-BR"))" class="@($"{(_menuVisible ? "hover:bg-ghibli-sky" : "hover:bg-ghibli-sky-hover")} dark:hover:text-ghibli-white w-full px-2 py-1 text-start transition-colors duration-300 hover:text-ghibli-black")">Português</button>
+                    </ChildContent>
+                </DropdownMenu>
+                </div>
+                <button type="button" @onclick="ToggleMenu" class="text-ghibli-white transition-colors duration-300 hover:text-ghibli-black md:hidden dark:text-ghibli-black dark:hover:text-ghibli-white">
                     <!-- menu sanduiche -->
                     <svg class="h-8 w-8 fill-current" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
@@ -88,7 +119,7 @@
             </div>
         </div>
     </div>
-</div>
+</nav>
 
 @code {
     private bool _menuVisible = false;
@@ -97,4 +128,16 @@
     {
         _menuVisible = !_menuVisible;
     }
+
+    private async Task ChangeTheme(string theme)
+    {
+        await Theme.SetThemeAsync(theme);
+    }
+
+    private async Task ChangeLanguage(string culture)
+    {
+        await Culture.SetCultureAsync(culture);
+    }
+
+
 }
