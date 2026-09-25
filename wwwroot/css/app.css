@@ -11,3 +11,8 @@
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+/* O Router foca o h1 ao navegar (FocusOnNavigate, bom pra leitor de tela), sem mostrar a borda de foco */
+h1:focus {
+    outline: none;
+}

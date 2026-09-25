@@ -26,5 +26,15 @@
         public const string WhenMarnieWasThere = "tt3398268";
         public const string EarwigAndTheWitch = "tt12441478";
         public const string TheBoyAndTheHeron = "tt6587046";
+        public const string TheRedTurtle = "tt3666024";
+
+        // Filmes dos fundadores fora do estúdio
+        public const string Horus = "tt0063668";
+        public const string PussInBoots = "tt0064714";
+        public const string PandaGoPanda = "tt0069058";
+        public const string Cagliostro = "tt0079833";
+        public const string ChieTheBrat = "tt0081881";
+        public const string GaucheTheCellist = "tt0083053";
+        public const string Yanagawa = "tt0094345";
     }
 }

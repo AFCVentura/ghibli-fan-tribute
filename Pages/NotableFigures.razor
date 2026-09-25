@@ -1,0 +1,120 @@
+@page "/ghibli/notable-figures"
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+@inject IWebHostEnvironment Env
+
+<PageTitle>@L["FiguresPageTitle"]</PageTitle>
+
+<section class="text-ghibli-black pb-20 dark:text-ghibli-white">
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <div class="flex flex-col items-center gap-8 px-8 pb-6">
+        <h1 class="font-ghibli-lemon-milk text-center text-2xl md:text-4xl">@L["FiguresPageTitle"]</h1>
+        <p class="font-montserrat text-md w-full md:w-[60vw] lg:w-[45vw] lg:text-xl">@L["FiguresIntro"]</p>
+    </div>
+
+    @foreach (var group in Groups)
+    {
+        <div class="flex flex-col items-center pt-16 pb-12">
+            <div class="border-ghibli-black mb-14 w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white"></div>
+            <h2 class="font-ghibli-lemon-milk text-center text-2xl md:text-3xl">@L[group.TitleKey]</h2>
+        </div>
+
+        <div class="mx-auto flex max-w-5xl flex-col gap-12 px-6 md:px-10">
+            @foreach (var figure in group.Figures)
+            {
+                var photo = Photo(figure);
+                <!-- Mesmo card grande do modo detalhado da filmografia, com foto no lugar da capa -->
+                <article class="flex flex-col overflow-hidden rounded-2xl shadow-lg md:flex-row dark:ring-1 dark:ring-ghibli-white/15">
+                    <div class="aspect-[3/4] w-full shrink-0 md:w-64 lg:w-72">
+                        @if (photo is not null)
+                        {
+                            <img src="@photo" alt="@figure.Name" class="h-full w-full object-cover dark:brightness-90" loading="lazy" draggable="false" />
+                        }
+                        else
+                        {
+                            <!-- Placeholder até a foto real entrar em wwwroot/images/figures/{slug}.jpg -->
+                            <div class="bg-ghibli-sky/20 flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center">
+                                <span class="font-ghibli-lemon-milk text-ghibli-sky text-6xl">@Initials(figure.Name)</span>
+                                <span class="font-ghibli-lemon-milk text-sm">@figure.Name</span>
+                            </div>
+                        }
+                    </div>
+                    <div class="flex flex-1 flex-col gap-4 p-6 lg:p-8">
+                        <div class="flex flex-col gap-1">
+                            <h3 class="font-ghibli-lemon-milk text-2xl lg:text-3xl">@figure.Name</h3>
+                            <p class="font-ghibli-lemon-milk-light text-ghibli-sky text-base lg:text-lg">@L[$"Figure_{figure.Slug}_Role"]</p>
+                            <p class="font-montserrat text-ghibli-grey text-sm">@Lifespan(figure)</p>
+                        </div>
+                        <p class="font-montserrat text-md leading-relaxed lg:text-lg">@L[$"Figure_{figure.Slug}_Bio"]</p>
+                        <div class="mt-auto flex flex-col gap-2 pt-2">
+                            <span class="font-ghibli-lemon-milk text-ghibli-grey text-xs">@L["FiguresKnownFor"]</span>
+                            <ul class="flex flex-wrap gap-2">
+                                @foreach (var work in L[$"Figure_{figure.Slug}_Works"].Value.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                                {
+                                    <li class="font-montserrat bg-ghibli-sky/15 rounded-full px-3 py-1 text-sm">@work</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>
+
+<Footer />
+
+@code {
+    private record Figure(string Slug, string Name, int Born, int? Died = null, string? Photo = null);
+    private record FigureGroup(string TitleKey, Figure[] Figures);
+
+    // Nomes próprios ficam aqui; papel, biografia e obras ficam nos resx (Figure_{Slug}_Role/Bio/Works)
+    private static readonly FigureGroup[] Groups =
+    {
+        new("FiguresGroupFounders", new Figure[]
+        {
+            new("HayaoMiyazaki", "Hayao Miyazaki", 1941, Photo: "images/hayao_miyazaki.jpeg"),
+            new("IsaoTakahata", "Isao Takahata", 1935, 2018, "images/isao_takahata.jpg"),
+            new("ToshioSuzuki", "Toshio Suzuki", 1948, Photo: "images/toshio_suzuki.jpg"),
+            new("YasuyoshiTokuma", "Yasuyoshi Tokuma", 1921, 2000, "images/yasuyoshi_tokuma.webp"),
+        }),
+        new("FiguresGroupStudio", new Figure[]
+        {
+            new("YoshifumiKondo", "Yoshifumi Kondō", 1950, 1998),
+            new("MichiyoYasuda", "Michiyo Yasuda", 1939, 2016),
+            new("KazuoOga", "Kazuo Oga", 1952),
+            new("GoroMiyazaki", "Gorō Miyazaki", 1967),
+            new("HiromasaYonebayashi", "Hiromasa Yonebayashi", 1973),
+        }),
+        new("FiguresGroupOutside", new Figure[]
+        {
+            new("YasuoOtsuka", "Yasuo Ōtsuka", 1931, 2021),
+            new("PaulGrimault", "Paul Grimault", 1905, 1994),
+            new("JoeHisaishi", "Joe Hisaishi", 1950),
+            new("JohnLasseter", "John Lasseter", 1957),
+            new("HideakiAnno", "Hideaki Anno", 1960),
+            new("MichaelDudokDeWit", "Michaël Dudok de Wit", 1953),
+            new("DianaWynneJones", "Diana Wynne Jones", 1934, 2011),
+        }),
+    };
+
+    // Uma foto salva em wwwroot/images/figures/{slug}.jpg passa na frente de tudo
+    private string? Photo(Figure figure)
+    {
+        var path = $"images/figures/{figure.Slug.ToLowerInvariant()}.jpg";
+        return Env.WebRootFileProvider.GetFileInfo(path).Exists ? path : figure.Photo;
+    }
+
+    private string Lifespan(Figure figure) => figure.Died is null
+        ? string.Format(L["FiguresBorn"], figure.Born)
+        : string.Format(L["FiguresLifespan"], figure.Born, figure.Died);
+
+    private static string Initials(string name)
+    {
+        var words = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return words.Length == 1 ? words[0][..1] : $"{words[0][0]}{words[^1][0]}";
+    }
+}

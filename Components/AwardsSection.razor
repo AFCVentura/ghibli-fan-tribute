@@ -2,6 +2,7 @@
 @using BlazorServerFirstProject.Services
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> L
+@inject ImdbApiService ImdbService
 @using Microsoft.AspNetCore.Components
 
 <section class="text-ghibli-black min-h-dvh dark:text-ghibli-white">
@@ -34,7 +35,7 @@
                             <div class="flex w-full items-center justify-start gap-4">
                                 <div class="flex h-14 w-14 items-center justify-center sm:h-18 sm:w-18">  
                                     <div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg bg-metacritic-green text-center text-2xl font-bold sm:h-14 sm:w-14 sm:text-3xl dark:bg-metacritic-green-dark">
-                                        @Items[CurrentIndex].Metacritic.ToString()
+                                        @MetacriticText(Items[CurrentIndex].Metacritic)
                                     </div>
                                 </div>
                                 <p class="font-ghibli-lemon-milk text-xl sm:text-2xl">METACRITIC</p>
@@ -51,7 +52,7 @@
                                         <g id="SVGRepo_iconCarrier"> <path d="M16.926 20.2a1 1 0 0 1-.466-.115l-4.471-2.352-4.471 2.348a1 1 0 0 1-1.451-1.054l.854-4.98L3.3 10.521a1 1 0 0 1 .555-1.706l5-.727 2.237-4.531A1 1 0 0 1 11.989 3a1 1 0 0 1 .9.558l2.236 4.53 5 .727a1 1 0 0 1 .555 1.706l-3.618 3.527.854 4.98a1 1 0 0 1-.99 1.172z" /> </g>
                                     </svg>
                                     <span class="relative z-10 text-2xl font-bold sm:text-3xl">
-                                        @Items[CurrentIndex].Score.ToString("0.0")
+                                        @ScoreText(Items[CurrentIndex].Score)
                                     </span>
                                 </div>
                                 <p class="font-ghibli-lemon-milk text-xl sm:text-2xl">IMDB</p>
@@ -88,7 +89,7 @@
 
         </div>
         <div class="flex items-center justify-center pt-14">
-            <button type="button" class="font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:active:bg-ghibli-black dark:hover:bg-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-black">@L["AwardsSectionButton"]</button>
+            <NavLink href="films" class="font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:active:bg-ghibli-black dark:hover:bg-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-black">@L["AwardsSectionButton"]</NavLink>
         </div>
     </div>
     <div class="border-ghibli-black flex items-end justify-center border-b-[3px] py-14 dark:border-ghibli-white">
@@ -101,70 +102,66 @@
 @code {
     private int CurrentIndex = 0;
 
-    private ImdbApiService _imdbService = new ImdbApiService();
-    private RateLimiter _rateLimiter = new RateLimiter()
-    ;
-    private List<CarouselItem> Items;
-    private List<string> CarouselMovieIds = new()
-        {
-        GhibliMovies.SpiritedAway,
-        GhibliMovies.TheBoyAndTheHeron,
-        GhibliMovies.GraveOfTheFireflies,
-        GhibliMovies.PrincessMononoke,
-        GhibliMovies.MyNeighborTotoro
-    };
+    private List<CarouselItem> Items = new();
+    private bool _ratingsLoaded = false;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         Items = new()
         {
             new CarouselItem {
+            ImdbId = GhibliMovies.SpiritedAway,
             Title = L["SpiritedAwayTitle"],
             Description = L["SpiritedAwayPreviewDescription"],
             ImageUrl = "images/spirited_away.jpg",
             },
             new CarouselItem {
+            ImdbId = GhibliMovies.TheBoyAndTheHeron,
             Title = L["TheBoyAndTheHeronTitle"],
             Description = L["TheBoyAndTheHeronPreviewDescription"],
             ImageUrl = "images/the_boy_and_the_heron.jpg"
             },
             new CarouselItem {
+            ImdbId = GhibliMovies.GraveOfTheFireflies,
             Title = L["GraveOfTheFirefliesTitle"],
             Description = L["GraveOfTheFirefliesPreviewDescription"],
             ImageUrl = "images/grave_of_the_fireflies.jpg"
             },
             new CarouselItem {
+            ImdbId = GhibliMovies.PrincessMononoke,
             Title = L["PrincessMononokeTitle"],
             Description = L["PrincessMononokePreviewDescription"],
             ImageUrl = "images/princess_mononoke.webp"
             },
             new CarouselItem {
+            ImdbId = GhibliMovies.MyNeighborTotoro,
             Title = L["MyNeighborTotoroTitle"],
             Description = L["MyNeighborTotoroPreviewDescription"],
             ImageUrl = "images/my_neighbor_totoro.jpg"
             },
         };
-        
-        for (int i = 0; i < CarouselMovieIds.Count; i++)
+    }
+
+    // As notas eram buscadas no OnInitializedAsync, uma de cada vez (10 chamadas com 500ms de intervalo),
+    // o que segurava a renderização da página inteira e ainda rodava duas vezes por causa do prerender.
+    // Agora o carrossel aparece na hora e as notas chegam depois, todas em paralelo.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        var ratings = await Task.WhenAll(Items.Select(item => ImdbService.GetRatingsAsync(item.ImdbId)));
+        for (int i = 0; i < Items.Count; i++)
         {
-            Items[i].Score = await _rateLimiter.ExecuteAsync(() => GetMovieScoreAsync(CarouselMovieIds[i]));
-            Items[i].Metacritic = await _rateLimiter.ExecuteAsync(() => GetMovieMetacriticAsync(CarouselMovieIds[i]));
+            Items[i].Score = ratings[i].Imdb;
+            Items[i].Metacritic = ratings[i].Metacritic;
         }
 
-        await base.OnInitializedAsync();
+        _ratingsLoaded = true;
+        StateHasChanged();
     }
 
-    private async Task<double> GetMovieScoreAsync(string imdbId)
-    {
-        var score = await _imdbService.GetMovieRatingAsync(imdbId);
-        return score;
-    }
-
-    private async Task<int> GetMovieMetacriticAsync(string imdbId)
-    {
-        var metacritic = await _imdbService.GetMovieMetacriticAsync(imdbId);
-        return metacritic;
-    }
+    private string MetacriticText(int? value) => value?.ToString() ?? (_ratingsLoaded ? "N/A" : "…");
+    private string ScoreText(double? value) => value?.ToString("0.0", System.Globalization.CultureInfo.InvariantCulture) ?? (_ratingsLoaded ? "N/A" : "…");
     private bool _isNavigating = false;
 
     private async Task Next()
@@ -208,10 +205,11 @@
 
     public class CarouselItem
     {
+        public string ImdbId { get; set; } = "";
         public string Title { get; set; } = "";
         public string Description { get; set; } = "";
         public string ImageUrl { get; set; } = "";
-        public double Score { get; set; }
-        public int Metacritic { get; set; }
+        public double? Score { get; set; }
+        public int? Metacritic { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿@using BlazorServerFirstProject.Services
 @inherits LayoutComponentBase
 @inject ThemeService Theme
+@inject IJSRuntime JS
 <!-- As linhas acima fazem, respectivamente
 1. Importar o namespace do service.
 2. Indicar que este componente herda de LayoutComponentBase, que é a base para layouts em Blazor, não voga pro modo dark, já estava aqui.
@@ -24,10 +25,12 @@
     // O firstRender indica se é a primeira vez que o componente está sendo renderizado.
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // Se for a primeira vez, inicializa o tema.
+        // Se for a primeira vez, inicializa o tema e tira a tela de carregamento.
+        // O OnAfterRenderAsync só roda com o circuito conectado, então aqui a página já está interativa.
         if (firstRender)
         {
             await Theme.InitAsync();
+            await JS.InvokeVoidAsync("ghibliHideLoading");
         }
     }
 }

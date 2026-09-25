@@ -1,10 +1,23 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+@using Microsoft.Extensions.Localization
+@using System.Globalization
+@inject IStringLocalizer<SharedResources> L
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
+    <!-- Aplica o tema salvo antes da primeira pintura, pra tela de carregamento e o prerender já nascerem no tema certo -->
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem('theme');
+                var dark = theme === 'dark' || ((!theme || theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                document.documentElement.classList.toggle('dark', dark);
+            } catch (e) { }
+        })();
+    </script>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="BlazorServerFirstProject.styles.css" />
@@ -12,23 +25,35 @@
     <HeadOutlet />
 </head>
 
-<body>
-    <!-- LOADING (aparece enquanto o Blazor inicia) -->
-    <div id="blazor-loading" class="bg-ghibli-white flex h-screen items-center justify-center dark:bg-ghibli-black">
+<body class="bg-ghibli-white dark:bg-ghibli-black">
+    <!-- LOADING: sobreposição fixa que cobre a página enquanto o circuito do Blazor conecta.
+         Antes era um bloco comum no fluxo da página e nada o removia, então ficava parado no topo pra sempre. -->
+    <div id="blazor-loading" class="bg-ghibli-white text-ghibli-black fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-500 dark:bg-ghibli-black dark:text-ghibli-white">
         <div class="text-center">
             <img src="favicon.svg" class="mx-auto w-28 animate-bounce" alt="logo" />
-            <p class="mt-4 text-lg font-medium">Abrindo o mundo de Ghibli…</p>
+            <p class="font-montserrat mt-4 text-lg">@L["LoadingText"]</p>
         </div>
     </div>
 
     <!-- O teu Router / Routes -->
     <Routes @rendermode="new InteractiveServerRenderMode()" />
 
+    <!-- autostart=false pra iniciar o Blazor manualmente e saber quando o circuito ficou pronto -->
+    <script src="_framework/blazor.web.js" autostart="false"></script>
+    <script>
+        // Chamada pelo MainLayout no primeiro render interativo, que é quando o circuito realmente está pronto
+        window.ghibliHideLoading = function () {
+            var loading = document.getElementById('blazor-loading');
+            if (!loading) return;
+            loading.style.opacity = '0';
+            setTimeout(function () { loading.remove(); }, 500);
+        };
 
-   
-    <script src="_framework/blazor.web.js"></script>
+        Blazor.start().catch(window.ghibliHideLoading);
 
-
+        // Rede de segurança: se a conexão demorar demais, libera a página prerenderizada mesmo assim
+        setTimeout(window.ghibliHideLoading, 8000);
+    </script>
 </body>
 
 </html>

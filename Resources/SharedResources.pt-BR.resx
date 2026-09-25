@@ -134,14 +134,6 @@
     <value>Filmografia</value>
     <comment>Sublink "Filmography"</comment>
   </data>
-  <data name="NavFilmsCharacters" xml:space="preserve">
-    <value>Personagens</value>
-    <comment>Sublink "Characters"</comment>
-  </data>
-  <data name="NavFilmsOthers" xml:space="preserve">
-    <value>Outros</value>
-    <comment>Sublink "Others"</comment>
-  </data>
   <data name="NavAboutme" xml:space="preserve">
     <value>Sobre Mim</value>
     <comment>Link "About Me"</comment>
@@ -305,5 +297,1537 @@ Suas obras mesclam temas humanos, natureza, fantasia e crítica social, ressoand
   </data>
   <data name="ResumePath" xml:space="preserve">
     <value>files/JoaoVitorVenturaResumePortugues.pdf</value>
+  </data>
+  <data name="HistoryPageTitle" xml:space="preserve">
+    <value>História do Ghibli</value>
+    <comment>Ghibli's History page</comment>
+  </data>
+  <data name="HistoryIntro1" xml:space="preserve">
+    <value>Fundado em 1985 por Hayao Miyazaki e Isao Takahata, ao lado do produtor Toshio Suzuki, o Studio Ghibli rapidamente se tornou um dos estúdios de animação mais influentes do mundo. Seus filmes unem beleza visual, emoção e reflexão social de um jeito que continua encantando pessoas de todas as idades.</value>
+    <comment>Ghibli's History page</comment>
+  </data>
+  <data name="HistoryIntro2" xml:space="preserve">
+    <value>Abaixo, você encontra uma linha do tempo que acompanha a trajetória do estúdio, desde os anos em que ele ainda nem existia e seus fundadores eram jovens animadores aprendendo o ofício, até o reconhecimento mundial que veio depois.</value>
+    <comment>Ghibli's History page</comment>
+  </data>
+  <data name="HistoryBadgeFilm" xml:space="preserve">
+    <value>Filme</value>
+    <comment>Ghibli's History page</comment>
+  </data>
+  <data name="HistoryBadgeFigure" xml:space="preserve">
+    <value>Figura importante</value>
+    <comment>Ghibli's History page</comment>
+  </data>
+  <data name="LoadingText" xml:space="preserve">
+    <value>Abrindo o mundo de Ghibli…</value>
+    <comment>Loading screen</comment>
+  </data>
+  <data name="History_Era1_Title" xml:space="preserve">
+    <value>Dois caminhos</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era1_Range" xml:space="preserve">
+    <value>1935 a 1970</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_Era2_Title" xml:space="preserve">
+    <value>Juntos pela estrada</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era2_Range" xml:space="preserve">
+    <value>1971 a 1981</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_Era3_Title" xml:space="preserve">
+    <value>Nausicaä e um estúdio só deles</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era3_Range" xml:space="preserve">
+    <value>1982 a 1985</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_Era4_Title" xml:space="preserve">
+    <value>Os anos de estúdio</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era4_Range" xml:space="preserve">
+    <value>1986 a 1998</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_Era5_Title" xml:space="preserve">
+    <value>O mundo presta atenção</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era5_Range" xml:space="preserve">
+    <value>1999 a 2008</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_Era6_Title" xml:space="preserve">
+    <value>Passando o bastão</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era6_Range" xml:space="preserve">
+    <value>2010 a 2016</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_Era7_Title" xml:space="preserve">
+    <value>Um novo capítulo</value>
+    <comment>Ghibli's History era title</comment>
+  </data>
+  <data name="History_Era7_Range" xml:space="preserve">
+    <value>2017 até hoje</value>
+    <comment>Ghibli's History era range</comment>
+  </data>
+  <data name="History_TakahataBorn_Date" xml:space="preserve">
+    <value>Outubro de 1935</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_TakahataBorn_Title" xml:space="preserve">
+    <value>Nasce Isao Takahata</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_TakahataBorn_Text" xml:space="preserve">
+    <value>Isao Takahata nasce em 29 de outubro em Ujiyamada, na província de Mie, e passa a infância em Okayama. Dos dois futuros fundadores, é o mais velho, com cinco anos de diferença, e o que vai chegar à animação pelo caminho mais longo: pelos livros, pela poesia francesa e pelo cinema.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_MiyazakiBorn_Date" xml:space="preserve">
+    <value>Janeiro de 1941</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_MiyazakiBorn_Title" xml:space="preserve">
+    <value>Nasce Hayao Miyazaki</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_MiyazakiBorn_Text" xml:space="preserve">
+    <value>Miyazaki nasce em 5 de janeiro, em Tóquio. A família comanda a Miyazaki Airplane, empresa que fabrica peças para aviões de caça durante a guerra, e o menino cresce cercado de desenhos de aeronaves. Esse fascínio pelo voo, junto com o incômodo de saber para que aqueles aviões serviam, vai atravessar quase tudo o que ele fizer.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Okayama_Date" xml:space="preserve">
+    <value>Junho de 1945</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Okayama_Title" xml:space="preserve">
+    <value>A noite em que Okayama queimou</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Okayama_Text" xml:space="preserve">
+    <value>Em 29 de junho, bombardeiros americanos incendeiam Okayama. Takahata, com nove anos, foge pelas ruas de pijama com uma das irmãs, separado do resto da família. Mais de quarenta anos depois, aquela noite vai parar na tela em Túmulo dos Vagalumes.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Mother_Date" xml:space="preserve">
+    <value>1947</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Mother_Title" xml:space="preserve">
+    <value>Uma mãe de cama</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Mother_Text" xml:space="preserve">
+    <value>A mãe de Miyazaki recebe o diagnóstico de tuberculose na coluna e passa anos entre hospitais e a cama de casa. Era uma mulher firme, questionadora e cheia de opinião, e o filho diria mais tarde que foi ela quem moldou o jeito dele de ver o mundo. A doença dela é o coração silencioso de Meu Amigo Totoro.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Hakujaden_Date" xml:space="preserve">
+    <value>1958</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Hakujaden_Title" xml:space="preserve">
+    <value>Apaixonado pela Lenda da Serpente Branca</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Hakujaden_Text" xml:space="preserve">
+    <value>A Toei Doga lança Hakujaden, o primeiro longa animado colorido do Japão. Miyazaki, ainda no colegial e estudando para o vestibular, assiste e se apaixona, como ele mesmo admitiu depois, pela heroína. Sai do cinema convencido de que a animação podia carregar sentimento de verdade, e um pouco envergonhado dos mangás de imitação que andava desenhando.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_TakahataToei_Date" xml:space="preserve">
+    <value>1959</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_TakahataToei_Title" xml:space="preserve">
+    <value>Takahata entra na Toei Doga</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_TakahataToei_Text" xml:space="preserve">
+    <value>Recém-formado em literatura francesa pela Universidade de Tóquio, Takahata entra na Toei Doga como assistente de direção. O que o levou até ali foi um filme francês, A Pastora e o Limpador de Chaminés, de Paul Grimault, que lhe mostrou que animação podia ser poética e política ao mesmo tempo. Ele voltou a esse filme a vida inteira, e décadas depois ajudou a levar a versão finalizada, O Rei e o Pássaro, aos cinemas japoneses.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_MiyazakiToei_Date" xml:space="preserve">
+    <value>1963</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_MiyazakiToei_Title" xml:space="preserve">
+    <value>Miyazaki entra na Toei Doga</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_MiyazakiToei_Text" xml:space="preserve">
+    <value>Depois de se formar em ciência política e economia pela Universidade Gakushuin, Miyazaki entra na Toei Doga como intervalador. O primeiro trabalho é Wan Wan Chushingura. O salário é baixo e as jornadas são longas, mas ele logo chama atenção pelas ideias que vive enfiando nas cenas dos outros.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Union_Date" xml:space="preserve">
+    <value>1964</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Union_Title" xml:space="preserve">
+    <value>Lado a lado no sindicato</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Union_Text" xml:space="preserve">
+    <value>Miyazaki vira secretário-geral do sindicato dos trabalhadores da Toei, e Takahata, vice-presidente. Os dois já tinham se cruzado antes, mas é ali, em reuniões compridas e voltas para casa mais compridas ainda, que começam a conversar sobre filmes, política e o que a animação ainda poderia ser. Começa uma parceria que vai durar mais de cinquenta anos, muitas vezes briguenta, nunca sem graça.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Otsuka_Date" xml:space="preserve">
+    <value>Toei Doga</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Otsuka_Title" xml:space="preserve">
+    <value>O mentor: Yasuo Otsuka</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Otsuka_Text" xml:space="preserve">
+    <value>Um dos primeiros animadores da Toei, Otsuka é quem ensina aos dois como o movimento funciona de verdade e, tão importante quanto, como se divertir fazendo isso. Apaixonado por máquinas, jipes e qualquer coisa com motor, vai ser diretor de animação do primeiro longa de Takahata e, anos depois, do primeiro de Miyazaki. Nenhum dos dois jamais deixou de chamá-lo de professor.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Horus_Date" xml:space="preserve">
+    <value>Julho de 1968</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Horus_Title" xml:space="preserve">
+    <value>Horus, o Príncipe do Sol</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Horus_Text" xml:space="preserve">
+    <value>Takahata dirige seu primeiro longa, com Miyazaki entre os principais animadores e criadores de cenas e Otsuka como diretor de animação. A produção se arrasta por três anos, estoura prazo e orçamento, e o filme sai de cartaz em dez dias. Takahata é rebaixado. Hoje, é lembrado como o momento em que a animação japonesa começou a se levar a sério.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Pero_Date" xml:space="preserve">
+    <value>1969</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Pero_Title" xml:space="preserve">
+    <value>Um gato chamado Pero</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Pero_Text" xml:space="preserve">
+    <value>Miyazaki anima algumas das sequências mais lembradas de O Gato de Botas, da Toei, incluindo uma perseguição pelos telhados de um castelo que já tem a cara dele. O gato do filme, Pero, vira mascote da Toei. No mesmo ano, com pseudônimo, ele publica O Povo do Deserto, seu primeiro mangá e um primeiro sinal do contador de histórias que queria ser.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Pippi_Date" xml:space="preserve">
+    <value>1971</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Pippi_Title" xml:space="preserve">
+    <value>A saída da Toei e a Píppi que nunca existiu</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Pippi_Text" xml:space="preserve">
+    <value>Takahata, Miyazaki e o animador Yoichi Kotabe deixam a Toei rumo à A Production para adaptar Píppi Meialonga. Miyazaki chega a viajar à Suécia para estudar as locações, mas Astrid Lindgren nega os direitos e o projeto morre. Para continuar trabalhando, os dois assumem no meio do caminho a direção da primeira série de Lupin III, sem crédito.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Panda_Date" xml:space="preserve">
+    <value>1972 e 1973</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Panda_Title" xml:space="preserve">
+    <value>Panda! Go, Panda!</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Panda_Text" xml:space="preserve">
+    <value>Takahata dirige e Miyazaki escreve e desenha dois curtas sobre uma menina que mora sozinha e acaba adotando um filhote de panda e o pai dele. As ideias que sobraram de Píppi encontram casa aqui, e junto com elas aparece uma criatura grande, redonda e gentil que um dia vai virar o Totoro.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Heidi_Date" xml:space="preserve">
+    <value>1974</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Heidi_Title" xml:space="preserve">
+    <value>Heidi</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Heidi_Text" xml:space="preserve">
+    <value>Já na Zuiyo Eizo, a equipe faz Heidi, com Takahata na direção e Miyazaki no desenho de cenas e layout de todos os 52 episódios. Eles viajam para a Suíça para estudar a luz, as casas e o jeito como as pessoas comem. Essa obsessão pelo cotidiano, a comida, as tarefas de casa, o tempo lá fora, vira marca registrada de tudo o que fariam depois.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Marco_Date" xml:space="preserve">
+    <value>1976</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Marco_Title" xml:space="preserve">
+    <value>3000 Léguas em Busca da Mãe</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Marco_Text" xml:space="preserve">
+    <value>Takahata dirige uma série longa e melancólica sobre um menino italiano que atravessa o oceano até a Argentina atrás da mãe, com Miyazaki de novo no layout. É uma narrativa paciente, sem emoção fácil, e prova que criança acompanha uma história triste desde que ela seja contada com honestidade.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Conan_Date" xml:space="preserve">
+    <value>1978</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Conan_Title" xml:space="preserve">
+    <value>Conan, o Menino do Futuro: Miyazaki na direção</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Conan_Text" xml:space="preserve">
+    <value>Na Nippon Animation, Miyazaki dirige pela primeira vez: uma série de 26 episódios passada depois de uma guerra mundial, com um menino que segura o fôlego por uma eternidade, uma menina que conversa com pássaros e uma fortaleza voadora gigante. Takahata ajuda nos storyboards e dirige alguns episódios. Muitas ideias que depois aparecem em O Castelo no Céu e em Nausicaä já estão ali.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Suzuki_Date" xml:space="preserve">
+    <value>Por volta de 1979</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Suzuki_Title" xml:space="preserve">
+    <value>Um editor chamado Toshio Suzuki</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Suzuki_Text" xml:space="preserve">
+    <value>Suzuki, jornalista da editora Tokuma Shoten, faz parte da equipe da Animage, uma das primeiras revistas sobre animação do Japão. Ele liga para Takahata pedindo uma entrevista e ouve uma longa explicação de por que Takahata não vai dar entrevista nenhuma. Depois vai atrás de Miyazaki, mergulhado no primeiro longa, que o ignora. Suzuki simplesmente se senta na mesa ao lado por dias, até Miyazaki começar a falar. Os três vão trabalhar juntos pelo resto da vida.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Cagliostro_Date" xml:space="preserve">
+    <value>Dezembro de 1979</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Cagliostro_Title" xml:space="preserve">
+    <value>O Castelo de Cagliostro</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Cagliostro_Text" xml:space="preserve">
+    <value>Miyazaki deixa Anne de Green Gables, de Takahata, depois dos primeiros episódios para fazer seu primeiro longa, uma aventura de Lupin III com Otsuka como diretor de animação. Feito em poucos meses, tem bilheteria modesta. Anos depois, animadores do mundo inteiro vão estudar sua perseguição de carro quadro a quadro.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Chie_Date" xml:space="preserve">
+    <value>1981 e 1982</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Chie_Title" xml:space="preserve">
+    <value>Chie, a Pestinha, e Gauche, o Violoncelista</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Chie_Text" xml:space="preserve">
+    <value>Takahata passa o começo dos anos oitenta nos próprios projetos: Chie, a Pestinha, uma comédia de Osaka sobre uma menina que toca o restaurante de miúdos grelhados do pai, e Gauche, o Violoncelista, um filme pequeno baseado num conto de Kenji Miyazawa, feito ao longo de vários anos por um estúdio minúsculo. Os dois mostram o gosto dele por lugares de verdade, trabalho de verdade e música levada a sério.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_NausicaaManga_Date" xml:space="preserve">
+    <value>1982</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_NausicaaManga_Title" xml:space="preserve">
+    <value>Nausicaä começa no papel</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_NausicaaManga_Text" xml:space="preserve">
+    <value>Ninguém quer bancar um filme original que não seja baseado em uma obra já existente, então Suzuki sugere um atalho: fazer o mangá primeiro. Nausicaä do Vale do Vento começa a sair na Animage. Miyazaki segue desenhando a história, com longas pausas sempre que um filme toma conta da vida dele, até 1994.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Tokuma_Date" xml:space="preserve">
+    <value>Tokuma Shoten</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Tokuma_Title" xml:space="preserve">
+    <value>O investidor: Yasuyoshi Tokuma</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Tokuma_Text" xml:space="preserve">
+    <value>O fundador da Tokuma Shoten era um empresário com faro de apostador. Confiava no julgamento de Suzuki, e Suzuki confiava em Miyazaki e Takahata. O dinheiro dele tornou possível o filme de Nausicaä e, um ano depois, um estúdio. Ficou por trás do Ghibli como produtor executivo até morrer, em 2000.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_NausicaaFilm_Date" xml:space="preserve">
+    <value>Março de 1984</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_NausicaaFilm_Title" xml:space="preserve">
+    <value>Nausicaä do Vale do Vento</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_NausicaaFilm_Text" xml:space="preserve">
+    <value>O filme estreia em 11 de março, produzido pela Tokuma Shoten e pela agência de publicidade Hakuhodo, animado no pequeno estúdio Topcraft, com Takahata como produtor. É também a primeira vez que Miyazaki trabalha com o compositor Joe Hisaishi, que vai assinar a trilha de todos os filmes dele dali em diante. Cerca de 900 mil pessoas vão ao cinema, o suficiente para provar que uma história original, com uma menina no centro e a natureza como personagem, enchia salas.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Founding_Date" xml:space="preserve">
+    <value>Junho de 1985</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Founding_Title" xml:space="preserve">
+    <value>Nasce o Studio Ghibli</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Founding_Text" xml:space="preserve">
+    <value>Em 15 de junho, com o lucro de Nausicaä e o apoio da Tokuma Shoten, Miyazaki, Takahata e Suzuki abrem o Studio Ghibli num andar alugado em Kichijoji, Tóquio, acolhendo parte da equipe da Topcraft, que tinha fechado. O nome vem de um vento quente que sopra no Saara e de um avião italiano de que Miyazaki gostava. A ideia era soprar um vento novo na animação japonesa.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Laputa_Date" xml:space="preserve">
+    <value>Agosto de 1986</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Laputa_Title" xml:space="preserve">
+    <value>O Castelo no Céu</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Laputa_Text" xml:space="preserve">
+    <value>O primeiro filme feito com o nome Ghibli. Miyazaki tinha visitado o País de Gales durante a greve dos mineiros e ficou tocado com a forma como aquelas comunidades lutavam pelo próprio trabalho, e a cidade mineira onde Pazu vive nasce dali. A bilheteria é respeitável, sem ser espetacular, mas o estúdio agora tem um rumo.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Yanagawa_Date" xml:space="preserve">
+    <value>1987</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Yanagawa_Title" xml:space="preserve">
+    <value>Um desvio pelos canais de Yanagawa</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Yanagawa_Text" xml:space="preserve">
+    <value>Takahata termina A História dos Canais de Yanagawa, um documentário de quase três horas sobre uma cidade que decidiu salvar seus antigos canais, pago com o dinheiro que Miyazaki tinha ganhado com Nausicaä. Estoura prazo e orçamento, e é Takahata em estado puro: curioso, minucioso e sem pressa nenhuma.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Totoro_Date" xml:space="preserve">
+    <value>Abril de 1988</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Totoro_Title" xml:space="preserve">
+    <value>Totoro e os vagalumes no mesmo ingresso</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Totoro_Text" xml:space="preserve">
+    <value>Para conseguir fazer os dois filmes, Suzuki vende os dois juntos, numa sessão dupla. O público passa de dois órfãos passando fome no fim da guerra para um espírito da floresta esperando o ônibus debaixo de chuva, ou o contrário. Nenhum dos dois faz sucesso no cinema. Totoro encontra seu público depois, na televisão e nos bichos de pelúcia, e acaba virando o logotipo do estúdio.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Kiki_Date" xml:space="preserve">
+    <value>Julho de 1989</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Kiki_Title" xml:space="preserve">
+    <value>O Serviço de Entregas da Kiki</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Kiki_Text" xml:space="preserve">
+    <value>A história de uma bruxa de treze anos aprendendo a viver sozinha vira o filme japonês de maior bilheteria do ano. Com esse dinheiro, o Ghibli toma uma decisão rara na indústria: contrata seus animadores como funcionários fixos, aumenta os salários e começa a formar gente nova. A partir dali, o estúdio precisa continuar fazendo filmes para sustentar todo mundo.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_OnlyYesterday_Date" xml:space="preserve">
+    <value>Julho de 1991</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_OnlyYesterday_Title" xml:space="preserve">
+    <value>Memórias de Ontem</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_OnlyYesterday_Text" xml:space="preserve">
+    <value>Takahata conta a história de uma funcionária de escritório de 27 anos que passa as férias colhendo cártamo no interior enquanto lembra de quando tinha dez. Um filme para adultos, sobre trabalho, memória e escolher uma vida, que vira o maior sucesso japonês do ano. Takahata queria os rostos adultos com maçãs do rosto e marcas de sorriso, coisa que o anime quase nunca desenhava, e os animadores suaram em cada um deles.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Porco_Date" xml:space="preserve">
+    <value>Julho de 1992</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Porco_Title" xml:space="preserve">
+    <value>Porco Rosso e uma casa só deles</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Porco_Text" xml:space="preserve">
+    <value>O que começou como um curta para passar nos voos da Japan Airlines vira um longa sobre um piloto da Primeira Guerra transformado em porco, voando de hidroavião sobre o Adriático. No mesmo ano, o Ghibli se muda para um prédio próprio em Koganei, desenhado pelo próprio Miyazaki, com muita luz e um jardim no telhado.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_OceanWaves_Date" xml:space="preserve">
+    <value>Maio de 1993</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_OceanWaves_Title" xml:space="preserve">
+    <value>Eu Posso Ouvir o Oceano</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_OceanWaves_Text" xml:space="preserve">
+    <value>O Ghibli dá uma chance à equipe mais jovem com um filme para TV dirigido por Tomomi Mochizuki, pensado para ser rápido, barato e bom. Atrasa e estoura o orçamento como todo o resto, mas vira uma história de colégio tranquila e desajeitada, que muito fã guarda com carinho até hoje.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_PomPoko_Date" xml:space="preserve">
+    <value>Julho de 1994</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_PomPoko_Title" xml:space="preserve">
+    <value>PomPoko: A Grande Batalha dos Guaxinins</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_PomPoko_Text" xml:space="preserve">
+    <value>A história de Takahata sobre tanukis que lutam contra a construção de um bairro novo em cima da floresta deles. É engraçado, cheio de transformações e profundamente triste, e uma das expressões mais claras da preocupação do estúdio com o que o Japão moderno estava fazendo com a própria terra.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Whisper_Date" xml:space="preserve">
+    <value>Julho de 1995</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Whisper_Title" xml:space="preserve">
+    <value>Sussurros do Coração</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Whisper_Text" xml:space="preserve">
+    <value>Pela primeira vez, um longa do Ghibli é dirigido por alguém que não é um dos fundadores: Yoshifumi Kondo, o animador que muitos viam como sucessor natural. Com roteiro de Miyazaki, acompanha uma menina que quer escrever e um menino que quer fabricar violinos. Kondo morreu em 1998, aos 47 anos, e este continua sendo o único filme que ele dirigiu.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Disney_Date" xml:space="preserve">
+    <value>1996</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Disney_Title" xml:space="preserve">
+    <value>O Ghibli vai para o mundo, sem cortes</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Disney_Text" xml:space="preserve">
+    <value>A Tokuma Shoten fecha um acordo com a Disney para distribuir os filmes do Ghibli fora do Japão. A condição do estúdio, repetida por Suzuki em toda reunião, é simples: nenhum corte.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Mononoke_Date" xml:space="preserve">
+    <value>Julho de 1997</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Mononoke_Title" xml:space="preserve">
+    <value>Princesa Mononoke</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Mononoke_Text" xml:space="preserve">
+    <value>O filme mais ambicioso de Miyazaki até então: uma luta violenta e moralmente complicada entre uma cidade do ferro, os deuses da floresta e um jovem príncipe carregando uma maldição. Algumas cenas usam ferramentas digitais pela primeira vez no estúdio. Vira a maior bilheteria da história do Japão, até Titanic chegar alguns meses depois. Miyazaki anuncia que vai se aposentar. Não vai ser a última vez.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Yamadas_Date" xml:space="preserve">
+    <value>Julho de 1999</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Yamadas_Title" xml:space="preserve">
+    <value>Meus Vizinhos, os Yamadas</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Yamadas_Text" xml:space="preserve">
+    <value>Takahata transforma uma tirinha de jornal numa sequência de esquetes sobre uma família comum e meio caótica, desenhada como aquarela. É o primeiro filme do Ghibli feito inteiramente no computador, e um dos mais trabalhosos, tudo para parecer leve como um rabisco. A bilheteria decepciona. Takahata só vai dirigir de novo catorze anos depois.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_SpiritedAway_Date" xml:space="preserve">
+    <value>Julho de 2001</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_SpiritedAway_Title" xml:space="preserve">
+    <value>A Viagem de Chihiro</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_SpiritedAway_Text" xml:space="preserve">
+    <value>A história de Chihiro, uma menina emburrada de dez anos que precisa trabalhar numa casa de banhos para espíritos para salvar os pais, estreia no Japão e fica meses em cartaz. Vira a maior bilheteria da história do país, recorde que se mantém por quase vinte anos. Ganha o Urso de Ouro em Berlim e, em 2003, o Oscar de Melhor Animação. Miyazaki não vai à cerimônia, sem vontade de visitar um país que estava em guerra no Iraque.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Museum_Date" xml:space="preserve">
+    <value>Outubro de 2001</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Museum_Title" xml:space="preserve">
+    <value>Abre o Museu Ghibli</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Museum_Text" xml:space="preserve">
+    <value>O museu abre em Mitaka, construído a partir dos rascunhos de Miyazaki, sem roteiro fixo, com escadas em caracol, um Gatobus gigante para as crianças subirem e um robô soldado de O Castelo no Céu parado no jardim do telhado. O lema convida os visitantes a se perderem, juntos.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_CatReturns_Date" xml:space="preserve">
+    <value>Julho de 2002</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_CatReturns_Title" xml:space="preserve">
+    <value>O Reino dos Gatos</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_CatReturns_Text" xml:space="preserve">
+    <value>Dirigido por Hiroyuki Morita, traz de volta o Barão de Sussurros do Coração numa aventura mais leve sobre uma colegial que salva um gato e acaba arrastada para o reino dele. Começou como uma encomenda pequena para um parque temático e cresceu até virar longa.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Howl_Date" xml:space="preserve">
+    <value>Novembro de 2004</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Howl_Title" xml:space="preserve">
+    <value>O Castelo Animado</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Howl_Text" xml:space="preserve">
+    <value>Baseado no romance de Diana Wynne Jones, cai nas mãos de Miyazaki depois que Mamoru Hosoda deixa o projeto. Feito enquanto a guerra do Iraque passava no jornal toda noite, transforma um livro sobre uma maldição num filme sobre o absurdo da guerra, e sobre uma moça de dezoito anos que parece mais feliz como velhinha.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Independence_Date" xml:space="preserve">
+    <value>2005</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Independence_Title" xml:space="preserve">
+    <value>Independência e um Leão de Ouro</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Independence_Text" xml:space="preserve">
+    <value>O Ghibli se torna independente da Tokuma Shoten, com Suzuki na presidência. Em setembro, Miyazaki recebe o Leão de Ouro pelo conjunto da obra no Festival de Veneza.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Earthsea_Date" xml:space="preserve">
+    <value>Julho de 2006</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Earthsea_Title" xml:space="preserve">
+    <value>Contos de Terramar</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Earthsea_Text" xml:space="preserve">
+    <value>Goro Miyazaki, filho de Hayao, paisagista que vinha dirigindo o Museu Ghibli, faz seu primeiro filme, baseado nos livros de Ursula K. Le Guin. O pai é contra a ideia, e os dois mal se falam durante a produção. O filme divide o público, e a própria Le Guin deixa claro que não se convenceu.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Ponyo_Date" xml:space="preserve">
+    <value>Julho de 2008</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Ponyo_Title" xml:space="preserve">
+    <value>Ponyo: Uma Amizade que Veio do Mar</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Ponyo_Text" xml:space="preserve">
+    <value>Uma menina peixe que quer virar humana, desenhada quase toda à mão como resposta deliberada à era digital. Só as ondas já parecem criaturas vivas. O filme precisou de mais de 170 mil desenhos, um recorde para o estúdio.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Arrietty_Date" xml:space="preserve">
+    <value>Julho de 2010</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Arrietty_Title" xml:space="preserve">
+    <value>O Mundo dos Pequeninos</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Arrietty_Text" xml:space="preserve">
+    <value>Hiromasa Yonebayashi, animador que cresceu dentro do estúdio, dirige seu primeiro filme, a partir de Os Pequeninos, de Mary Norton, com roteiro de Miyazaki. Uma família de pessoas minúsculas vivendo embaixo do assoalho de uma casa de campo, onde uma gota d'água pesa e uma cozinha é uma cordilheira.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_PoppyHill_Date" xml:space="preserve">
+    <value>Julho de 2011</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_PoppyHill_Title" xml:space="preserve">
+    <value>Da Colina Kokuriko</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_PoppyHill_Text" xml:space="preserve">
+    <value>O segundo filme de Goro Miyazaki, sobre estudantes na Yokohama de 1963 tentando salvar o velho prédio dos clubes da demolição. Os últimos meses de produção coincidem com o terremoto e o tsunami de 11 de março, e a equipe continua trabalhando no meio dos apagões programados para terminar no prazo.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_WindRises_Date" xml:space="preserve">
+    <value>Julho de 2013</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_WindRises_Title" xml:space="preserve">
+    <value>Vidas ao Vento</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_WindRises_Text" xml:space="preserve">
+    <value>O filme mais pessoal de Miyazaki, um retrato de Jiro Horikoshi, o engenheiro que projetou o caça Zero, o mesmo tipo de avião para o qual a empresa do pai dele fabricava peças. Pergunta se dá para amar algo bonito sabendo que ele vai ser usado para matar. Jiro é dublado por Hideaki Anno, criador de Evangelion e, lá atrás, jovem animador de Nausicaä. Em setembro, Miyazaki anuncia, mais uma vez, que vai se aposentar.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Kaguya_Date" xml:space="preserve">
+    <value>Novembro de 2013</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Kaguya_Title" xml:space="preserve">
+    <value>O Conto da Princesa Kaguya</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Kaguya_Text" xml:space="preserve">
+    <value>A despedida de Takahata, oito anos em produção, desenhada com traços de carvão e aquarela que parecem inacabados de propósito. Reconta o conto popular mais antigo do Japão, sobre uma menina vinda da lua que quer, acima de tudo, viver. É indicado ao Oscar.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Marnie_Date" xml:space="preserve">
+    <value>2014</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Marnie_Title" xml:space="preserve">
+    <value>As Memórias de Marnie e uma pausa</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Marnie_Text" xml:space="preserve">
+    <value>O segundo filme de Yonebayashi, sobre uma menina solitária e uma amiga misteriosa numa mansão antiga à beira de um pântano. Pouco depois, Suzuki anuncia uma pausa na produção e o departamento de animação é desfeito. Pela primeira vez em quase trinta anos, ninguém está desenhando um longa no Ghibli. Em novembro, Miyazaki recebe um Oscar honorário.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_RedTurtle_Date" xml:space="preserve">
+    <value>2016</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_RedTurtle_Title" xml:space="preserve">
+    <value>A Tartaruga Vermelha</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_RedTurtle_Text" xml:space="preserve">
+    <value>Uma coprodução com o diretor holandês Michaël Dudok de Wit: um filme sem diálogos sobre um homem náufrago numa ilha. Ganha um prêmio especial em Cannes e mostra que o estúdio, mesmo parado, ainda sabe abrir as portas para outras vozes.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Return_Date" xml:space="preserve">
+    <value>2017</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Return_Title" xml:space="preserve">
+    <value>Miyazaki volta ao trabalho</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Return_Text" xml:space="preserve">
+    <value>Aos 76 anos, Miyazaki começa um novo longa, e o Ghibli volta a contratar animadores. Segundo Suzuki, ele está fazendo o filme para o neto, como um jeito de contar que o avô está indo para o outro mundo, mas vai deixar esse filme para trás.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_TakahataDies_Date" xml:space="preserve">
+    <value>Abril de 2018</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_TakahataDies_Title" xml:space="preserve">
+    <value>Adeus, Paku-san</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_TakahataDies_Text" xml:space="preserve">
+    <value>Isao Takahata morre em 5 de abril, aos 82 anos. Na despedida realizada no Museu Ghibli, Miyazaki, com a voz embargada, lembra da primeira vez que o viu: numa noite de chuva em 1963, num ponto de ônibus, um rapaz de rosto gentil e inteligente vindo na direção dele. Chama o amigo de Paku-san, o apelido dos tempos de Toei.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Earwig_Date" xml:space="preserve">
+    <value>Dezembro de 2020</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Earwig_Title" xml:space="preserve">
+    <value>Aya e a Bruxa</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Earwig_Text" xml:space="preserve">
+    <value>Goro Miyazaki dirige o primeiro filme do Ghibli feito inteiramente em 3D, baseado no último livro de Diana Wynne Jones, autora de O Castelo Animado. A estreia é na televisão japonesa, no fim do ano, em plena pandemia.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Park_Date" xml:space="preserve">
+    <value>Novembro de 2022</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Park_Title" xml:space="preserve">
+    <value>Abre o Parque Ghibli</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Park_Text" xml:space="preserve">
+    <value>Na província de Aichi, o Parque Ghibli abre dentro do terreno da Expo Mundial de 2005. Não tem brinquedos. Em vez disso, os visitantes entram nos lugares dos filmes, como a casa de Satsuki e Mei e a loja de antiguidades no alto da colina de Sussurros do Coração, construídos em tamanho real.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Heron_Date" xml:space="preserve">
+    <value>Julho de 2023</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Heron_Title" xml:space="preserve">
+    <value>O Menino e a Garça</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Heron_Text" xml:space="preserve">
+    <value>O filme estreia sem trailer, sem imagens divulgadas e com um único pôster, e o público entra na sala sabendo quase nada. Um menino que perdeu a mãe na guerra segue uma garça falante até outro mundo. Em março de 2024, ganha o Oscar de Melhor Animação. Meses antes, a Nippon Television tinha se tornado a controladora do Ghibli, garantindo o futuro do estúdio para além dos fundadores.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="History_Palme_Date" xml:space="preserve">
+    <value>Maio de 2024</value>
+    <comment>Ghibli's History item date</comment>
+  </data>
+  <data name="History_Palme_Title" xml:space="preserve">
+    <value>Uma Palma de Ouro honorária</value>
+    <comment>Ghibli's History item title</comment>
+  </data>
+  <data name="History_Palme_Text" xml:space="preserve">
+    <value>Em Cannes, o Studio Ghibli recebe uma Palma de Ouro honorária, a primeira entregue a um estúdio e não a uma pessoa. Quase quarenta anos depois daquele andar alugado em Kichijoji, o vento que eles queriam soprar na animação chegou ao mundo inteiro.</value>
+    <comment>Ghibli's History item text</comment>
+  </data>
+  <data name="FilmsPageTitle" xml:space="preserve">
+    <value>Filmes</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsIntro" xml:space="preserve">
+    <value>Todos os longas lançados pelo Studio Ghibli, de Nausicaä ao Oscar mais recente. Leia um por um na lista detalhada ou troque para um mural de capas, e ordene por data de lançamento ou pelo que a crítica e o público acharam de cada filme.</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsViewLabel" xml:space="preserve">
+    <value>Exibição</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsViewDetailed" xml:space="preserve">
+    <value>Detalhada</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsViewPosters" xml:space="preserve">
+    <value>Capas</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSortLabel" xml:space="preserve">
+    <value>Ordenar por</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSortRelease" xml:space="preserve">
+    <value>Data de lançamento</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSortCritics" xml:space="preserve">
+    <value>Crítica (Metacritic)</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSortAudience" xml:space="preserve">
+    <value>Público (IMDb)</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSortAscending" xml:space="preserve">
+    <value>Crescente</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSortDescending" xml:space="preserve">
+    <value>Decrescente</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsShowNames" xml:space="preserve">
+    <value>Exibir nomes</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsShowRelated" xml:space="preserve">
+    <value>Exibir filmes dos fundadores fora do estúdio</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSectionGhibli" xml:space="preserve">
+    <value>Filmes do Studio Ghibli</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSectionRelated" xml:space="preserve">
+    <value>Antes e além do Ghibli</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsSectionRelatedIntro" xml:space="preserve">
+    <value>Filmes em que Miyazaki e Takahata trabalharam antes de o estúdio existir. Não são produções do Ghibli, mas muito do que o Ghibli virou começou aqui.</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsDirectedBy" xml:space="preserve">
+    <value>Direção de</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsCriticsLabel" xml:space="preserve">
+    <value>Crítica</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsAudienceLabel" xml:space="preserve">
+    <value>Público</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsNausicaaNote" xml:space="preserve">
+    <value>Feito em 1984 na Topcraft, um ano antes de o Studio Ghibli existir. Tecnicamente não é uma produção do Ghibli, mas o estúdio o considera o começo da sua história.</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="FilmsLoading" xml:space="preserve">
+    <value>Carregando filmes…</value>
+    <comment>Films page</comment>
+  </data>
+  <data name="Film_Nausicaa_Title" xml:space="preserve">
+    <value>Nausicaä do Vale do Vento</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Nausicaa_Synopsis" xml:space="preserve">
+    <value>Mil anos depois de uma guerra que envenenou o planeta, uma jovem princesa tenta entender a floresta tóxica e os insetos gigantes que todo mundo só quer queimar. Um épico ecológico que abriu caminho para o estúdio.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_Laputa_Title" xml:space="preserve">
+    <value>O Castelo no Céu</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Laputa_Synopsis" xml:space="preserve">
+    <value>Pazu, um garoto de uma cidade mineira, vê uma menina descer flutuando do céu, e os dois acabam perseguidos por piratas e soldados que querem a mesma coisa: a ilha voadora de Laputa.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_GraveOfTheFireflies_Title" xml:space="preserve">
+    <value>Túmulo dos Vagalumes</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_GraveOfTheFireflies_Synopsis" xml:space="preserve">
+    <value>Nos últimos meses da guerra, dois irmãos que perderam a casa no bombardeio de Kobe tentam sobreviver sozinhos. Um dos filmes animados mais devastadores já feitos, e também um dos mais delicados.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_MyNeighborTotoro_Title" xml:space="preserve">
+    <value>Meu Amigo Totoro</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_MyNeighborTotoro_Synopsis" xml:space="preserve">
+    <value>Duas irmãs se mudam para o interior com o pai enquanto a mãe se recupera num hospital ali perto, e descobrem que a floresta ao lado da casa é cheia de espíritos. Sem vilão, sem perigo, só a sensação de ser criança no verão.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_KikiDeliveryService_Title" xml:space="preserve">
+    <value>O Serviço de Entregas da Kiki</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_KikiDeliveryService_Synopsis" xml:space="preserve">
+    <value>Aos treze anos, Kiki sai de casa para passar um ano morando sozinha numa cidade à beira-mar, como toda jovem bruxa deve fazer, e abre um serviço de entregas de vassoura. Um filme sobre independência, trabalho e os dias em que a magia simplesmente não aparece.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_OnlyYesterday_Title" xml:space="preserve">
+    <value>Memórias de Ontem</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_OnlyYesterday_Synopsis" xml:space="preserve">
+    <value>Taeko, funcionária de escritório de 27 anos em Tóquio, viaja ao interior para ajudar na colheita do cártamo e é visitada o tempo todo por lembranças de quando tinha dez anos. Tranquilo, adulto e surpreendentemente engraçado.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_PorcoRosso_Title" xml:space="preserve">
+    <value>Porco Rosso: O Último Herói Romântico</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_PorcoRosso_Synopsis" xml:space="preserve">
+    <value>Sobre o Adriático nos anos 1920, um ás da Primeira Guerra que de algum jeito virou porco caça piratas do ar por dinheiro e tenta não pensar no passado. O filme mais descontraído de Miyazaki, cheio de hidroaviões e arrependimentos antigos.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_OceanWaves_Title" xml:space="preserve">
+    <value>Eu Posso Ouvir o Oceano</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_OceanWaves_Synopsis" xml:space="preserve">
+    <value>Um filme para TV feito pela equipe mais jovem do estúdio: um universitário relembra a aluna transferida de Tóquio que virou de cabeça para baixo seu último ano de colégio em Kochi.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_PomPoko_Title" xml:space="preserve">
+    <value>PomPoko: A Grande Batalha dos Guaxinins</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_PomPoko_Synopsis" xml:space="preserve">
+    <value>Os tanukis das colinas de Tama usam todos os truques de transformação que conhecem para impedir que um conjunto habitacional engula a floresta deles. Engraçado, caótico e, no fim, muito triste.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_WhisperOfTheHeart_Title" xml:space="preserve">
+    <value>Sussurros do Coração</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_WhisperOfTheHeart_Synopsis" xml:space="preserve">
+    <value>Shizuku, uma menina que vive lendo, percebe que o mesmo nome aparece nas fichas de todos os livros que pega na biblioteca. Seguir essa pista a leva a uma loja de antiguidades, a uma estatueta de gato e a um garoto que quer fabricar violinos.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_PrincessMononoke_Title" xml:space="preserve">
+    <value>Princesa Mononoke</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_PrincessMononoke_Synopsis" xml:space="preserve">
+    <value>Amaldiçoado depois de defender sua aldeia de um deus javali enfurecido, o jovem príncipe Ashitaka viaja para o oeste e acaba no meio de uma guerra entre uma cidade do ferro e os deuses da floresta. Ninguém ali está simplesmente certo.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_MyNeighborsTheYamadas_Title" xml:space="preserve">
+    <value>Meus Vizinhos, os Yamadas</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_MyNeighborsTheYamadas_Synopsis" xml:space="preserve">
+    <value>Esquetes curtos em aquarela sobre os Yamada, uma família comum que esquece as coisas, briga, perde a filha no shopping e mesmo assim se dá bem. O filme mais gentil de Takahata.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_SpiritedAway_Title" xml:space="preserve">
+    <value>A Viagem de Chihiro</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_SpiritedAway_Synopsis" xml:space="preserve">
+    <value>A caminho da casa nova, Chihiro, de dez anos, e os pais entram sem querer num mundo de espíritos. Os pais viram porcos, e ela precisa trabalhar numa casa de banhos para deuses até encontrar um jeito de voltar.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_TheCatReturns_Title" xml:space="preserve">
+    <value>O Reino dos Gatos</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_TheCatReturns_Synopsis" xml:space="preserve">
+    <value>Haru salva um gato de ser atropelado, e ele é um príncipe. A gratidão do Reino dos Gatos logo vira problema quando decidem que ela deve se casar com ele.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_HowlsMovingCastle_Title" xml:space="preserve">
+    <value>O Castelo Animado</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_HowlsMovingCastle_Synopsis" xml:space="preserve">
+    <value>Sophie, uma jovem chapeleira tímida, é transformada em velhinha pela maldição de uma bruxa e encontra abrigo no castelo ambulante de Howl, um mago vaidoso e famoso, enquanto uma guerra acontece ao fundo.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_TalesFromEarthsea_Title" xml:space="preserve">
+    <value>Contos de Terramar</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_TalesFromEarthsea_Synopsis" xml:space="preserve">
+    <value>Numa terra onde os dragões voltaram a aparecer e a magia está se apagando, o mago Gavião viaja com Arren, um jovem príncipe perturbado que foge de algo que fez.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_Ponyo_Title" xml:space="preserve">
+    <value>Ponyo: Uma Amizade que Veio do Mar</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Ponyo_Synopsis" xml:space="preserve">
+    <value>Uma princesa peixinho foge do mar, conhece Sosuke, de cinco anos, e decide que quer ser humana, o que desequilibra o oceano inteiro. Desenhado quase todo à mão.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_Arrietty_Title" xml:space="preserve">
+    <value>O Mundo dos Pequeninos</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Arrietty_Synopsis" xml:space="preserve">
+    <value>Arrietty faz parte de uma família de pessoas minúsculas que vive embaixo do assoalho de uma casa de campo e pega emprestado o que precisa dos humanos lá de cima. Tudo muda quando um menino doente hospedado na casa a vê.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_FromUpOnPoppyHill_Title" xml:space="preserve">
+    <value>Da Colina Kokuriko</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_FromUpOnPoppyHill_Synopsis" xml:space="preserve">
+    <value>Yokohama, 1963, um ano antes das Olimpíadas. Umi, que hasteia bandeiras de sinalização toda manhã pelo pai perdido no mar, se junta a um grupo de estudantes que luta para salvar o velho prédio dos clubes da demolição.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_TheWindRises_Title" xml:space="preserve">
+    <value>Vidas ao Vento</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_TheWindRises_Synopsis" xml:space="preserve">
+    <value>Uma versão ficcional da vida de Jiro Horikoshi, o engenheiro que sonhava com aviões bonitos e projetou o caça Zero usado na guerra. O filme mais pessoal de Miyazaki.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_TheTaleOfThePrincessKaguya_Title" xml:space="preserve">
+    <value>O Conto da Princesa Kaguya</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_TheTaleOfThePrincessKaguya_Synopsis" xml:space="preserve">
+    <value>Um cortador de bambu encontra uma menina minúscula dentro de um broto brilhante e decide criá-la como princesa da nobreza, queira ela ou não. O último filme de Takahata, desenhado com carvão e aquarela.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_WhenMarnieWasThere_Title" xml:space="preserve">
+    <value>As Memórias de Marnie</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_WhenMarnieWasThere_Synopsis" xml:space="preserve">
+    <value>Anna, uma menina solitária mandada para passar o verão perto do mar, fica amiga de Marnie, uma garota loira e misteriosa que mora na velha mansão do outro lado do pântano.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_TheRedTurtle_Title" xml:space="preserve">
+    <value>A Tartaruga Vermelha</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_TheRedTurtle_Synopsis" xml:space="preserve">
+    <value>Um homem náufrago numa ilha deserta tenta escapar várias vezes, até que uma tartaruga vermelha gigante muda os planos dele. Uma coprodução com o diretor holandês Michaël Dudok de Wit, contada sem uma única palavra.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_EarwigAndTheWitch_Title" xml:space="preserve">
+    <value>Aya e a Bruxa</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_EarwigAndTheWitch_Synopsis" xml:space="preserve">
+    <value>Aya, uma órfã esperta que sempre consegue o que quer, é adotada por uma bruxa que só quer um par de mãos a mais. O primeiro filme do estúdio feito inteiramente em 3D.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_TheBoyAndTheHeron_Title" xml:space="preserve">
+    <value>O Menino e a Garça</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_TheBoyAndTheHeron_Synopsis" xml:space="preserve">
+    <value>Depois de perder a mãe num incêndio durante a guerra, Mahito se muda para o interior, onde uma garça-cinzenta falante insiste que ela ainda está viva e o leva para outro mundo.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_Horus_Title" xml:space="preserve">
+    <value>Horus, o Príncipe do Sol</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Horus_Synopsis" xml:space="preserve">
+    <value>Um menino com uma espada do sol volta à terra do pai para proteger uma vila de pescadores de um demônio do gelo. O primeiro longa de Takahata, feito na Toei com Miyazaki e Yasuo Otsuka.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_PussInBoots_Title" xml:space="preserve">
+    <value>O Gato de Botas</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_PussInBoots_Synopsis" xml:space="preserve">
+    <value>Pero, um gato fugindo das autoridades felinas por ter salvado um rato, ajuda o filho pobre de um moleiro a conquistar uma princesa. Miyazaki animou a famosa perseguição pelos telhados do castelo.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_PandaGoPanda_Title" xml:space="preserve">
+    <value>Panda! Go, Panda!</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_PandaGoPanda_Synopsis" xml:space="preserve">
+    <value>Enquanto a avó está viajando, a pequena Mimiko acolhe um filhote de panda e o pai dele, enorme. Dirigido por Takahata e escrito por Miyazaki, traz as primeiras sementes do Totoro.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_Cagliostro_Title" xml:space="preserve">
+    <value>O Castelo de Cagliostro</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Cagliostro_Synopsis" xml:space="preserve">
+    <value>O ladrão cavalheiro Lupin III segue uma pista de dinheiro falso até um pequeno país europeu e acaba tentando resgatar uma princesa do castelo de um conde. O primeiro longa de Miyazaki.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_ChieTheBrat_Title" xml:space="preserve">
+    <value>Chie, a Pestinha</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_ChieTheBrat_Synopsis" xml:space="preserve">
+    <value>Num bairro operário de Osaka, Chie, de onze anos, toca o restaurante de miúdos grelhados da família enquanto o pai aposta e arruma briga. Takahata no seu jeito mais pé no chão.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_GaucheTheCellist_Title" xml:space="preserve">
+    <value>Gauche, o Violoncelista</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_GaucheTheCellist_Synopsis" xml:space="preserve">
+    <value>Gauche, o violoncelista mais fraco de uma orquestra de cidade pequena, recebe toda noite a visita de animais que, cada um do seu jeito esquisito, o ensinam a tocar. Baseado num conto de Kenji Miyazawa.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="Film_Yanagawa_Title" xml:space="preserve">
+    <value>A História dos Canais de Yanagawa</value>
+    <comment>Film title</comment>
+  </data>
+  <data name="Film_Yanagawa_Synopsis" xml:space="preserve">
+    <value>Um documentário com imagens reais sobre uma cidade de Kyushu que decidiu salvar sua antiga rede de canais. Produzido por Miyazaki com o dinheiro de Nausicaä e dirigido com uma paciência enorme por Takahata.</value>
+    <comment>Film synopsis</comment>
+  </data>
+  <data name="MePageTitle" xml:space="preserve">
+    <value>Quem Sou Eu</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeRole" xml:space="preserve">
+    <value>Desenvolvedor .NET · Full-stack</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeIntro1" xml:space="preserve">
+    <value>Oi, eu sou o João Vitor Ventura, mas quase todo mundo me chama só de Ventura. Sou desenvolvedor .NET de Santa Catarina, com cerca de três anos de experiência criando aplicações web e multiplataforma, principalmente com ASP.NET Core, Blazor e SQL Server.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeIntro2" xml:space="preserve">
+    <value>Antes do código, estudei química num ensino médio técnico e passei um semestre num laboratório trabalhando num projeto de pesquisa. Desde então participei de game jams, dei aula de programação e trabalhei como freelancer, e cada uma dessas fases deixou alguma coisa no meu jeito de trabalhar: paciência para explicar, curiosidade para testar e atenção aos detalhes que fazem um software parecer pronto.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeResumeButton" xml:space="preserve">
+    <value>Currículo</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeContactButton" xml:space="preserve">
+    <value>Fale comigo</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MePathTitle" xml:space="preserve">
+    <value>Minha trajetória</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHowTitle" xml:space="preserve">
+    <value>Como eu trabalho</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHow1Title" xml:space="preserve">
+    <value>Eu explico o que faço</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHow1Text" xml:space="preserve">
+    <value>Um ano dando aula para iniciantes me ensinou a explicar decisões técnicas sem me esconder atrás de jargão. Quem trabalha comigo entende o que foi feito e por quê.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHow2Title" xml:space="preserve">
+    <value>Eu fico para o longo prazo</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHow2Text" xml:space="preserve">
+    <value>A maior parte do meu trabalho como freelancer vem de um contrato longo, mais de mil horas no mesmo sistema. Sei o que significa manter um código, não só escrevê-lo.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHow3Title" xml:space="preserve">
+    <value>Eu testo antes de confiar</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeHow3Text" xml:space="preserve">
+    <value>Testes unitários e de integração contra bancos de dados reais, e um bom tempo lendo log de produção. Ter começado num laboratório provavelmente ajuda.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="MeStackLink" xml:space="preserve">
+    <value>Ver meu stack tecnológico</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackPageTitle" xml:space="preserve">
+    <value>Stack Tecnológico</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackIntro" xml:space="preserve">
+    <value>As ferramentas com que eu trabalho, separadas pelo quanto eu realmente as conheço. Prefiro deixar clara a diferença entre o que já coloquei em produção e o que ainda estou aprendendo.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackLevelProduction" xml:space="preserve">
+    <value>Usado em produção</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackLevelProjects" xml:space="preserve">
+    <value>Projetos e ensino</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackLevelStudying" xml:space="preserve">
+    <value>Estudando</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupBackend" xml:space="preserve">
+    <value>Back-end</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupFrontend" xml:space="preserve">
+    <value>Front-end</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupData" xml:space="preserve">
+    <value>Bancos de dados</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupCloud" xml:space="preserve">
+    <value>Nuvem e infraestrutura</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupErp" xml:space="preserve">
+    <value>ERP e integrações</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupMobile" xml:space="preserve">
+    <value>Mobile e machine learning</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupQuality" xml:space="preserve">
+    <value>Testes e arquitetura</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackGroupTools" xml:space="preserve">
+    <value>Ferramentas</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSiteTitle" xml:space="preserve">
+    <value>Como este site foi feito</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSiteIntro" xml:space="preserve">
+    <value>Esta homenagem é um projeto feito à mão, desenhado por mim no Figma e construído sem templates. Por baixo dos panos:</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSite1" xml:space="preserve">
+    <value>Blazor Server no .NET 8, com renderização interativa no servidor e prerender.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSite2" xml:space="preserve">
+    <value>Tailwind CSS 4 com tema próprio para a paleta e as fontes do Ghibli.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSite3" xml:space="preserve">
+    <value>Inglês e português com arquivos .resx e a localização do ASP.NET Core, escolhidos por cookie.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSite4" xml:space="preserve">
+    <value>Temas claro, escuro e do sistema via JS interop e localStorage, aplicados antes da primeira pintura.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSite5" xml:space="preserve">
+    <value>Capas da Studio Ghibli API e notas da OMDb API, com HttpClients tipados e cache em memória.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="StackSite6" xml:space="preserve">
+    <value>Todos os textos, incluindo a história do estúdio e as sinopses dos filmes, escritos para este site.</value>
+    <comment>Who am I / Tech stack</comment>
+  </data>
+  <data name="Me_Chemistry_Date" xml:space="preserve">
+    <value>2019 a 2022</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Chemistry_Title" xml:space="preserve">
+    <value>Primeiro, técnico em química</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Chemistry_Text" xml:space="preserve">
+    <value>Estudei química no IFSC, o Instituto Federal de Santa Catarina. No último ano entrei no Sustembalagem, um projeto de pesquisa que produzia papel reciclado resistente à água para embalagens de sabão em pó doadas a comunidades em situação de vulnerabilidade. Levamos a resistência do papel de menos de um segundo para mais de uma hora.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_FirstCode_Date" xml:space="preserve">
+    <value>Junho de 2023</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_FirstCode_Title" xml:space="preserve">
+    <value>A primeira linha de código</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_FirstCode_Text" xml:space="preserve">
+    <value>Meu primeiro programa foi o Dark Dungeon Quest, um RPG por turnos em Python que rodava no terminal com arte ASCII. Logo depois vieram jogos no GameMaker, incluindo um de plataforma feito em menos de uma semana para uma game jam.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_College_Date" xml:space="preserve">
+    <value>2023 a 2025</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_College_Title" xml:space="preserve">
+    <value>Análise e Desenvolvimento de Sistemas</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_College_Text" xml:space="preserve">
+    <value>Me formei em Análise e Desenvolvimento de Sistemas no Senac Santa Catarina, trabalhando com C#, Java, Python e JavaScript, bancos relacionais e não relacionais e deploy na nuvem.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Paper_Date" xml:space="preserve">
+    <value>Abril de 2024</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Paper_Title" xml:space="preserve">
+    <value>Um artigo publicado</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Paper_Text" xml:space="preserve">
+    <value>Fui coautor de um artigo que propõe rotas de ônibus em tempo real integradas ao Google Maps para comunidades rurais, publicado na revista REASE.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Teacher_Date" xml:space="preserve">
+    <value>2024 a 2025</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Teacher_Title" xml:space="preserve">
+    <value>Professor de programação no Senac</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Teacher_Text" xml:space="preserve">
+    <value>Durante um ano ensinei pessoas sem nenhuma base em tecnologia a construir para a web: ASP.NET Core, React, Blazor, SQL Server e Azure, num curso full-stack e em outro de front-end. No fim do curso, meus alunos estavam hospedando os próprios bancos de dados na nuvem.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Lume_Date" xml:space="preserve">
+    <value>2025</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Lume_Title" xml:space="preserve">
+    <value>Lume</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Lume_Text" xml:space="preserve">
+    <value>Um projeto da faculdade criado por mim: um app de recomendação de filmes com cliente em .NET MAUI, API em ASP.NET Core e clustering com ML.NET, com MySQL hospedado no Azure.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Freelance_Date" xml:space="preserve">
+    <value>2025 até hoje</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Freelance_Title" xml:space="preserve">
+    <value>Desenvolvedor freelancer</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Freelance_Text" xml:space="preserve">
+    <value>Desde março de 2025 trabalho como freelancer, principalmente num contrato longo com uma empresa de e-commerce e ERP: aplicações em ASP.NET Core e Blazor, SQL Server, módulos customizados de Odoo, integrações com Shopify e transportadoras, e também a parte menos glamorosa, fazer deploy em Windows Server e consertar o que quebra em produção.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Now_Date" xml:space="preserve">
+    <value>Agora</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Now_Title" xml:space="preserve">
+    <value>Ainda aprendendo</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="Me_Now_Text" xml:space="preserve">
+    <value>Hoje estou construindo um jogo de adivinhação sobre história com Next.js e TypeScript em cima de uma API em ASP.NET Core, e finalmente terminando esta homenagem ao Studio Ghibli.</value>
+    <comment>Who am I path</comment>
+  </data>
+  <data name="FiguresPageTitle" xml:space="preserve">
+    <value>Figuras Notáveis</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresIntro" xml:space="preserve">
+    <value>O Studio Ghibli costuma ser contado como a história de dois diretores, mas muita gente fez dele o que ele é: os fundadores, os artistas que passaram décadas dentro do estúdio e amigos, mentores e parceiros de fora dele.</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresGroupFounders" xml:space="preserve">
+    <value>Os fundadores</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresGroupStudio" xml:space="preserve">
+    <value>Dentro do estúdio</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresGroupOutside" xml:space="preserve">
+    <value>Fora do estúdio</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresLifespan" xml:space="preserve">
+    <value>{0} a {1}</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresBorn" xml:space="preserve">
+    <value>Nascido em {0}</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="FiguresKnownFor" xml:space="preserve">
+    <value>Conhecido por</value>
+    <comment>Notable figures page</comment>
+  </data>
+  <data name="Figure_HayaoMiyazaki_Role" xml:space="preserve">
+    <value>Diretor, cofundador</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_HayaoMiyazaki_Bio" xml:space="preserve">
+    <value>O diretor em quem a maioria das pessoas pensa quando ouve o nome Ghibli. Começou como intervalador na Toei em 1963 e dirigiu doze longas, levando para quase todos uma obsessão pelo voo, heroínas jovens e fortes e o mundo natural. Já anunciou a aposentadoria mais de uma vez, e voltou todas as vezes.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_HayaoMiyazaki_Works" xml:space="preserve">
+    <value>Nausicaä do Vale do Vento;Meu Amigo Totoro;Princesa Mononoke;A Viagem de Chihiro;O Menino e a Garça</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_IsaoTakahata_Role" xml:space="preserve">
+    <value>Diretor, produtor, cofundador</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_IsaoTakahata_Bio" xml:space="preserve">
+    <value>Cinco anos mais velho que Miyazaki, e quem mostrou a ele que animação podia ser coisa séria. Leitor de poesia francesa que levava anos para terminar cada filme, nunca repetiu um estilo visual: realismo em Túmulo dos Vagalumes, tirinha nos Yamada, rascunho a carvão em Kaguya. Também produziu Nausicaä e O Castelo no Céu.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_IsaoTakahata_Works" xml:space="preserve">
+    <value>Heidi;Túmulo dos Vagalumes;Memórias de Ontem;PomPoko;O Conto da Princesa Kaguya</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_ToshioSuzuki_Role" xml:space="preserve">
+    <value>Produtor, cofundador</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_ToshioSuzuki_Bio" xml:space="preserve">
+    <value>Editor da revista Animage que não aceitou o não de nenhum dos dois diretores e acabou virando o produtor que manteve o estúdio vivo. Encontrou jeitos de financiar filmes que ninguém queria bancar, vendeu Totoro e Túmulo dos Vagalumes numa sessão dupla e comandou o estúdio como presidente depois que ele ficou independente.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_ToshioSuzuki_Works" xml:space="preserve">
+    <value>Produtor da maioria dos filmes do Ghibli;Animage</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_YasuyoshiTokuma_Role" xml:space="preserve">
+    <value>Editor, investidor do estúdio</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_YasuyoshiTokuma_Bio" xml:space="preserve">
+    <value>Fundador da editora Tokuma Shoten, empresário com faro de apostador que também comandou o estúdio de cinema Daiei. Confiava em Suzuki, e Suzuki confiava em Miyazaki e Takahata: o dinheiro dele tornou possível o filme de Nausicaä e, um ano depois, um estúdio. Ficou por trás do Ghibli como produtor executivo até morrer.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_YasuyoshiTokuma_Works" xml:space="preserve">
+    <value>Tokuma Shoten;Produtor executivo dos filmes do Ghibli</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_YoshifumiKondo_Role" xml:space="preserve">
+    <value>Animador, diretor</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_YoshifumiKondo_Bio" xml:space="preserve">
+    <value>Para muita gente no estúdio, o sucessor natural. Foi designer de personagens de Anne de Green Gables, de Takahata, diretor de animação de Túmulo dos Vagalumes e Memórias de Ontem, e dirigiu Sussurros do Coração em 1995. Morreu em 1998, aos 47 anos, e este continua sendo o único filme que dirigiu.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_YoshifumiKondo_Works" xml:space="preserve">
+    <value>Sussurros do Coração;Túmulo dos Vagalumes;Memórias de Ontem</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_MichiyoYasuda_Role" xml:space="preserve">
+    <value>Designer de cores</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_MichiyoYasuda_Bio" xml:space="preserve">
+    <value>Conheceu Takahata e Miyazaki na Toei e escolheu as cores dos filmes deles por mais de três décadas, de Nausicaä a Vidas ao Vento. Os verdes suaves de Totoro e a noite iluminada da casa de banhos de A Viagem de Chihiro passaram pelas mãos dela.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_MichiyoYasuda_Works" xml:space="preserve">
+    <value>Nausicaä do Vale do Vento;Meu Amigo Totoro;A Viagem de Chihiro;Vidas ao Vento</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_KazuoOga_Role" xml:space="preserve">
+    <value>Diretor de arte, pintor de cenários</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_KazuoOga_Bio" xml:space="preserve">
+    <value>O pintor por trás das florestas de que todo mundo se lembra. Como diretor de arte de Meu Amigo Totoro, deu ao interior do Japão seu retrato mais famoso, e depois comandou os cenários de Memórias de Ontem, PomPoko e Princesa Mononoke.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_KazuoOga_Works" xml:space="preserve">
+    <value>Meu Amigo Totoro;Memórias de Ontem;PomPoko;Princesa Mononoke</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_GoroMiyazaki_Role" xml:space="preserve">
+    <value>Diretor, paisagista</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_GoroMiyazaki_Bio" xml:space="preserve">
+    <value>O filho de Hayao se formou como paisagista e chegou ao estúdio para dirigir o Museu Ghibli. Depois dirigiu Contos de Terramar, contra a vontade do pai, seguido de Da Colina Kokuriko e Aya e a Bruxa, e liderou a criação do Parque Ghibli.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_GoroMiyazaki_Works" xml:space="preserve">
+    <value>Contos de Terramar;Da Colina Kokuriko;Aya e a Bruxa;Parque Ghibli</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_HiromasaYonebayashi_Role" xml:space="preserve">
+    <value>Animador, diretor</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_HiromasaYonebayashi_Bio" xml:space="preserve">
+    <value>Um animador que cresceu dentro do estúdio e dirigiu O Mundo dos Pequeninos e As Memórias de Marnie. Quando o Ghibli pausou a produção em 2014, saiu com o produtor Yoshiaki Nishimura para ajudar a fundar o Studio Ponoc.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_HiromasaYonebayashi_Works" xml:space="preserve">
+    <value>O Mundo dos Pequeninos;As Memórias de Marnie;Studio Ponoc</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_YasuoOtsuka_Role" xml:space="preserve">
+    <value>Animador, mentor</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_YasuoOtsuka_Bio" xml:space="preserve">
+    <value>Um dos primeiros animadores da Toei e professor dos dois fundadores. Apaixonado por jipes e qualquer coisa com motor, foi diretor de animação do primeiro longa de Takahata e do primeiro de Miyazaki, e passou os últimos anos formando novos animadores.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_YasuoOtsuka_Works" xml:space="preserve">
+    <value>Horus, o Príncipe do Sol;O Castelo de Cagliostro;Lupin III</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_PaulGrimault_Role" xml:space="preserve">
+    <value>Diretor de animação francês</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_PaulGrimault_Bio" xml:space="preserve">
+    <value>O filme dele, A Pastora e o Limpador de Chaminés, mostrou a um jovem Takahata que animação podia ser poética e política ao mesmo tempo. Décadas depois, o Ghibli ajudou a levar a versão finalizada, O Rei e o Pássaro, aos cinemas japoneses.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_PaulGrimault_Works" xml:space="preserve">
+    <value>O Rei e o Pássaro</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_JoeHisaishi_Role" xml:space="preserve">
+    <value>Compositor</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_JoeHisaishi_Bio" xml:space="preserve">
+    <value>Conheceu Miyazaki em Nausicaä e compôs a trilha de todos os longas dele desde então, além de Kaguya, de Takahata. É difícil pensar em Totoro, Mononoke ou A Viagem de Chihiro sem ouvir a música dele.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_JoeHisaishi_Works" xml:space="preserve">
+    <value>Meu Amigo Totoro;Princesa Mononoke;A Viagem de Chihiro;O Castelo Animado</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_JohnLasseter_Role" xml:space="preserve">
+    <value>Animador, cofundador da Pixar</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_JohnLasseter_Bio" xml:space="preserve">
+    <value>Amigo de Miyazaki desde o começo dos anos oitenta e um dos maiores defensores do Ghibli nos Estados Unidos. Supervisionou a versão em inglês de A Viagem de Chihiro, o filme que apresentou o estúdio a boa parte do público ocidental.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_JohnLasseter_Works" xml:space="preserve">
+    <value>Toy Story;Versão em inglês de A Viagem de Chihiro</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_HideakiAnno_Role" xml:space="preserve">
+    <value>Animador, diretor</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_HideakiAnno_Bio" xml:space="preserve">
+    <value>Como jovem animador, desenhou a cena do Guerreiro Deus em Nausicaä, e depois criou Neon Genesis Evangelion. Anos mais tarde, Miyazaki o escolheu para dar voz a Jiro, o engenheiro no centro de Vidas ao Vento.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_HideakiAnno_Works" xml:space="preserve">
+    <value>Neon Genesis Evangelion;Nausicaä do Vale do Vento;Vidas ao Vento</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_MichaelDudokDeWit_Role" xml:space="preserve">
+    <value>Diretor de animação</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_MichaelDudokDeWit_Bio" xml:space="preserve">
+    <value>Animador holandês cujo curta Pai e Filha, vencedor do Oscar, chamou a atenção do estúdio. O Ghibli o convidou para fazer com eles seu primeiro longa, A Tartaruga Vermelha, um filme sem nenhuma fala.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_MichaelDudokDeWit_Works" xml:space="preserve">
+    <value>Pai e Filha;A Tartaruga Vermelha</value>
+    <comment>Figure works, separated by ;</comment>
+  </data>
+  <data name="Figure_DianaWynneJones_Role" xml:space="preserve">
+    <value>Escritora</value>
+    <comment>Figure role</comment>
+  </data>
+  <data name="Figure_DianaWynneJones_Bio" xml:space="preserve">
+    <value>A autora britânica do romance que virou O Castelo Animado. O último livro dela, Aya e a Bruxa, virou o primeiro filme do estúdio feito inteiramente em 3D, dirigido por Goro Miyazaki.</value>
+    <comment>Figure bio</comment>
+  </data>
+  <data name="Figure_DianaWynneJones_Works" xml:space="preserve">
+    <value>O Castelo Animado;Aya e a Bruxa</value>
+    <comment>Figure works, separated by ;</comment>
   </data>
 </root>

@@ -1,0 +1,151 @@
+@page "/ghibli"
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+
+<PageTitle>@L["HistoryPageTitle"]</PageTitle>
+
+<section class="text-ghibli-black dark:text-ghibli-white">
+    <!-- Cabeçalho: mesma linha superior e tipografia das seções da Home -->
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <div class="flex flex-col items-center gap-8 px-8 pb-20">
+        <h1 class="font-ghibli-lemon-milk text-center text-2xl md:text-4xl">@L["HistoryPageTitle"]</h1>
+        <div class="font-montserrat text-md flex w-full flex-col gap-4 md:w-[60vw] lg:w-[45vw] lg:text-xl">
+            <p>@L["HistoryIntro1"]</p>
+            <p>@L["HistoryIntro2"]</p>
+        </div>
+    </div>
+
+    <!-- Linha do tempo: linha vertical à esquerda, eras como marcos grandes e eventos como marcos pequenos -->
+    <ol class="border-ghibli-black mr-8 ml-8 border-l-[3px] md:mr-16 md:ml-16 lg:mr-[10vw] lg:ml-[10vw] dark:border-ghibli-white">
+        @foreach (var era in Eras)
+        {
+            <li class="relative pt-4 pb-10 pl-8 md:pl-12">
+                <span class="bg-ghibli-black ring-ghibli-white absolute top-4 -left-[15.5px] h-7 w-7 rounded-full ring-4 dark:bg-ghibli-white dark:ring-ghibli-black"></span>
+                <h2 class="font-ghibli-lemon-milk text-xl md:text-3xl">@L[$"History_{era}_Title"]</h2>
+                <p class="font-ghibli-lemon-milk-light text-ghibli-grey mt-1 text-base md:text-lg">@L[$"History_{era}_Range"]</p>
+            </li>
+
+            @foreach (var item in Items.Where(i => i.Era == era))
+            {
+                <li class="relative pb-12 pl-8 md:pl-12">
+                    <span class="@MarkerClass(item.Kind) absolute top-1.5 -left-[9.5px] h-4 w-4 rounded-full ring-4 ring-ghibli-white dark:ring-ghibli-black"></span>
+
+                    <div class="flex flex-col gap-5 md:flex-row md:items-start md:gap-8">
+                        <div class="flex max-w-3xl flex-col gap-2">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="font-ghibli-lemon-milk text-ghibli-sky text-sm md:text-base">@L[$"History_{item.Key}_Date"]</span>
+                                @if (item.Kind != TimelineKind.Event)
+                                {
+                                    <span class="font-ghibli-lemon-milk bg-ghibli-sky text-ghibli-white rounded-full px-2.5 py-0.5 text-xs dark:text-ghibli-black">
+                                        @(item.Kind == TimelineKind.Film ? L["HistoryBadgeFilm"] : L["HistoryBadgeFigure"])
+                                    </span>
+                                }
+                            </div>
+                            <h3 class="font-ghibli-lemon-milk text-lg md:text-2xl">@L[$"History_{item.Key}_Title"]</h3>
+                            <p class="font-montserrat text-md leading-relaxed lg:text-lg">@L[$"History_{item.Key}_Text"]</p>
+                        </div>
+
+                        @if (item.Image is not null)
+                        {
+                            <img src="@item.Image"
+                                 alt="@L[$"History_{item.Key}_Title"]"
+                                 class="@ImageClass(item.Image) w-40 shrink-0 rounded-xl md:w-48"
+                                 loading="lazy"
+                                 draggable="false" />
+                        }
+                    </div>
+                </li>
+            }
+        }
+    </ol>
+
+    <div class="border-ghibli-black flex items-end justify-center border-b-[3px] py-14 dark:border-ghibli-white">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+</section>
+
+<Footer />
+
+@code {
+    // Os textos ficam nos resx (History_<Key>_Date/Title/Text), aqui só a ordem, a era, o tipo e a imagem de cada marco
+    private enum TimelineKind { Event, Film, Figure }
+
+    private record TimelineItem(string Key, string Era, TimelineKind Kind, string? Image);
+
+    private static readonly string[] Eras = { "Era1", "Era2", "Era3", "Era4", "Era5", "Era6", "Era7" };
+
+    private static readonly TimelineItem[] Items =
+    {
+        new("TakahataBorn", "Era1", TimelineKind.Event, "images/isao_takahata.jpg"),
+        new("MiyazakiBorn", "Era1", TimelineKind.Event, "images/hayao_miyazaki.jpeg"),
+        new("Okayama", "Era1", TimelineKind.Event, null),
+        new("Mother", "Era1", TimelineKind.Event, null),
+        new("Hakujaden", "Era1", TimelineKind.Event, null),
+        new("TakahataToei", "Era1", TimelineKind.Event, null),
+        new("MiyazakiToei", "Era1", TimelineKind.Event, null),
+        new("Union", "Era1", TimelineKind.Event, null),
+        new("Otsuka", "Era1", TimelineKind.Figure, null),
+        new("Horus", "Era1", TimelineKind.Film, null),
+        new("Pero", "Era1", TimelineKind.Event, null),
+        new("Pippi", "Era2", TimelineKind.Event, null),
+        new("Panda", "Era2", TimelineKind.Event, null),
+        new("Heidi", "Era2", TimelineKind.Event, null),
+        new("Marco", "Era2", TimelineKind.Event, null),
+        new("Conan", "Era2", TimelineKind.Event, null),
+        new("Suzuki", "Era2", TimelineKind.Figure, "images/toshio_suzuki.jpg"),
+        new("Cagliostro", "Era2", TimelineKind.Film, null),
+        new("Chie", "Era2", TimelineKind.Event, null),
+        new("NausicaaManga", "Era3", TimelineKind.Event, null),
+        new("Tokuma", "Era3", TimelineKind.Figure, "images/yasuyoshi_tokuma.webp"),
+        new("NausicaaFilm", "Era3", TimelineKind.Film, null),
+        new("Founding", "Era3", TimelineKind.Event, "images/Studio_Ghibli.svg"),
+        new("Laputa", "Era4", TimelineKind.Film, null),
+        new("Yanagawa", "Era4", TimelineKind.Event, null),
+        new("Totoro", "Era4", TimelineKind.Film, "images/my_neighbor_totoro.jpg"),
+        new("Kiki", "Era4", TimelineKind.Film, null),
+        new("OnlyYesterday", "Era4", TimelineKind.Film, null),
+        new("Porco", "Era4", TimelineKind.Film, null),
+        new("OceanWaves", "Era4", TimelineKind.Film, null),
+        new("PomPoko", "Era4", TimelineKind.Film, null),
+        new("Whisper", "Era4", TimelineKind.Film, null),
+        new("Disney", "Era4", TimelineKind.Event, null),
+        new("Mononoke", "Era4", TimelineKind.Film, "images/princess_mononoke.webp"),
+        new("Yamadas", "Era5", TimelineKind.Film, null),
+        new("SpiritedAway", "Era5", TimelineKind.Film, "images/spirited_away.jpg"),
+        new("Museum", "Era5", TimelineKind.Event, null),
+        new("CatReturns", "Era5", TimelineKind.Film, null),
+        new("Howl", "Era5", TimelineKind.Film, null),
+        new("Independence", "Era5", TimelineKind.Event, null),
+        new("Earthsea", "Era5", TimelineKind.Film, null),
+        new("Ponyo", "Era5", TimelineKind.Film, null),
+        new("Arrietty", "Era6", TimelineKind.Film, null),
+        new("PoppyHill", "Era6", TimelineKind.Film, null),
+        new("WindRises", "Era6", TimelineKind.Film, null),
+        new("Kaguya", "Era6", TimelineKind.Film, null),
+        new("Marnie", "Era6", TimelineKind.Film, null),
+        new("RedTurtle", "Era6", TimelineKind.Film, null),
+        new("Return", "Era7", TimelineKind.Event, null),
+        new("TakahataDies", "Era7", TimelineKind.Event, "images/isao_takahata.jpg"),
+        new("Earwig", "Era7", TimelineKind.Film, null),
+        new("Park", "Era7", TimelineKind.Event, null),
+        new("Heron", "Era7", TimelineKind.Film, "images/the_boy_and_the_heron.jpg"),
+        new("Palme", "Era7", TimelineKind.Event, null),
+    };
+
+    // Filme: marco azul. Figura importante: marco vazado. Evento: marco na cor do texto.
+    private static string MarkerClass(TimelineKind kind) => kind switch
+    {
+        TimelineKind.Film => "bg-ghibli-sky",
+        TimelineKind.Figure => "bg-ghibli-white border-[3px] border-ghibli-sky dark:bg-ghibli-black",
+        _ => "bg-ghibli-black dark:bg-ghibli-white"
+    };
+
+    // O logo em SVG é preto e não pode ser cortado, então fica inteiro e inverte no tema escuro
+    private static string ImageClass(string image) => image.EndsWith(".svg")
+        ? "object-contain p-4 dark:invert"
+        : "aspect-[3/4] object-cover dark:brightness-90";
+}

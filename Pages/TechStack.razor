@@ -1,0 +1,167 @@
+@page "/me/techstack"
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+
+<PageTitle>@L["StackPageTitle"]</PageTitle>
+
+<section class="text-ghibli-black pb-20 dark:text-ghibli-white">
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <div class="flex flex-col items-center gap-8 px-8 pb-10">
+        <h1 class="font-ghibli-lemon-milk text-center text-2xl md:text-4xl">@L["StackPageTitle"]</h1>
+        <p class="font-montserrat text-md w-full md:w-[60vw] lg:w-[45vw] lg:text-xl">@L["StackIntro"]</p>
+    </div>
+
+    <!-- Legenda dos níveis -->
+    <div class="font-montserrat flex flex-wrap justify-center gap-x-8 gap-y-3 px-8 pb-14 text-sm md:text-base">
+        @foreach (var level in Enum.GetValues<SkillLevel>())
+        {
+            <span class="flex items-center gap-2">
+                <span class="@DotClass(level) h-3.5 w-3.5 rounded-full"></span>
+                @L[LevelKey(level)]
+            </span>
+        }
+    </div>
+
+    <!-- Grupos de tecnologias -->
+    <div class="mx-auto grid max-w-6xl gap-6 px-8 md:grid-cols-2">
+        @foreach (var group in Groups)
+        {
+            <div class="flex flex-col gap-4 rounded-2xl p-6 shadow-lg dark:ring-1 dark:ring-ghibli-white/15">
+                <h2 class="font-ghibli-lemon-milk text-xl md:text-2xl">@L[group.TitleKey]</h2>
+                <ul class="flex flex-wrap gap-2">
+                    @foreach (var skill in group.Skills)
+                    {
+                        <li class="@ChipClass(skill.Level) font-montserrat flex items-center gap-2 rounded-full px-3 py-1.5 text-sm" title="@L[LevelKey(skill.Level)]">
+                            <span class="@DotClass(skill.Level) h-2.5 w-2.5 shrink-0 rounded-full"></span>
+                            @skill.Name
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+
+    <!-- Como este site foi feito (âncora usada pelo botão da Home) -->
+    <div id="site" class="flex scroll-mt-10 flex-col items-center pt-24 pb-10">
+        <div class="border-ghibli-black mb-14 w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white"></div>
+        <h2 class="font-ghibli-lemon-milk text-center text-2xl md:text-3xl">@L["StackSiteTitle"]</h2>
+    </div>
+    <div class="font-montserrat text-md mx-auto flex max-w-3xl flex-col gap-4 px-8 lg:text-lg">
+        <p>@L["StackSiteIntro"]</p>
+        <ul class="flex flex-col gap-3">
+            @for (int i = 1; i <= 6; i++)
+            {
+                <li class="border-ghibli-sky border-l-[3px] pl-4 leading-relaxed">@L[$"StackSite{i}"]</li>
+            }
+        </ul>
+    </div>
+</section>
+
+<Footer />
+
+@code {
+    private enum SkillLevel { Production, Projects, Studying }
+
+    private record Skill(string Name, SkillLevel Level);
+    private record SkillGroup(string TitleKey, Skill[] Skills);
+
+    // Níveis honestos: Production = já foi para produção em trabalho real; Projects = projetos pessoais, acadêmicos ou aulas; Studying = estudo
+    private static readonly SkillGroup[] Groups =
+    {
+        new("StackGroupBackend", new Skill[]
+        {
+            new("C#", SkillLevel.Production),
+            new("ASP.NET Core", SkillLevel.Production),
+            new("Entity Framework Core", SkillLevel.Production),
+            new("REST APIs", SkillLevel.Production),
+            new("Python (Odoo)", SkillLevel.Production),
+            new("Node.js / Express", SkillLevel.Projects),
+            new("Java / Spring Boot", SkillLevel.Projects),
+            new("Dapper", SkillLevel.Studying),
+        }),
+        new("StackGroupFrontend", new Skill[]
+        {
+            new("Blazor", SkillLevel.Production),
+            new("Razor / ASP.NET MVC", SkillLevel.Production),
+            new("HTML", SkillLevel.Production),
+            new("CSS", SkillLevel.Production),
+            new("JavaScript", SkillLevel.Production),
+            new("Bootstrap", SkillLevel.Production),
+            new("React", SkillLevel.Projects),
+            new("Next.js", SkillLevel.Projects),
+            new("TypeScript", SkillLevel.Projects),
+            new("Tailwind CSS", SkillLevel.Projects),
+        }),
+        new("StackGroupData", new Skill[]
+        {
+            new("SQL Server", SkillLevel.Production),
+            new("MySQL", SkillLevel.Production),
+            new("PostgreSQL", SkillLevel.Projects),
+            new("MongoDB", SkillLevel.Studying),
+        }),
+        new("StackGroupCloud", new Skill[]
+        {
+            new("Azure App Service", SkillLevel.Production),
+            new("Azure SQL", SkillLevel.Production),
+            new("Windows Server / IIS", SkillLevel.Production),
+            new("Vercel", SkillLevel.Projects),
+            new("AWS", SkillLevel.Projects),
+            new("Docker", SkillLevel.Studying),
+        }),
+        new("StackGroupErp", new Skill[]
+        {
+            new("Odoo 19", SkillLevel.Production),
+            new("Shopify API", SkillLevel.Production),
+            new("UPS API", SkillLevel.Production),
+            new("PdfPig / MigraDoc", SkillLevel.Production),
+        }),
+        new("StackGroupMobile", new Skill[]
+        {
+            new(".NET MAUI", SkillLevel.Projects),
+            new("ML.NET", SkillLevel.Projects),
+        }),
+        new("StackGroupQuality", new Skill[]
+        {
+            new("xUnit", SkillLevel.Production),
+            new("NSubstitute", SkillLevel.Production),
+            new("FluentAssertions", SkillLevel.Production),
+            new("Bogus", SkillLevel.Production),
+            new("MVC", SkillLevel.Production),
+            new("Clean Architecture", SkillLevel.Projects),
+            new("MVVM", SkillLevel.Projects),
+            new("Vertical Slice", SkillLevel.Projects),
+        }),
+        new("StackGroupTools", new Skill[]
+        {
+            new("Git / GitHub", SkillLevel.Production),
+            new("Visual Studio", SkillLevel.Production),
+            new("Claude Code", SkillLevel.Production),
+            new("Figma", SkillLevel.Projects),
+            new("GameMaker / Aseprite", SkillLevel.Projects),
+        }),
+    };
+
+    private static string LevelKey(SkillLevel level) => level switch
+    {
+        SkillLevel.Production => "StackLevelProduction",
+        SkillLevel.Projects => "StackLevelProjects",
+        _ => "StackLevelStudying"
+    };
+
+    private static string DotClass(SkillLevel level) => level switch
+    {
+        SkillLevel.Production => "bg-ghibli-sky",
+        SkillLevel.Projects => "border-2 border-ghibli-sky",
+        _ => "bg-ghibli-grey/50"
+    };
+
+    private static string ChipClass(SkillLevel level) => level switch
+    {
+        SkillLevel.Production => "bg-ghibli-sky/15",
+        SkillLevel.Projects => "ring-1 ring-ghibli-sky/50",
+        _ => "ring-1 ring-ghibli-grey/40 text-ghibli-grey dark:text-ghibli-white/70"
+    };
+}

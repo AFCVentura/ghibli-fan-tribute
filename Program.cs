@@ -1,4 +1,4 @@
-using BlazorServerFirstProject.Components;
+﻿using BlazorServerFirstProject.Components;
 using BlazorServerFirstProject.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
@@ -37,7 +37,19 @@ public class Program
         });
         builder.Services.AddScoped<CultureService>();
         builder.Services.AddScoped<ThemeService>();
-        builder.Services.AddScoped<ImdbApiService>();
+        builder.Services.AddMemoryCache();
+        // HttpClient gerenciado pela fábrica (em vez de new HttpClient() no service), já apontando pra OMDb
+        builder.Services.AddHttpClient<ImdbApiService>(client =>
+        {
+            client.BaseAddress = new Uri("https://www.omdbapi.com/");
+            client.Timeout = TimeSpan.FromSeconds(10);
+        });
+        builder.Services.AddHttpClient<GhibliApiService>(client =>
+        {
+            client.BaseAddress = new Uri("https://ghibliapi.vercel.app/");
+            client.Timeout = TimeSpan.FromSeconds(10);
+        });
+        builder.Services.AddScoped<FilmCatalogService>();
 
         var app = builder.Build();
 
