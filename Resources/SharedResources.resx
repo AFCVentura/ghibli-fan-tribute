@@ -1873,4 +1873,16 @@
     <value>Howl's Moving Castle;Earwig and the Witch</value>
     <comment>Figure works, separated by ;</comment>
   </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Page Not Found</value>
+    <comment>Not found page</comment>
+  </data>
+  <data name="NotFoundText" xml:space="preserve">
+    <value>The page you are looking for does not exist or has not been built yet.</value>
+    <comment>Not found page</comment>
+  </data>
+  <data name="NotFoundButton" xml:space="preserve">
+    <value>Back to Home</value>
+    <comment>Not found page</comment>
+  </data>
 </root>

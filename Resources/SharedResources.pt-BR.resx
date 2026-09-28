@@ -1830,4 +1830,16 @@ Suas obras mesclam temas humanos, natureza, fantasia e crítica social, ressoand
     <value>O Castelo Animado;Aya e a Bruxa</value>
     <comment>Figure works, separated by ;</comment>
   </data>
+  <data name="NotFoundTitle" xml:space="preserve">
+    <value>Página Não Encontrada</value>
+    <comment>Not found page</comment>
+  </data>
+  <data name="NotFoundText" xml:space="preserve">
+    <value>A página que você procura não existe ou ainda não foi construída.</value>
+    <comment>Not found page</comment>
+  </data>
+  <data name="NotFoundButton" xml:space="preserve">
+    <value>Voltar ao Início</value>
+    <comment>Not found page</comment>
+  </data>
 </root>
