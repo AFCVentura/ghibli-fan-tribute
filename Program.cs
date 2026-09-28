@@ -69,8 +69,11 @@ public class Program
 
         app.UseHttpsRedirection();
 
-        app.UseStaticFiles();
         app.UseAntiforgery();
+
+        // Arquivos de wwwroot com impressão digital no nome (@Assets no App.razor): o navegador guarda em cache
+        // pra sempre e baixa de novo assim que o conteúdo muda, sem ficar preso numa versão antiga
+        app.MapStaticAssets();
 
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode();

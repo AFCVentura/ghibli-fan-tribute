@@ -18,8 +18,8 @@
             } catch (e) { }
         })();
     </script>
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="@Assets["css/theme.css"]" />
+    <link rel="stylesheet" href="@Assets["css/app.css"]" />
     <link rel="icon" type="image/png" href="favicon.svg" />
     <HeadOutlet />
 </head>
@@ -36,6 +36,9 @@
 
     <!-- O teu Router / Routes -->
     <Routes @rendermode="new InteractiveServerRenderMode()" />
+
+    <!-- Scroll fluido da rodinha; carrega antes do Blazor pra já envolver o history.pushState que o router usa -->
+    <script src="@Assets["js/smooth-scroll.js"]"></script>
 
     <!-- autostart=false pra iniciar o Blazor manualmente e saber quando o circuito ficou pronto -->
     <script src="_framework/blazor.web.js" autostart="false"></script>
