@@ -30,4 +30,10 @@
     </Compile>
   </ItemGroup>
 
+  <!-- Regera o wwwroot/css/theme.css (Tailwind) a cada build, pra classe nova num .razor nunca ficar sem CSS.
+       Só roda com o node_modules instalado (npm install); sem ele, usa o theme.css já commitado. -->
+  <Target Name="BuildTailwind" BeforeTargets="BeforeBuild" Condition="Exists('node_modules')">
+    <Exec Command="npm run build" />
+  </Target>
+
 </Project>
