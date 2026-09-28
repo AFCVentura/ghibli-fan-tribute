@@ -1,6 +1,8 @@
 @using Microsoft.Extensions.Localization
 @using System.Globalization
+@using BlazorServerFirstProject.Services
 @inject IStringLocalizer<SharedResources> L
+@inject AnalyticsService Analytics
 <!DOCTYPE html>
 <html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
 
@@ -32,6 +34,11 @@
     <link rel="icon" type="image/png" href="favicon.svg" />
     <!-- Mesmo modo do Routes: sem isso o <PageTitle> das páginas interativas não atualiza o título da aba ao navegar -->
     <HeadOutlet @rendermode="PageRenderMode" />
+    @if (Analytics.Enabled)
+    {
+        <!-- Cloudflare Web Analytics: sem cookie; "spa" conta também as trocas de página feitas pelo Blazor sem recarregar -->
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="@AnalyticsBeaconConfig"></script>
+    }
 </head>
 
 <body class="bg-ghibli-white dark:bg-ghibli-black">
@@ -82,4 +89,7 @@
     // rate limit e o antiforgery funcionarem) ficam estáticas (SSR); o resto do site segue interativo
     private IComponentRenderMode? PageRenderMode =>
         HttpContext.AcceptsInteractiveRouting() ? InteractiveServer : null;
+
+    private string AnalyticsBeaconConfig =>
+        System.Text.Json.JsonSerializer.Serialize(new { token = Analytics.Token, spa = true });
 }

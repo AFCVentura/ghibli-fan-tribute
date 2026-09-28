@@ -1,9 +1,12 @@
 @page "/privacy"
 @* Texto jurídico longo: as duas versões ficam aqui mesmo, e não no .resx, pra ficar fácil de revisar e manter
-   as duas iguais. Ao mudar o que o site coleta (analytics, outro serviço), atualizar esta página e a data. *@
+   as duas iguais. Ao mudar o que o site coleta (outro serviço, outra hospedagem), atualizar esta página e a data.
+   Os trechos sobre o Cloudflare Web Analytics só aparecem quando ele está ativo (token configurado, fora do Development). *@
 @using System.Globalization
 @using Microsoft.Extensions.Localization
+@using BlazorServerFirstProject.Services
 @inject IStringLocalizer<SharedResources> L
+@inject AnalyticsService Analytics
 
 <PageTitle>@L["PrivacyPageTitle"]</PageTitle>
 
@@ -19,7 +22,7 @@
         {
             <p class="text-ghibli-grey text-center text-sm dark:text-neutral-400">Última atualização: 28 de setembro de 2026</p>
 
-            <p>Este é um site de fã, pessoal e sem fins comerciais, feito por João Vitor Ventura. Ele não tem cadastro de usuários, analytics nem anúncios. Esta política explica os poucos dados que o site trata e por quê, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).</p>
+            <p>Este é um site de fã, pessoal e sem fins comerciais, feito por João Vitor Ventura. Ele não tem cadastro de usuários@(Analytics.Enabled ? " nem anúncios, e as estatísticas de visita não usam cookies" : ", analytics nem anúncios"). Esta política explica os poucos dados que o site trata e por quê, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).</p>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">1. Quem é o responsável</h2>
@@ -33,25 +36,29 @@
                     <li><strong>Endereço IP:</strong> ao enviar o formulário, ele é usado para limitar a quantidade de mensagens por visitante (fica só na memória do servidor, por até 10 minutos) e é repassado à Cloudflare na verificação contra robôs.</li>
                     <li><strong>Verificação contra robôs:</strong> o Cloudflare Turnstile, carregado apenas na página de contato, analisa sinais técnicos do navegador para diferenciar pessoas de robôs.</li>
                     <li><strong>Registros técnicos:</strong> o servidor pode registrar erros para manter o site funcionando. Esses registros não incluem o conteúdo da sua mensagem.</li>
+                    @if (Analytics.Enabled)
+                    {
+                        <li><strong>Estatísticas de visita:</strong> o Cloudflare Web Analytics conta as visitas e registra a página vista, o site de onde você veio, o país, o navegador e o tipo de dispositivo. Ele não usa cookies, não identifica você e não acompanha você em outros sites.</li>
+                    }
                 </ul>
-                <p>Nada além disso é coletado. Navegar pelas outras páginas não exige nenhum dado pessoal.</p>
+                <p>Nada além disso é coletado. Navegar pelas páginas não exige que você informe nenhum dado pessoal.</p>
             </div>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">3. Para que os dados são usados</h2>
-                <p>Somente para ler e responder a sua mensagem e para proteger o formulário contra spam e abuso. Os dados não são vendidos, não são usados para marketing e você não entra em nenhuma lista de e-mails.</p>
+                <p>Somente para ler e responder a sua mensagem, para proteger o formulário contra spam e abuso@(Analytics.Enabled ? " e para saber, em números gerais, quantas pessoas visitam o site e quais páginas leem" : ""). Os dados não são vendidos, não são usados para marketing e você não entra em nenhuma lista de e-mails.</p>
             </div>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">4. Base legal</h2>
-                <p>Responder ao contato que você iniciou (art. 7º, V, da LGPD) e o legítimo interesse em manter o site seguro contra abuso (art. 7º, IX).</p>
+                <p>Responder ao contato que você iniciou (art. 7º, V, da LGPD) e o legítimo interesse em manter o site seguro contra abuso@(Analytics.Enabled ? " e em entender, de forma agregada, como ele é usado" : "") (art. 7º, IX).</p>
             </div>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">5. Com quem os dados são compartilhados</h2>
                 <ul class="@ListClass">
                     <li><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="@LinkClass">Resend</a>: entrega a mensagem do formulário na minha caixa de e-mail.</li>
-                    <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="@LinkClass">Cloudflare</a>: verificação contra robôs (Turnstile).</li>
+                    <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="@LinkClass">Cloudflare</a>: verificação contra robôs (Turnstile)@(Analytics.Enabled ? " e estatísticas de visita (Web Analytics)" : "").</li>
                     <li>O provedor de hospedagem que roda o servidor do site.</li>
                     <li>Algumas capas de filmes são carregadas direto dos servidores de imagem do TMDB e do IMDb (Amazon), que recebem o seu endereço IP como qualquer site que você visita.</li>
                 </ul>
@@ -93,7 +100,7 @@
         {
             <p class="text-ghibli-grey text-center text-sm dark:text-neutral-400">Last updated: September 28, 2026</p>
 
-            <p>This is a personal, non-commercial fan site made by João Vitor Ventura. It has no user accounts, analytics or ads. This policy explains the little data the site handles and why, following Brazil's General Data Protection Law (LGPD, Law 13,709/2018).</p>
+            <p>This is a personal, non-commercial fan site made by João Vitor Ventura. It has no user accounts@(Analytics.Enabled ? " or ads, and its visit statistics don't use cookies" : ", analytics or ads"). This policy explains the little data the site handles and why, following Brazil's General Data Protection Law (LGPD, Law 13,709/2018).</p>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">1. Who is responsible</h2>
@@ -107,25 +114,29 @@
                     <li><strong>IP address:</strong> when you submit the form, it is used to limit the number of messages per visitor (kept only in the server's memory, for up to 10 minutes) and passed to Cloudflare for the anti-bot check.</li>
                     <li><strong>Anti-bot check:</strong> Cloudflare Turnstile, loaded only on the contact page, analyzes technical browser signals to tell people from bots.</li>
                     <li><strong>Technical logs:</strong> the server may record errors to keep the site working. These records don't include the content of your message.</li>
+                    @if (Analytics.Enabled)
+                    {
+                        <li><strong>Visit statistics:</strong> Cloudflare Web Analytics counts visits and records the page viewed, the site you came from, country, browser and device type. It doesn't use cookies, doesn't identify you and doesn't follow you across other sites.</li>
+                    }
                 </ul>
-                <p>Nothing else is collected. Browsing the other pages doesn't require any personal data.</p>
+                <p>Nothing else is collected. Browsing the pages doesn't require you to give any personal data.</p>
             </div>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">3. How the data is used</h2>
-                <p>Only to read and reply to your message and to protect the form against spam and abuse. The data is not sold, not used for marketing, and you are not added to any mailing list.</p>
+                <p>Only to read and reply to your message, to protect the form against spam and abuse@(Analytics.Enabled ? " and to know, in general numbers, how many people visit the site and which pages they read" : ""). The data is not sold, not used for marketing, and you are not added to any mailing list.</p>
             </div>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">4. Legal basis</h2>
-                <p>Replying to the contact you started (LGPD, article 7, V) and the legitimate interest in keeping the site safe from abuse (article 7, IX).</p>
+                <p>Replying to the contact you started (LGPD, article 7, V) and the legitimate interest in keeping the site safe from abuse@(Analytics.Enabled ? " and in understanding, in aggregate, how it is used" : "") (article 7, IX).</p>
             </div>
 
             <div class="flex flex-col gap-3">
                 <h2 class="@HeadingClass">5. Who the data is shared with</h2>
                 <ul class="@ListClass">
                     <li><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="@LinkClass">Resend</a>: delivers the form message to my inbox.</li>
-                    <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="@LinkClass">Cloudflare</a>: anti-bot check (Turnstile).</li>
+                    <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="@LinkClass">Cloudflare</a>: anti-bot check (Turnstile)@(Analytics.Enabled ? " and visit statistics (Web Analytics)" : "").</li>
                     <li>The hosting provider that runs the site's server.</li>
                     <li>Some film posters are loaded directly from the TMDB and IMDb (Amazon) image servers, which receive your IP address like any website you visit.</li>
                 </ul>

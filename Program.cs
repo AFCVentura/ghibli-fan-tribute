@@ -52,6 +52,7 @@ public class Program
             client.Timeout = TimeSpan.FromSeconds(10);
         });
         builder.Services.AddScoped<FilmCatalogService>();
+        builder.Services.AddSingleton<AnalyticsService>();
 
         // Formulário de contato: Turnstile (anti-robô da Cloudflare) e envio de e-mail pela API do Resend
         builder.Services.AddHttpClient<TurnstileService>(client =>
