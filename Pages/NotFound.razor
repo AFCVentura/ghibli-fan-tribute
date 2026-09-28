@@ -1,4 +1,6 @@
 @page "/not-found"
+@* O Router do .NET 10 renderiza a NotFoundPage sem o DefaultLayout, então o layout precisa vir daqui. Sem ele o menu some e o MainLayout nunca tira a tela de loading. *@
+@layout BlazorServerFirstProject.Components.Layout.MainLayout
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<SharedResources> L
 
