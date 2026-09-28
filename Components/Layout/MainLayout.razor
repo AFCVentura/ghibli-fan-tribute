@@ -11,7 +11,17 @@
 <!-- Aqui é o código do Layout, não voga pro modo dark -->
 <div class="page">
     <div class="">
-        <NavMenu />
+        @* Página estática (SSR, como o /contact) não tem circuito, então o menu vira uma "ilha" interativa
+           sozinho, pra tema, idioma e menu sanduíche continuarem funcionando. Nas páginas interativas o layout
+           inteiro já é interativo, e o menu vem junto. *@
+        @if (AssignedRenderMode is null)
+        {
+            <NavMenu @rendermode="InteractiveServer" />
+        }
+        else
+        {
+            <NavMenu />
+        }
     </div>
 
     <main class="bg-ghibli-white min-h-screen dark:bg-ghibli-black">

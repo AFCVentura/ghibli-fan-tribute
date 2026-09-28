@@ -21,21 +21,26 @@
     <link rel="stylesheet" href="@Assets["css/theme.css"]" />
     <link rel="stylesheet" href="@Assets["css/app.css"]" />
     <link rel="icon" type="image/png" href="favicon.svg" />
-    <HeadOutlet />
+    <!-- Mesmo modo do Routes: sem isso o <PageTitle> das páginas interativas não atualiza o título da aba ao navegar -->
+    <HeadOutlet @rendermode="PageRenderMode" />
 </head>
 
 <body class="bg-ghibli-white dark:bg-ghibli-black">
     <!-- LOADING: sobreposição fixa que cobre a página enquanto o circuito do Blazor conecta.
-         Antes era um bloco comum no fluxo da página e nada o removia, então ficava parado no topo pra sempre. -->
+         Antes era um bloco comum no fluxo da página e nada o removia, então ficava parado no topo pra sempre.
+         Página estática (como /contact) não tem circuito pra esperar, então não mostra o loading. -->
+    @if (PageRenderMode is not null)
+    {
     <div id="blazor-loading" class="bg-ghibli-white text-ghibli-black fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-500 dark:bg-ghibli-black dark:text-ghibli-white">
         <div class="text-center">
             <img src="favicon.svg" class="mx-auto w-28 animate-bounce" alt="logo" />
             <p class="font-montserrat mt-4 text-lg">@L["LoadingText"]</p>
         </div>
     </div>
+    }
 
-    <!-- O teu Router / Routes -->
-    <Routes @rendermode="new InteractiveServerRenderMode()" />
+    <!-- O teu Router / Routes. Interativo em todas as páginas, menos nas marcadas com [ExcludeFromInteractiveRouting] -->
+    <Routes @rendermode="PageRenderMode" />
 
     <!-- Scroll fluido da rodinha; carrega antes do Blazor pra já envolver o history.pushState que o router usa -->
     <script src="@Assets["js/smooth-scroll.js"]"></script>
@@ -59,3 +64,13 @@
 </body>
 
 </html>
+
+@code {
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    // Páginas com [ExcludeFromInteractiveRouting] (como o /contact, que precisa de POST HTTP de verdade pro
+    // rate limit e o antiforgery funcionarem) ficam estáticas (SSR); o resto do site segue interativo
+    private IComponentRenderMode? PageRenderMode =>
+        HttpContext.AcceptsInteractiveRouting() ? InteractiveServer : null;
+}

@@ -1885,4 +1885,112 @@
     <value>Back to Home</value>
     <comment>Not found page</comment>
   </data>
+  <data name="ContactPageTitle" xml:space="preserve">
+    <value>Contact</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactIntro" xml:space="preserve">
+    <value>Have a project in mind, a job opening or just want to talk about Ghibli? Send me a message here or reach me through one of the links.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubject" xml:space="preserve">
+    <value>Subject</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubjectFreelance" xml:space="preserve">
+    <value>Freelance project</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubjectJob" xml:space="preserve">
+    <value>Job opportunity</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubjectOther" xml:space="preserve">
+    <value>Just saying hi</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactMessage" xml:space="preserve">
+    <value>Message</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSend" xml:space="preserve">
+    <value>Send Message</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSending" xml:space="preserve">
+    <value>Sending...</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSentTitle" xml:space="preserve">
+    <value>Message sent!</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSentText" xml:space="preserve">
+    <value>Thanks for reaching out. I'll reply to the email you provided as soon as I can.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSendAnother" xml:space="preserve">
+    <value>Send Another Message</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactOrReachMe" xml:space="preserve">
+    <value>Or reach me directly</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactCopy" xml:space="preserve">
+    <value>Copy</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactCopied" xml:space="preserve">
+    <value>Copied!</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactNameRequired" xml:space="preserve">
+    <value>Please enter your name.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactNameTooLong" xml:space="preserve">
+    <value>Your name can have at most 100 characters.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactEmailRequired" xml:space="preserve">
+    <value>Please enter your email.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactEmailInvalid" xml:space="preserve">
+    <value>This email doesn't look valid.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactMessageRequired" xml:space="preserve">
+    <value>Please write a message.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactMessageTooLong" xml:space="preserve">
+    <value>Your message can have at most 2,000 characters.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactTooMany" xml:space="preserve">
+    <value>You've sent several messages in a short time. Please try again in a few minutes.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactCaptchaFailed" xml:space="preserve">
+    <value>We couldn't confirm you're not a robot. Wait for the check to finish and try again.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSendFailed" xml:space="preserve">
+    <value>Something went wrong sending your message. Please try again or reach me through one of the links.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactExpired" xml:space="preserve">
+    <value>This page has expired. Please send your message again.</value>
+    <comment>Contact page</comment>
+  </data>
 </root>

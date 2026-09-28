@@ -1842,4 +1842,112 @@ Suas obras mesclam temas humanos, natureza, fantasia e crítica social, ressoand
     <value>Voltar ao Início</value>
     <comment>Not found page</comment>
   </data>
+  <data name="ContactPageTitle" xml:space="preserve">
+    <value>Contato</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactIntro" xml:space="preserve">
+    <value>Tem um projeto em mente, uma vaga ou só quer conversar sobre Ghibli? Me mande uma mensagem por aqui ou fale comigo por um dos links.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Nome</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>E-mail</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubject" xml:space="preserve">
+    <value>Assunto</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubjectFreelance" xml:space="preserve">
+    <value>Projeto freelance</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubjectJob" xml:space="preserve">
+    <value>Oportunidade de emprego</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSubjectOther" xml:space="preserve">
+    <value>Só dizer oi</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactMessage" xml:space="preserve">
+    <value>Mensagem</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSend" xml:space="preserve">
+    <value>Enviar Mensagem</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSending" xml:space="preserve">
+    <value>Enviando...</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSentTitle" xml:space="preserve">
+    <value>Mensagem enviada!</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSentText" xml:space="preserve">
+    <value>Obrigado pelo contato. Vou responder no e-mail que você informou assim que puder.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSendAnother" xml:space="preserve">
+    <value>Enviar Outra Mensagem</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactOrReachMe" xml:space="preserve">
+    <value>Ou fale comigo direto</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactCopy" xml:space="preserve">
+    <value>Copiar</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactCopied" xml:space="preserve">
+    <value>Copiado!</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactNameRequired" xml:space="preserve">
+    <value>Informe seu nome.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactNameTooLong" xml:space="preserve">
+    <value>O nome pode ter no máximo 100 caracteres.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactEmailRequired" xml:space="preserve">
+    <value>Informe seu e-mail.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactEmailInvalid" xml:space="preserve">
+    <value>Esse e-mail não parece válido.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactMessageRequired" xml:space="preserve">
+    <value>Escreva uma mensagem.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactMessageTooLong" xml:space="preserve">
+    <value>A mensagem pode ter no máximo 2.000 caracteres.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactTooMany" xml:space="preserve">
+    <value>Você enviou várias mensagens em pouco tempo. Tente de novo daqui a alguns minutos.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactCaptchaFailed" xml:space="preserve">
+    <value>Não deu pra confirmar que você não é um robô. Espere a verificação terminar e tente de novo.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactSendFailed" xml:space="preserve">
+    <value>Algo deu errado no envio. Tente de novo ou fale comigo por um dos links.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ContactExpired" xml:space="preserve">
+    <value>Esta página expirou. Envie sua mensagem de novo.</value>
+    <comment>Contact page</comment>
+  </data>
 </root>

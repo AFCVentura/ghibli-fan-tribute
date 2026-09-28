@@ -1,0 +1,10 @@
+@* Mensagem de erro de um campo de formulário; não renderiza nada quando não há erro *@
+@if (!string.IsNullOrEmpty(Message))
+{
+    <p class="font-montserrat text-sm text-red-700 dark:text-red-300">@Message</p>
+}
+
+@code {
+    [Parameter]
+    public string? Message { get; set; }
+}
