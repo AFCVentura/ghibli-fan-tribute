@@ -11,11 +11,20 @@
     <!-- Aplica o tema salvo antes da primeira pintura, pra tela de carregamento e o prerender já nascerem no tema certo -->
     <script>
         (function () {
-            try {
-                var theme = localStorage.getItem('theme');
-                var dark = theme === 'dark' || ((!theme || theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-                document.documentElement.classList.toggle('dark', dark);
-            } catch (e) { }
+            function syncTheme() {
+                try {
+                    var theme = localStorage.getItem('theme');
+                    var dark = theme === 'dark' || ((!theme || theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    if (document.documentElement.classList.contains('dark') !== dark)
+                        document.documentElement.classList.toggle('dark', dark);
+                } catch (e) { }
+            }
+            syncTheme();
+
+            // A navegação aprimorada do Blazor (ex.: "Enviar Outra Mensagem" no /contact) copia pro <html> os
+            // atributos que o servidor manda, e o servidor não sabe o tema (fica no localStorage), então a classe
+            // "dark" sumia. O observador devolve a classe antes da próxima pintura, sem piscar.
+            new MutationObserver(syncTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
         })();
     </script>
     <link rel="stylesheet" href="@Assets["css/theme.css"]" />
