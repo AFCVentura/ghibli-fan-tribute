@@ -15,6 +15,7 @@
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-neutral-100: oklch(97% 0 none);
+    --color-neutral-400: oklch(70.8% 0 none);
     --color-neutral-500: oklch(55.6% 0 none);
     --color-neutral-600: oklch(43.9% 0 none);
     --color-black: #000;
@@ -619,6 +620,9 @@
   .scroll-mt-10 {
     scroll-margin-top: calc(var(--spacing) * 10);
   }
+  .list-disc {
+    list-style-type: disc;
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1020,6 +1024,9 @@
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
   }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
   }
@@ -1043,6 +1050,9 @@
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
+  }
+  .pl-6 {
+    padding-left: calc(var(--spacing) * 6);
   }
   .pl-8 {
     padding-left: calc(var(--spacing) * 8);
@@ -1314,6 +1324,9 @@
     }
     .hover\:text-ghibli-sky:hover {
       color: var(--color-ghibli-sky);
+    }
+    .hover\:text-ghibli-sky-hover:hover {
+      color: var(--color-ghibli-sky-hover);
     }
     .hover\:text-ghibli-white:hover {
       color: var(--color-ghibli-white);
@@ -1719,6 +1732,9 @@
   }
   .dark\:text-imdb-star-dark:where(.dark, .dark *) {
     color: var(--color-imdb-star-dark);
+  }
+  .dark\:text-neutral-400:where(.dark, .dark *) {
+    color: var(--color-neutral-400);
   }
   .dark\:text-red-300:where(.dark, .dark *) {
     color: var(--color-red-300);

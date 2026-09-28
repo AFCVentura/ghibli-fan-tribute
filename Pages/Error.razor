@@ -1,36 +1,35 @@
-﻿@page "/Error"
+@page "/Error"
+@* Página do UseExceptionHandler (só em produção; no Development aparece a página de detalhes do ASP.NET).
+   Fica estática (SSR): quando ela aparece, o servidor pode estar com problema, e não dá pra depender do circuito. *@
+@attribute [ExcludeFromInteractiveRouting]
 @using System.Diagnostics
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
 
-<PageTitle>Error</PageTitle>
+<PageTitle>@L["ErrorTitle"]</PageTitle>
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<section class="text-ghibli-black flex min-h-[calc(100dvh-72px)] flex-col items-center justify-center gap-8 px-8 pt-20 pb-20 text-center dark:text-ghibli-white">
+    <img src="images/totoro.png" alt="" class="w-20 md:w-24 dark:invert" draggable="false" />
+    <h1 class="font-ghibli-lemon-milk text-2xl md:text-4xl">@L["ErrorTitle"]</h1>
+    <p class="font-montserrat max-w-xl text-base lg:text-lg">@L["ErrorText"]</p>
+    <a href="/" class="@ButtonClass">@L["NotFoundButton"]</a>
+    @if (!string.IsNullOrEmpty(RequestId))
+    {
+        <p class="font-montserrat text-ghibli-grey text-xs">@L["ErrorRequestId"] <code>@RequestId</code></p>
+    }
+</section>
 
-@if (ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@RequestId</code>
-    </p>
-}
+<Footer />
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
-
-@code{
+@code {
     [CascadingParameter]
     private HttpContext? HttpContext { get; set; }
 
+    // Código que aparece nos logs do servidor; se alguém relatar o erro, dá pra achar a requisição exata
     private string? RequestId { get; set; }
-    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
     protected override void OnInitialized() =>
         RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
+
+    private const string ButtonClass = "font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:hover:bg-ghibli-black dark:hover:text-ghibli-white";
 }

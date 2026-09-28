@@ -281,19 +281,13 @@ Suas obras mesclam temas humanos, natureza, fantasia e crítica social, ressoand
     <value>API do Studio Ghibli</value>
   </data>
   <data name="FooterDisclaimerPart5" xml:space="preserve">
-    <value>, que não é afiliada ao Studio Ghibli. Nem esse site nem a API reivindicam quaisquer direitos à propriedade intelectual do Studio Ghibli.</value>
+    <value>, que não é afiliada ao Studio Ghibli. As notas vêm da OMDb e algumas capas do TMDB. Nem este site nem esses serviços reivindicam quaisquer direitos à propriedade intelectual do Studio Ghibli.</value>
   </data>
   <data name="FooterCopyrightText" xml:space="preserve">
-    <value>© 2025 João Vitor Ventura.</value>
-  </data>
-  <data name="FooterCopyrightButton" xml:space="preserve">
-    <value>Copyright</value>
+    <value>© {0} João Vitor Ventura. Nomes, personagens e imagens dos filmes pertencem ao Studio Ghibli.</value>
   </data>
   <data name="FooterPrivacyPolicyButton" xml:space="preserve">
     <value>Política de Privacidade</value>
-  </data>
-  <data name="FooterCookiesButton" xml:space="preserve">
-    <value>Cookies</value>
   </data>
   <data name="ResumePath" xml:space="preserve">
     <value>files/JoaoVitorVenturaResumePortugues.pdf</value>
@@ -1948,6 +1942,26 @@ Suas obras mesclam temas humanos, natureza, fantasia e crítica social, ressoand
   </data>
   <data name="ContactExpired" xml:space="preserve">
     <value>Esta página expirou. Envie sua mensagem de novo.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Algo Deu Errado</value>
+    <comment>Error page</comment>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Aconteceu um erro inesperado no servidor. Tente de novo daqui a pouco.</value>
+    <comment>Error page</comment>
+  </data>
+  <data name="ErrorRequestId" xml:space="preserve">
+    <value>Código do erro:</value>
+    <comment>Error page</comment>
+  </data>
+  <data name="PrivacyPageTitle" xml:space="preserve">
+    <value>Política de Privacidade</value>
+    <comment>Privacy policy page</comment>
+  </data>
+  <data name="ContactPrivacyNote" xml:space="preserve">
+    <value>Seus dados só são usados pra responder sua mensagem. Mais na</value>
     <comment>Contact page</comment>
   </data>
 </root>

@@ -318,23 +318,15 @@
     <comment>FOOTER</comment>
   </data>
   <data name="FooterDisclaimerPart5" xml:space="preserve">
-    <value>, which is not affiliated with Studio Ghibli. Neither this site nor the API claims any rights to Studio Ghibli’s intellectual property. </value>
+    <value>, which is not affiliated with Studio Ghibli. Ratings come from OMDb and some posters from TMDB. Neither this site nor these services claim any rights to Studio Ghibli’s intellectual property.</value>
     <comment>FOOTER</comment>
   </data>
   <data name="FooterCopyrightText" xml:space="preserve">
-    <value>© 2025 João Vitor Ventura.</value>
-    <comment>FOOTER</comment>
-  </data>
-  <data name="FooterCopyrightButton" xml:space="preserve">
-    <value>Copyright</value>
+    <value>© {0} João Vitor Ventura. Film names, characters and images belong to Studio Ghibli.</value>
     <comment>FOOTER</comment>
   </data>
   <data name="FooterPrivacyPolicyButton" xml:space="preserve">
     <value>Privacy Policy</value>
-    <comment>FOOTER</comment>
-  </data>
-  <data name="FooterCookiesButton" xml:space="preserve">
-    <value>Cookies</value>
     <comment>FOOTER</comment>
   </data>
   <data name="ResumePath" xml:space="preserve">
@@ -1991,6 +1983,26 @@
   </data>
   <data name="ContactExpired" xml:space="preserve">
     <value>This page has expired. Please send your message again.</value>
+    <comment>Contact page</comment>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Something Went Wrong</value>
+    <comment>Error page</comment>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>An unexpected error happened on the server. Please try again in a few moments.</value>
+    <comment>Error page</comment>
+  </data>
+  <data name="ErrorRequestId" xml:space="preserve">
+    <value>Error code:</value>
+    <comment>Error page</comment>
+  </data>
+  <data name="PrivacyPageTitle" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment>Privacy policy page</comment>
+  </data>
+  <data name="ContactPrivacyNote" xml:space="preserve">
+    <value>Your details are only used to reply to your message. More in the</value>
     <comment>Contact page</comment>
   </data>
 </root>

@@ -36,19 +36,9 @@
                 @L["FooterDisclaimerPart1"] <a target="_blank" href="https://jventura.dev" rel="noopener noreferrer" class="text-ghibli-white inline cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">@L["FooterDisclaimerPart2"]</a>@L["FooterDisclaimerPart3"]<a target="_blank" href="https://ghibliapi.vercel.app/" rel="noopener noreferrer" class="text-ghibli-white inline cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">@L["FooterDisclaimerPart4"]</a>@L["FooterDisclaimerPart5"]
             </h4>
             <p class="text-xs">
-                <NavLink class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
-                    @L["FooterCopyrightButton"]
-                </NavLink>
-                / 
-                <NavLink class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
-                    @L["FooterPrivacyPolicyButton"]
-                </NavLink> 
-                / 
-                <NavLink class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">
-                    @L["FooterCookiesButton"]
-                </NavLink>
+                <NavLink href="/privacy" class="text-ghibli-white cursor-pointer underline transition-colors duration-300 hover:text-ghibli-black active:text-ghibli-black dark:text-ghibli-black dark:hover:text-ghibli-white dark:active:text-ghibli-white">@L["FooterPrivacyPolicyButton"]</NavLink>
             </p>
-            <h5 class="text-xs"> @L["FooterCopyrightText"]</h5>
+            <h5 class="text-xs">@L["FooterCopyrightText", DateTime.Now.Year]</h5>
         </div>
     </div>
 </footer>
