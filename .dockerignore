@@ -1,0 +1,17 @@
+# Gerados localmente ou só do ambiente de desenvolvimento
+bin/
+obj/
+node_modules/
+.vs/
+*.user
+
+# Controle de versão e CI
+.git/
+.github/
+.gitignore
+
+# Prints do README e o próprio Docker
+/*.png
+README.md
+Dockerfile
+.dockerignore
