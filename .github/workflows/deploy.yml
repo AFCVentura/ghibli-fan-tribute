@@ -63,15 +63,16 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      # Troca a imagem do app (gera uma revisão nova) e garante o ingress na 8080, a porta do .NET no container
+      # Primeiro garante o ingress na 8080 (a porta do .NET no container), depois troca a imagem.
+      # Nessa ordem a revisão nova já nasce verificando a porta certa; ao contrário, ela fica presa em "Activating".
       - name: Atualizar o Container App
         run: |
           az config set extension.use_dynamic_install=yes_without_prompt
-          az containerapp update \
-            --name "$CONTAINER_APP" \
-            --resource-group "$RESOURCE_GROUP" \
-            --image "$IMAGE:${{ github.sha }}"
           az containerapp ingress update \
             --name "$CONTAINER_APP" \
             --resource-group "$RESOURCE_GROUP" \
             --target-port 8080
+          az containerapp update \
+            --name "$CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --image "$IMAGE:${{ github.sha }}"
