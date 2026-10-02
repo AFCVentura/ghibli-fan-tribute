@@ -1243,7 +1243,7 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,csharp,node
 
 # Saída da extensão de Tailwind do Visual Studio (o site usa wwwroot/css/theme.css, gerado pelo npm run watch)
-Themes/theme.output.css
+src/GhibliTribute/Themes/theme.output.css
 
 # Regras do Copilot só pra máquina local (o resto da .github/, como os workflows, vai pro Git)
 .github/copilot-instructions.md

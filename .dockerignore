@@ -1,9 +1,12 @@
 # Gerados localmente ou só do ambiente de desenvolvimento
-bin/
-obj/
-node_modules/
+**/bin/
+**/obj/
+**/node_modules/
 .vs/
-*.user
+**/*.user
+
+# Testes não entram na imagem do site
+tests/
 
 # Controle de versão e CI
 .git/

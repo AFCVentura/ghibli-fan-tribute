@@ -1,0 +1,86 @@
+@page "/me"
+@using GhibliTribute.Components.SVGs
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> L
+
+<PageTitle>@L["MePageTitle"]</PageTitle>
+
+<section class="text-ghibli-black pb-20 dark:text-ghibli-white">
+    <div class="flex items-start justify-center py-14">
+        <div class="border-ghibli-black w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white">
+        </div>
+    </div>
+    <h1 class="font-ghibli-lemon-milk pb-14 text-center text-2xl md:text-4xl">@L["MePageTitle"]</h1>
+
+    <!-- Apresentação: foto + texto + links -->
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-10 px-8 md:flex-row md:items-start md:gap-14">
+        <img src="images/joao_vitor_ventura.jpg" alt="João Vitor Ventura"
+             class="aspect-[4/5] w-60 shrink-0 rounded-2xl object-cover shadow-lg md:w-72 lg:w-80 dark:brightness-90"
+             draggable="false" />
+        <div class="flex flex-col gap-5">
+            <div>
+                <p class="font-ghibli-lemon-milk text-2xl md:text-3xl">João Vitor Ventura</p>
+                <p class="font-ghibli-lemon-milk-light text-ghibli-sky text-lg md:text-xl">@L["MeRole"]</p>
+            </div>
+            <p class="font-montserrat text-md leading-relaxed lg:text-lg">@L["MeIntro1"]</p>
+            <p class="font-montserrat text-md leading-relaxed lg:text-lg">@L["MeIntro2"]</p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="@L["ResumePath"]" target="_blank" rel="noopener noreferrer" class="@ButtonClass">@L["MeResumeButton"]</a>
+                <NavLink href="contact" class="@OutlineButtonClass">@L["MeContactButton"]</NavLink>
+                <div class="flex items-center gap-3">
+                    <a href="https://github.com/AFCVentura" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><GitHubIcon CssClass="@IconClass" /></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-ventura-b2777626a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedinIcon CssClass="@IconClass" /></a>
+                    <a href="https://jventura.dev" target="_blank" rel="noopener noreferrer" aria-label="Portfolio"><WebsiteIcon CssClass="@IconClass" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trajetória, no mesmo formato de linha do tempo da página de história -->
+    <div class="flex flex-col items-center pt-24 pb-10">
+        <div class="border-ghibli-black mb-14 w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white"></div>
+        <h2 class="font-ghibli-lemon-milk text-center text-2xl md:text-3xl">@L["MePathTitle"]</h2>
+    </div>
+    <ol class="border-ghibli-black mx-8 max-w-4xl border-l-[3px] md:mx-16 lg:mx-auto dark:border-ghibli-white">
+        @foreach (var step in PathSteps)
+        {
+            <li class="relative pb-12 pl-8 md:pl-12">
+                <span class="@(step == "Now" ? "bg-ghibli-sky" : "bg-ghibli-black dark:bg-ghibli-white") ring-ghibli-white absolute top-1.5 -left-[9.5px] h-4 w-4 rounded-full ring-4 dark:ring-ghibli-black"></span>
+                <span class="font-ghibli-lemon-milk text-ghibli-sky text-sm md:text-base">@L[$"Me_{step}_Date"]</span>
+                <h3 class="font-ghibli-lemon-milk mt-1 text-lg md:text-2xl">@L[$"Me_{step}_Title"]</h3>
+                <p class="font-montserrat text-md mt-2 leading-relaxed lg:text-lg">@L[$"Me_{step}_Text"]</p>
+            </li>
+        }
+    </ol>
+
+    <!-- Como eu trabalho -->
+    <div class="flex flex-col items-center pt-16 pb-12">
+        <div class="border-ghibli-black mb-14 w-[60vw] border-b-[3px] lg:w-[30vw] dark:border-ghibli-white"></div>
+        <h2 class="font-ghibli-lemon-milk text-center text-2xl md:text-3xl">@L["MeHowTitle"]</h2>
+    </div>
+    <div class="mx-auto grid max-w-6xl gap-6 px-8 md:grid-cols-3">
+        @for (int i = 1; i <= 3; i++)
+        {
+            <div class="flex flex-col gap-3 rounded-2xl p-6 shadow-lg dark:ring-1 dark:ring-ghibli-white/15">
+                <h3 class="font-ghibli-lemon-milk text-xl">@L[$"MeHow{i}Title"]</h3>
+                <p class="font-montserrat text-md leading-relaxed">@L[$"MeHow{i}Text"]</p>
+            </div>
+        }
+    </div>
+
+    <div class="flex justify-center pt-14">
+        <NavLink href="me/techstack" class="@ButtonClass">@L["MeStackLink"]</NavLink>
+    </div>
+</section>
+
+<Footer />
+
+@code {
+    private static readonly string[] PathSteps = { "Chemistry", "FirstCode", "College", "Paper", "Teacher", "Lume", "Freelance", "Now" };
+
+    // Mesmo estilo dos botões da Home
+    private const string ButtonClass = "font-ghibli-lemon-milk bg-ghibli-black text-ghibli-white w-fit cursor-pointer rounded-2xl px-5 py-2.5 text-center text-lg transition-all duration-500 hover:bg-ghibli-white hover:text-ghibli-black active:bg-ghibli-white active:text-ghibli-black md:text-xl dark:text-ghibli-black dark:bg-ghibli-white dark:hover:bg-ghibli-black dark:hover:text-ghibli-white";
+    private const string OutlineButtonClass = "font-ghibli-lemon-milk border-ghibli-black w-fit cursor-pointer rounded-2xl border-2 px-5 py-2 text-center text-lg transition-all duration-500 hover:bg-ghibli-black hover:text-ghibli-white md:text-xl dark:border-ghibli-white dark:hover:bg-ghibli-white dark:hover:text-ghibli-black";
+    private const string IconClass = "text-ghibli-black h-10 w-10 transition-colors duration-300 hover:text-ghibli-sky dark:text-ghibli-white dark:hover:text-ghibli-sky";
+}
