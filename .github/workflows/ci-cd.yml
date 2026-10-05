@@ -1,0 +1,166 @@
+# CI/CD do site: roda os testes em todo push e pull request pro main e, só se eles passarem,
+# publica no Azure Container Apps (push no main ou botão "Run workflow" na aba Actions).
+# Em pull request só os testes rodam: nada é publicado.
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+    # Mudança só em texto de documentação ou nos prints do README não precisa de teste nem deploy.
+    # "*.png" pega só a raiz (os prints); as imagens do site em wwwroot/ continuam disparando.
+    paths-ignore:
+      - "**.md"
+      - "*.png"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "*.png"
+  workflow_dispatch:
+
+# Cada job pede só a permissão que usa (o deploy amplia as dele logo abaixo)
+permissions:
+  contents: read
+
+env:
+  IMAGE: ghcr.io/afcventura/ghibli-fan-tribute
+  RESOURCE_GROUP: rg-ghibli-tribute
+  CONTAINER_APP: ghibli-tribute
+  SITE_URL: https://ghiblitribute.jventura.dev
+
+jobs:
+  test:
+    name: Testes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar o .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # Guarda os pacotes NuGet entre execuções; a chave muda quando algum .csproj muda
+      - name: Cache dos pacotes NuGet
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      # O runner é o Microsoft.Testing.Platform (ligado no global.json), por isso o --solution.
+      # Sem node_modules no runner, o build usa o wwwroot/css/theme.css commitado em vez de rodar o Tailwind.
+      - name: Rodar os testes
+        run: dotnet test --solution GhibliTribute.sln -c Release --report-xunit-trx --results-directory TestResults
+
+      # Relatório pra baixar na página do run, principalmente quando algum teste falha
+      - name: Anexar o relatório dos testes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/*.trx
+          if-no-files-found: ignore
+
+  deploy:
+    name: Deploy no Azure
+    needs: test
+    # Pull request só testa; publicar é só a partir do main
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    # Sem "environment:" de propósito: ele mudaria o subject do token OIDC pra "...:environment:<nome>",
+    # e a credencial federada no Azure espera "repo:AFCVentura/ghibli-fan-tribute:ref:refs/heads/main"
+    permissions:
+      contents: read   # ler o código do repo
+      packages: write  # mandar a imagem pro GHCR
+      id-token: write  # pedir o token OIDC que o Azure aceita no lugar de senha
+    # Se dois pushes saírem em sequência, o segundo deploy espera o primeiro terminar em vez de rodarem juntos.
+    # Fica no job (e não no workflow) pra os testes de um pull request não entrarem nessa fila.
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Preparar o Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login no GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Tag com o hash do commit (cada deploy aponta pra uma imagem exata) e "latest" por conveniência.
+      # O cache "gha" guarda as camadas entre execuções: se o .csproj não mudou, o restore não roda de novo.
+      - name: Build e push da imagem
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ github.sha }}
+            ${{ env.IMAGE }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Login no Azure (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # Primeiro garante o ingress na 8080 (a porta do .NET no container), depois troca a imagem.
+      # Nessa ordem a revisão nova já nasce verificando a porta certa; ao contrário, ela fica presa em "Activating".
+      - name: Atualizar o Container App
+        run: |
+          az config set extension.use_dynamic_install=yes_without_prompt
+          az containerapp ingress update \
+            --name "$CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --target-port 8080
+          az containerapp update \
+            --name "$CONTAINER_APP" \
+            --resource-group "$RESOURCE_GROUP" \
+            --image "$IMAGE:${{ github.sha }}"
+
+      # O "az containerapp update" volta assim que o Azure aceita a mudança, não quando a revisão nova sobe.
+      # Em modo single revision, uma revisão nova doente não derruba a antiga: sem esta checagem o run ficava
+      # verde com o site ainda na versão velha (foi o que aconteceu com as probes na porta 80).
+      - name: Esperar a revisão nova ficar saudável
+        run: |
+          revision=$(az containerapp show --name "$CONTAINER_APP" --resource-group "$RESOURCE_GROUP" \
+            --query properties.latestRevisionName --output tsv)
+          echo "Revisão nova: $revision"
+
+          for attempt in $(seq 1 30); do
+            read -r provisioning running health < <(az containerapp revision show \
+              --name "$CONTAINER_APP" --resource-group "$RESOURCE_GROUP" --revision "$revision" \
+              --query "[properties.provisioningState, properties.runningState, properties.healthState]" --output tsv | tr '\n' ' ')
+            echo "[$attempt/30] provisioning=$provisioning running=$running health=$health"
+
+            if [ "$provisioning" = "Failed" ] || [ "$running" = "Failed" ]; then
+              echo "::error::A revisão $revision falhou. Ver os logs em Container App > Revisions and replicas."
+              exit 1
+            fi
+            if [ "$provisioning" = "Provisioned" ] && [ "$health" = "Healthy" ] && [[ "$running" == Running* ]]; then
+              echo "Revisão $revision no ar e saudável."
+              exit 0
+            fi
+            sleep 10
+          done
+
+          echo "::error::A revisão $revision não ficou saudável em 5 minutos (último estado: provisioning=$provisioning running=$running health=$health)."
+          exit 1
+
+      # Última conferência, de fora, pelo domínio de verdade. As tentativas cobrem a partida a frio do scale to zero.
+      - name: Smoke test no domínio
+        run: |
+          curl --fail --silent --show-error --output /dev/null \
+            --retry 5 --retry-delay 10 --retry-all-errors --max-time 30 \
+            --write-out "HTTP %{http_code} em %{time_total}s\n" \
+            "$SITE_URL"
