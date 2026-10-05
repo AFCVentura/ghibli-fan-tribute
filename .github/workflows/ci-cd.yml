@@ -138,9 +138,11 @@ jobs:
           echo "Revisão nova: $revision"
 
           for attempt in $(seq 1 30); do
-            read -r provisioning running health < <(az containerapp revision show \
+            # O GitHub roda com "bash -e": a here-string garante a quebra de linha final; sem ela o read
+            # retorna erro e derruba o passo
+            read -r provisioning running health <<< "$(az containerapp revision show \
               --name "$CONTAINER_APP" --resource-group "$RESOURCE_GROUP" --revision "$revision" \
-              --query "[properties.provisioningState, properties.runningState, properties.healthState]" --output tsv | tr '\n' ' ')
+              --query "[properties.provisioningState, properties.runningState, properties.healthState]" --output tsv | tr '\n' ' ')"
             echo "[$attempt/30] provisioning=$provisioning running=$running health=$health"
 
             if [ "$provisioning" = "Failed" ] || [ "$running" = "Failed" ]; then
