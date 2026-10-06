@@ -34,16 +34,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Baixar o código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Instalar o .NET 10
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: 10.0.x
 
       # Guarda os pacotes NuGet entre execuções; a chave muda quando algum .csproj muda
       - name: Cache dos pacotes NuGet
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.nuget/packages
           key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
@@ -57,7 +57,7 @@ jobs:
       # Relatório pra baixar na página do run, principalmente quando algum teste falha
       - name: Anexar o relatório dos testes
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: TestResults/*.trx
@@ -82,13 +82,13 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Baixar o código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Preparar o Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Login no GHCR
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -97,7 +97,7 @@ jobs:
       # Tag com o hash do commit (cada deploy aponta pra uma imagem exata) e "latest" por conveniência.
       # O cache "gha" guarda as camadas entre execuções: se o .csproj não mudou, o restore não roda de novo.
       - name: Build e push da imagem
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
@@ -108,7 +108,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Login no Azure (OIDC)
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
