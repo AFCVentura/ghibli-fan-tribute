@@ -1,0 +1,48 @@
+# Análise de segurança do GitHub (CodeQL): lê o código procurando falhas como injeção, XSS
+# ou dado sensível em log. Os alertas aparecem na aba Security > Code scanning.
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # Toda segunda às 06:00 UTC: as regras do CodeQL são atualizadas, então vale rodar mesmo sem push
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analisar (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write  # publicar os alertas na aba Security
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # "none" analisa o C# direto do código-fonte, sem compilar (dispensa .NET e Tailwind no runner)
+          - language: csharp
+            build-mode: none
+          # Também confere os próprios workflows (permissões largas demais, injeção em run: etc.)
+          - language: actions
+            build-mode: none
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v7
+
+      - name: Iniciar o CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Rodar a análise
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:${{ matrix.language }}

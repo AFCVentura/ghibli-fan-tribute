@@ -1,0 +1,41 @@
+# Dependabot: abre pull request quando um pacote ou action tem versão nova ou vulnerabilidade.
+# O CI roda os testes em cada PR, então dá pra ver se a atualização quebra algo antes de juntar.
+# Atualizações de patch e minor vêm agrupadas num PR só por ecossistema, pra não virar uma enxurrada.
+version: 2
+updates:
+  # Pacotes NuGet do site e do projeto de testes (acha os dois pela .sln na raiz)
+  - package-ecosystem: nuget
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      nuget:
+        update-types: [minor, patch]
+
+  # Tailwind (só usado no build local do CSS)
+  - package-ecosystem: npm
+    directory: /src/GhibliTribute
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      npm:
+        update-types: [minor, patch]
+
+  # Actions usadas nos workflows
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        update-types: [minor, patch]
+
+  # Imagens base do Dockerfile (sdk e aspnet do .NET 10)
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
