@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="bunit" Version="2.11.3" />
-    <PackageReference Include="xunit.v3" Version="4.0.1" />
+    <PackageReference Include="xunit.v3" Version="4.0.2" />
   </ItemGroup>
 
 </Project>
