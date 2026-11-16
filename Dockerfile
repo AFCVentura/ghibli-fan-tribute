@@ -1,5 +1,5 @@
 # Etapa 1: compila e publica com o SDK completo
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS build
 WORKDIR /src
 
 # Só o .csproj primeiro: se nenhum pacote mudou, o Docker reaproveita o restore do build anterior
