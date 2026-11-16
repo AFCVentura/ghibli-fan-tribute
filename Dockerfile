@@ -13,7 +13,7 @@ COPY src/ src/
 RUN dotnet publish src/GhibliTribute/GhibliTribute.csproj -c Release -o /app
 
 # Etapa 2: só o runtime do ASP.NET, bem menor e sem SDK
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:11.0 AS runtime
 WORKDIR /app
 COPY --from=build /app .
 
